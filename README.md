@@ -94,10 +94,16 @@ sae:
 - [x] Feature interpretation tools
 - [x] Training orchestration scripts
 
-### Phase 3-7: Coming Soon
-- Hypothesis tracking system
-- Detection pipeline
-- Visualization tools
+### Phase 3: Hypothesis Tracking ✅ COMPLETE
+- [x] Track dataclass with rich API
+- [x] Layerwise feature extraction
+- [x] Semantic similarity-based association
+- [x] Hypothesis tracker with birth/death detection
+- [x] Hungarian algorithm for optimal matching
+
+### Phase 4-7: Coming Soon
+- Detection pipeline (divergence metrics, classifier)
+- Visualization tools (radar plots, trajectories)
 - Optimization & ablations
 - Paper & code release
 
