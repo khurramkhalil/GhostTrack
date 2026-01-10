@@ -1,0 +1,90 @@
+# GhostTrack Project Configuration
+# Multi-Hypothesis Tracking for Hallucination Detection
+
+project:
+  name: GhostTrack
+  version: 1.0.0
+  description: Multi-Hypothesis Tracking for Interpretable Hallucination Detection in LLMs
+
+environment:
+  python_env: conda
+  env_name: pt
+  python_version: "3.10+"
+
+paths:
+  data_dir: ./data
+  cache_dir: ./data/cache
+  models_dir: ./models/checkpoints
+  results_dir: ./results
+  logs_dir: ./logs
+
+model:
+  base_model: gpt2
+  d_model: 768
+  n_layers: 12
+  device: cuda
+
+sae:
+  architecture: JumpReLU
+  d_model: 768
+  d_hidden: 4096
+  threshold: 0.1
+  lambda_sparse: 0.01
+
+sae_training:
+  epochs: 20
+  batch_size: 256
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  gradient_clip: 1.0
+  num_tokens: 100000000
+  max_length: 512
+  validation_every: 1000
+  target_recon_loss: 0.01
+  target_sparsity_min: 50
+  target_sparsity_max: 100
+
+tracking:
+  top_k_features: 50
+  semantic_weight: 0.6
+  activation_weight: 0.2
+  position_weight: 0.2
+  association_threshold: 0.5
+  birth_threshold: 0.5
+  death_threshold: 0.1
+
+detection:
+  entropy_threshold: 1.5
+  churn_threshold: 0.3
+  entropy_weight: 0.4
+  churn_weight: 0.3
+  ml_weight: 0.3
+  threshold: 0.5
+
+dataset:
+  primary: truthful_qa
+  split_train: 0.7
+  split_val: 0.15
+  split_test: 0.15
+  stratify_by: category
+
+evaluation:
+  target_auroc_min: 0.90
+  target_auroc_strong: 0.92
+  target_auroc_exceptional: 0.94
+
+logging:
+  use_wandb: true
+  project_name: ghosttrack
+  log_level: INFO
+
+testing:
+  run_unit_tests: true
+  run_integration_tests: true
+  min_coverage: 80
+
+visualization:
+  umap_n_components: 2
+  umap_random_state: 42
+  figure_dpi: 300
+  figure_format: png

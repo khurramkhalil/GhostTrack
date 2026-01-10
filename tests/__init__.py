@@ -1,0 +1,1 @@
+"""Tests for GhostTrack components."""
