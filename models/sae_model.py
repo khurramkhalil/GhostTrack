@@ -57,10 +57,14 @@ class JumpReLUSAE(nn.Module):
 
         This is a standard technique for SAEs that helps with
         interpretability and training stability.
+
+        W_dec.weight is [d_model, d_hidden]. Each column (along dim 1)
+        represents one feature's decoder vector. We normalize columns so each
+        feature has unit norm.
         """
         with torch.no_grad():
             # W_dec.weight is [d_model, d_hidden]
-            # Normalize each column (feature) to unit norm
+            # Normalize each column (feature decoder) to unit norm
             norms = torch.norm(self.W_dec.weight.data, dim=0, keepdim=True)
             self.W_dec.weight.data = self.W_dec.weight.data / (norms + 1e-8)
 
@@ -180,12 +184,12 @@ class JumpReLUSAE(nn.Module):
 
     def get_feature_norms(self) -> torch.Tensor:
         """
-        Get L2 norms of decoder weight columns.
+        Get L2 norms of decoder weight columns (features).
 
         Returns:
-            Tensor of shape [d_hidden] with norm of each feature.
+            Tensor of shape [d_hidden] with norm of each feature decoder.
         """
-        # W_dec.weight is [d_model, d_hidden], so compute norm over d_model dimension
+        # W_dec.weight is [d_model, d_hidden], compute norm over d_model dimension (dim=0)
         return torch.norm(self.W_dec.weight.data, dim=0)
 
     def get_active_features(

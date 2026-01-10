@@ -87,10 +87,12 @@ sae:
 - [x] JumpReLU SAE implementation
 - [x] Comprehensive test suite
 
-### Phase 2: SAE Training (In Progress)
-- [ ] Training pipeline
-- [ ] Feature interpretation
-- [ ] Error analysis
+### Phase 2: SAE Training ✅ COMPLETE
+- [x] Wikipedia corpus loader
+- [x] Hidden state extraction pipeline
+- [x] SAE training loop with validation
+- [x] Feature interpretation tools
+- [x] Training orchestration scripts
 
 ### Phase 3-7: Coming Soon
 - Hypothesis tracking system

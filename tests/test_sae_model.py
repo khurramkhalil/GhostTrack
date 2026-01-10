@@ -223,10 +223,12 @@ class TestJumpReLUSAE(unittest.TestCase):
 
     def test_decoder_normalization(self):
         """Test that decoder weights are normalized."""
-        # Check decoder column norms
-        norms = torch.norm(self.sae.W_dec.weight.data, dim=1)
+        # Check decoder column norms (each column is a feature decoder)
+        # W_dec.weight is [d_model, d_hidden], normalize along dim=0
+        norms = torch.norm(self.sae.W_dec.weight.data, dim=0)
 
         # All norms should be close to 1
+        self.assertEqual(norms.shape[0], self.d_hidden)
         for norm in norms:
             self.assertAlmostEqual(norm.item(), 1.0, places=5)
 
@@ -238,8 +240,9 @@ class TestJumpReLUSAE(unittest.TestCase):
         # Normalize
         self.sae.normalize_decoder_weights()
 
-        # Check norms are 1
-        norms = torch.norm(self.sae.W_dec.weight.data, dim=1)
+        # Check norms are 1 (columns should be unit norm)
+        norms = torch.norm(self.sae.W_dec.weight.data, dim=0)
+        self.assertEqual(norms.shape[0], self.d_hidden)
         for norm in norms:
             self.assertAlmostEqual(norm.item(), 1.0, places=5)
 

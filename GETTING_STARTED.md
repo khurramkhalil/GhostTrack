@@ -33,13 +33,13 @@ Verify Phase 1 implementation:
 
 ```bash
 # Run all tests
-python3 run_tests.py
+python run_tests.py
 
 # Or individual modules
-python3 run_tests.py --module test_config
-python3 run_tests.py --module test_data_loader
-python3 run_tests.py --module test_model_wrapper  # Requires GPU/CPU
-python3 run_tests.py --module test_sae_model
+python run_tests.py --module test_config
+python run_tests.py --module test_data_loader
+python run_tests.py --module test_model_wrapper  # Requires GPU/CPU
+python run_tests.py --module test_sae_model
 ```
 
 **Note**: Some tests require downloading GPT-2 (~500MB) and TruthfulQA dataset.
