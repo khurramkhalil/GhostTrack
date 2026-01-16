@@ -1,6 +1,7 @@
 """Wikipedia corpus loader for SAE training."""
 
 import torch
+import numpy as np
 from pathlib import Path
 from typing import Iterator, Optional, List
 from datasets import load_dataset
@@ -35,6 +36,9 @@ class WikipediaCorpus:
         self.date = date
         self.max_tokens = max_tokens
         self.dataset = None
+        self.streaming = True
+        # Auto-load dataset
+        self.load()
 
     def load(self):
         """Load Wikipedia dataset from HuggingFace."""
@@ -73,6 +77,28 @@ class WikipediaCorpus:
             if len(text.strip()) > 100:  # Filter out very short articles
                 yield text
                 count += 1
+
+    def get_batch(self, batch_size: int, min_length: int = 0) -> List[str]:
+        """
+        Get a single batch of texts.
+
+        Args:
+            batch_size: Number of texts to return.
+            min_length: Minimum text length filter.
+
+        Returns:
+            List of Wikipedia texts.
+        """
+        if batch_size == 0:
+            return []
+
+        batch = []
+        for text in self.get_texts():
+            if len(text) >= min_length:
+                batch.append(text)
+            if len(batch) >= batch_size:
+                break
+        return batch
 
     def get_text_batches(
         self,
@@ -117,7 +143,8 @@ class HiddenStateExtractor:
         self,
         model_wrapper,
         corpus: WikipediaCorpus,
-        cache_dir: Optional[str] = None
+        cache_dir: Optional[str] = None,
+        device: Optional[str] = None
     ):
         """
         Initialize hidden state extractor.
@@ -126,11 +153,63 @@ class HiddenStateExtractor:
             model_wrapper: GPT2WithResidualHooks instance.
             corpus: WikipediaCorpus instance.
             cache_dir: Directory to cache extracted states.
+            device: Device to run model on.
         """
         self.model = model_wrapper
         self.corpus = corpus
         self.cache_dir = Path(cache_dir) if cache_dir else Path('./data/cache/hidden_states')
         self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.device = device
+
+    def extract_from_text(
+        self,
+        text: str,
+        layer_idx: int,
+        max_length: int = 512
+    ) -> np.ndarray:
+        """
+        Extract hidden states from a single text.
+
+        Args:
+            text: Input text.
+            layer_idx: Layer index to extract from.
+            max_length: Maximum sequence length.
+
+        Returns:
+            Hidden states as numpy array [seq_len, d_model].
+        """
+        import torch
+        import numpy as np
+
+        with torch.no_grad():
+            outputs = self.model.process_text(text, max_length=max_length)
+            hidden_states = outputs['residual_stream'][layer_idx]  # [1, seq_len, d_model]
+            return hidden_states[0].cpu().numpy()  # [seq_len, d_model]
+
+    def extract_from_batch(
+        self,
+        texts: List[str],
+        layer_idx: int,
+        max_length: int = 512
+    ) -> np.ndarray:
+        """
+        Extract hidden states from multiple texts.
+
+        Args:
+            texts: List of input texts.
+            layer_idx: Layer index to extract from.
+            max_length: Maximum sequence length.
+
+        Returns:
+            Concatenated hidden states as numpy array [total_tokens, d_model].
+        """
+        all_states = []
+
+        for text in texts:
+            states = self.extract_from_text(text, layer_idx, max_length)
+            all_states.append(states)
+
+        return np.concatenate(all_states, axis=0)
 
     def extract_for_layer(
         self,
@@ -138,7 +217,8 @@ class HiddenStateExtractor:
         num_tokens: int = 10_000_000,
         batch_size: int = 8,
         max_length: int = 512,
-        save_every: int = 100
+        save_every: int = 100,
+        save_dir: Optional[str] = None
     ) -> Path:
         """
         Extract hidden states for a specific layer.
@@ -149,11 +229,14 @@ class HiddenStateExtractor:
             batch_size: Batch size for processing.
             max_length: Maximum sequence length.
             save_every: Save checkpoint every N batches.
+            save_dir: Optional directory to save to (overrides cache_dir).
 
         Returns:
             Path to saved hidden states file.
         """
-        output_file = self.cache_dir / f'layer_{layer_idx}_states.pt'
+        output_dir = Path(save_dir) if save_dir else self.cache_dir
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_file = output_dir / f'layer_{layer_idx}_states.pt'
 
         # Check if already exists
         if output_file.exists():

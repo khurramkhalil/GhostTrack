@@ -58,10 +58,10 @@ class SAETrainer:
             weight_decay=config.get('weight_decay', 0.0)
         )
 
-        # Setup scheduler
+        # Setup scheduler (T_max will be set during train())
         self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
             self.optimizer,
-            T_max=config['epochs']
+            T_max=config.get('epochs', 100)  # Default to 100 if not specified
         )
 
         # Training state
@@ -69,10 +69,41 @@ class SAETrainer:
         self.best_loss = float('inf')
         self.history = {
             'train_loss': [],
+            'val_loss': [],
             'recon_loss': [],
             'sparsity_loss': [],
+            'train_sparsity': [],
             'sparsity': [],
             'lr': []
+        }
+
+    def load_data(self):
+        """Load and return hidden states."""
+        return self.hidden_states
+
+    def compute_loss(self, batch: torch.Tensor) -> Dict[str, torch.Tensor]:
+        """
+        Compute loss for a batch.
+
+        Args:
+            batch: Input tensor [batch_size, d_model]
+
+        Returns:
+            Dictionary with loss components.
+        """
+        # Add sequence dimension if needed
+        if batch.ndim == 2:
+            batch = batch.unsqueeze(1)  # [batch_size, 1, d_model]
+
+        # Forward pass and compute loss
+        loss_dict = self.sae.loss(batch, return_components=True)
+
+        # Rename keys to match test expectations
+        return {
+            'total_loss': loss_dict['total_loss'],
+            'reconstruction_loss': loss_dict['recon_loss'],
+            'l1_loss': loss_dict['sparsity_loss'],
+            'sparsity': loss_dict['sparsity']
         }
 
     def create_dataloader(self, batch_size: int, shuffle: bool = True):
@@ -236,8 +267,10 @@ class SAETrainer:
 
             # Update history
             self.history['train_loss'].append(train_metrics['train_loss'])
+            self.history['val_loss'].append(val_metrics['val_recon'])
             self.history['recon_loss'].append(train_metrics['recon_loss'])
             self.history['sparsity_loss'].append(train_metrics['sparsity_loss'])
+            self.history['train_sparsity'].append(train_metrics['sparsity'])
             self.history['sparsity'].append(val_metrics['val_sparsity'])
             self.history['lr'].append(self.scheduler.get_last_lr()[0])
 

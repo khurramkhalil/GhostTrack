@@ -41,50 +41,78 @@ class FeatureInterpreter:
         self.layer_idx = layer_idx
         self.device = device
 
+    def get_feature_activations(
+        self,
+        text: str,
+        feature_id: int,
+        max_length: int = 512
+    ) -> np.ndarray:
+        """
+        Get activations for a specific feature across all tokens in text.
+
+        Args:
+            text: Input text.
+            feature_id: Feature ID to get activations for.
+            max_length: Max sequence length.
+
+        Returns:
+            Array of activations (one per token).
+        """
+        with torch.no_grad():
+            # Get model activations
+            outputs = self.model.process_text(text, max_length=max_length)
+            layer_states = outputs['residual_stream'][self.layer_idx]
+
+            # Pass through SAE
+            sae_output = self.sae.forward(layer_states)
+            features = sae_output['features']  # [1, seq_len, d_hidden]
+
+            # Get activations for this feature
+            feature_acts = features[0, :, feature_id].cpu().numpy()
+
+            return feature_acts
+
     def find_top_activating_examples(
         self,
-        feature_id: int,
         texts: List[str],
-        k: int = 20,
+        feature_id: int,
+        top_k: int = 20,
         max_length: int = 512
-    ) -> List[Tuple[str, int, float]]:
+    ) -> List[Dict]:
         """
         Find top-k examples that activate a specific feature.
 
         Args:
-            feature_id: Feature ID to analyze.
             texts: List of text examples to search.
-            k: Number of top examples to return.
+            feature_id: Feature ID to analyze.
+            top_k: Number of top examples to return.
             max_length: Max sequence length.
 
         Returns:
-            List of (text, token_position, activation_value) tuples.
+            List of dicts with 'text', 'max_activation', 'token_idx', 'activations'.
         """
-        top_activations = []  # (text, position, activation)
+        top_activations = []  # (text, position, activation, all_activations)
 
         with torch.no_grad():
-            for text in tqdm(texts, desc=f"Feature {feature_id}"):
-                # Get model activations
-                outputs = self.model.process_text(text, max_length=max_length)
-                layer_states = outputs['residual_stream'][self.layer_idx]
-
-                # Pass through SAE
-                sae_output = self.sae.forward(layer_states)
-                features = sae_output['features']  # [1, seq_len, d_hidden]
-
-                # Get activations for this feature
-                feature_acts = features[0, :, feature_id].cpu().numpy()
+            for text in texts:
+                # Get activations for this text
+                activations = self.get_feature_activations(text, feature_id, max_length)
 
                 # Find max activation in this text
-                max_pos = np.argmax(feature_acts)
-                max_act = feature_acts[max_pos]
+                max_idx = np.argmax(activations)
+                max_act = activations[max_idx]
 
                 if max_act > 0:  # Only if feature is active
-                    top_activations.append((text, int(max_pos), float(max_act)))
+                    top_activations.append({
+                        'text': text,
+                        'max_activation': float(max_act),
+                        'token_idx': int(max_idx),
+                        'activations': activations
+                    })
 
         # Sort by activation and take top-k
-        top_activations.sort(key=lambda x: x[2], reverse=True)
-        return top_activations[:k]
+        top_activations.sort(key=lambda x: x['max_activation'], reverse=True)
+        return top_activations[:top_k]
 
     def extract_common_tokens(
         self,
@@ -124,6 +152,127 @@ class FeatureInterpreter:
 
         return dict(token_counts)
 
+    def get_common_tokens(
+        self,
+        texts: List[str],
+        feature_id: int,
+        top_k: int = 10,
+        context_window: int = 5
+    ) -> List[Tuple[str, int]]:
+        """
+        Get most common tokens where feature activates.
+
+        Args:
+            texts: List of texts to analyze.
+            feature_id: Feature ID.
+            top_k: Number of top tokens to return.
+            context_window: Context window around activation.
+
+        Returns:
+            List of (token, count) tuples.
+        """
+        # Find top activating examples
+        examples = self.find_top_activating_examples(texts, feature_id, top_k=20)
+
+        # Convert to old format for extract_common_tokens
+        examples_old_format = [
+            (ex['text'], ex['token_idx'], ex['max_activation'])
+            for ex in examples
+        ]
+
+        # Extract common tokens
+        token_counts = self.extract_common_tokens(examples_old_format, context_window)
+
+        # Sort by count
+        sorted_tokens = sorted(
+            token_counts.items(),
+            key=lambda x: x[1],
+            reverse=True
+        )
+
+        return sorted_tokens[:top_k]
+
+    def identify_dead_features(
+        self,
+        texts: List[str],
+        threshold: float = 1e-6,
+        max_length: int = 512
+    ) -> List[int]:
+        """
+        Identify features that never activate above threshold.
+
+        Args:
+            texts: List of texts to check.
+            threshold: Minimum activation to be considered alive.
+            max_length: Max sequence length.
+
+        Returns:
+            List of dead feature IDs.
+        """
+        d_hidden = self.sae.d_hidden
+        max_activations = np.zeros(d_hidden)
+
+        with torch.no_grad():
+            for text in texts:
+                # Get model activations
+                outputs = self.model.process_text(text, max_length=max_length)
+                layer_states = outputs['residual_stream'][self.layer_idx]
+
+                # Pass through SAE
+                sae_output = self.sae.forward(layer_states)
+                features = sae_output['features']  # [1, seq_len, d_hidden]
+
+                # Get max activation for each feature
+                batch_max = features[0].max(dim=0)[0].cpu().numpy()
+                max_activations = np.maximum(max_activations, batch_max)
+
+        # Find dead features
+        dead_features = [
+            i for i in range(d_hidden)
+            if max_activations[i] < threshold
+        ]
+
+        return dead_features
+
+    def get_feature_statistics(
+        self,
+        texts: List[str],
+        feature_id: int,
+        max_length: int = 512
+    ) -> Dict[str, float]:
+        """
+        Compute statistics for a feature across texts.
+
+        Args:
+            texts: List of texts.
+            feature_id: Feature ID.
+            max_length: Max sequence length.
+
+        Returns:
+            Dict with statistics.
+        """
+        all_activations = []
+        num_active = 0
+        total_tokens = 0
+
+        with torch.no_grad():
+            for text in texts:
+                activations = self.get_feature_activations(text, feature_id, max_length)
+                all_activations.extend(activations)
+                total_tokens += len(activations)
+
+                # Count tokens where feature is active
+                num_active += np.sum(activations > 1e-6)
+
+        all_activations = np.array(all_activations)
+
+        return {
+            'mean_activation': float(np.mean(all_activations)),
+            'max_activation': float(np.max(all_activations)),
+            'activation_frequency': num_active / total_tokens if total_tokens > 0 else 0.0,
+            'num_samples': len(texts)
+        }
+
     def interpret_feature(
         self,
         feature_id: int,
@@ -143,7 +292,7 @@ class FeatureInterpreter:
         """
         # Find top examples
         top_examples = self.find_top_activating_examples(
-            feature_id, texts, k=k
+            texts, feature_id, top_k=k
         )
 
         if not top_examples:
@@ -153,8 +302,12 @@ class FeatureInterpreter:
                 'top_activation': 0.0
             }
 
-        # Extract common tokens
-        common_tokens = self.extract_common_tokens(top_examples)
+        # Extract common tokens - convert to old format
+        examples_old_format = [
+            (ex['text'], ex['token_idx'], ex['max_activation'])
+            for ex in top_examples
+        ]
+        common_tokens = self.extract_common_tokens(examples_old_format)
 
         # Sort by frequency
         sorted_tokens = sorted(
@@ -167,16 +320,16 @@ class FeatureInterpreter:
             'feature_id': feature_id,
             'active': True,
             'num_activations': len(top_examples),
-            'top_activation': top_examples[0][2],
-            'mean_activation': np.mean([act for _, _, act in top_examples]),
+            'top_activation': top_examples[0]['max_activation'],
+            'mean_activation': np.mean([ex['max_activation'] for ex in top_examples]),
             'common_tokens': sorted_tokens,
             'top_examples': [
                 {
-                    'text': text[:200],  # Truncate for storage
-                    'position': pos,
-                    'activation': act
+                    'text': ex['text'][:200],  # Truncate for storage
+                    'position': ex['token_idx'],
+                    'activation': ex['max_activation']
                 }
-                for text, pos, act in top_examples[:5]
+                for ex in top_examples[:5]
             ]
         }
 
