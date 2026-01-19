@@ -148,6 +148,28 @@ class HallucinationDetector:
 
         self.is_fitted = True
 
+    def fit_features(
+        self,
+        X: np.ndarray,
+        labels: np.ndarray
+    ):
+        """
+        Train the detector using precomputed features.
+        
+        Args:
+            X: Feature matrix [n_samples, n_features].
+            labels: Binary labels.
+        """
+        if self.model_type == 'ensemble':
+            for i, clf in enumerate(self.classifiers):
+                X_scaled = self.scaler[i].fit_transform(X)
+                clf.fit(X_scaled, labels)
+        else:
+            X_scaled = self.scaler.fit_transform(X)
+            self.classifier.fit(X_scaled, labels)
+            
+        self.is_fitted = True
+
     def predict(
         self,
         trackers: List[HypothesisTracker]
@@ -238,6 +260,53 @@ class HallucinationDetector:
             labels, y_pred, average='binary'
         )
 
+        return {
+            'accuracy': accuracy,
+            'auroc': auroc,
+            'precision': precision,
+            'recall': recall,
+            'f1': f1
+        }
+
+    def predict_features(self, X: np.ndarray) -> np.ndarray:
+        if not self.is_fitted:
+            raise ValueError("Detector must be fitted before prediction")
+            
+        if self.model_type == 'ensemble':
+            predictions = []
+            for i, clf in enumerate(self.classifiers):
+                X_scaled = self.scaler[i].transform(X)
+                predictions.append(clf.predict(X_scaled))
+            return (np.mean(predictions, axis=0) > 0.5).astype(int)
+        else:
+            X_scaled = self.scaler.transform(X)
+            return self.classifier.predict(X_scaled)
+
+    def predict_proba_features(self, X: np.ndarray) -> np.ndarray:
+        if not self.is_fitted:
+            raise ValueError("Detector must be fitted before prediction")
+            
+        if self.model_type == 'ensemble':
+            proba_list = []
+            for i, clf in enumerate(self.classifiers):
+                X_scaled = self.scaler[i].transform(X)
+                proba_list.append(clf.predict_proba(X_scaled))
+            return np.mean(proba_list, axis=0)
+        else:
+            X_scaled = self.scaler.transform(X)
+            return self.classifier.predict_proba(X_scaled)
+
+    def evaluate_features(self, X: np.ndarray, labels: np.ndarray) -> Dict[str, float]:
+        """Evaluate using precomputed features."""
+        y_pred = self.predict_features(X)
+        y_proba = self.predict_proba_features(X)[:, 1]
+        
+        accuracy = accuracy_score(labels, y_pred)
+        auroc = roc_auc_score(labels, y_proba)
+        precision, recall, f1, _ = precision_recall_fscore_support(
+            labels, y_pred, average='binary'
+        )
+        
         return {
             'accuracy': accuracy,
             'auroc': auroc,

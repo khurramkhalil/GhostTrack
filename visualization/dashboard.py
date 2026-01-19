@@ -37,16 +37,17 @@ def create_interactive_dashboard(
     output_path.mkdir(parents=True, exist_ok=True)
 
     # Compute divergence metrics
-    metrics = DivergenceMetrics.compute_all_metrics(tracker, num_layers)
+    metrics_computer = DivergenceMetrics()
+    metrics = metrics_computer.compute_all_metrics(tracker, num_layers)
 
     # Get track statistics
-    all_tracks = tracker.get_all_tracks()
+    all_tracks = tracker.tracks
     track_stats = {
         'total_tracks': len(all_tracks),
         'active_tracks': len([t for t in all_tracks if t.death_layer is None]),
         'dead_tracks': len([t for t in all_tracks if t.death_layer is not None]),
-        'avg_lifespan': np.mean([len(t.observations) for t in all_tracks]) if all_tracks else 0,
-        'max_activation': max([max([obs.activation for obs in t.observations])
+        'avg_lifespan': np.mean([len(t.trajectory) for t in all_tracks]) if all_tracks else 0,
+        'max_activation': max([max([act for _, act, _ in t.trajectory])
                               for t in all_tracks]) if all_tracks else 0
     }
 
@@ -59,12 +60,12 @@ def create_interactive_dashboard(
             'death_layer': track.death_layer,
             'observations': [
                 {
-                    'layer': obs.layer_idx,
-                    'activation': float(obs.activation),
-                    'feature_id': obs.feature_id,
-                    'token_pos': obs.token_pos
+                    'layer': layer,
+                    'activation': float(activation),
+                    'feature_id': -1,  # Feature ID not strictly tracked
+                    'token_pos': track.token_pos
                 }
-                for obs in track.observations
+                for layer, activation, _ in track.trajectory
             ]
         }
         track_timeline.append(track_data)
@@ -74,7 +75,7 @@ def create_interactive_dashboard(
     for layer_idx in range(num_layers):
         layer_tracks = [
             t for t in all_tracks
-            if any(obs.layer_idx == layer_idx for obs in t.observations)
+            if any(layer == layer_idx for layer, _, _ in t.trajectory)
         ]
 
         births = len([t for t in all_tracks if t.birth_layer == layer_idx])
@@ -82,9 +83,9 @@ def create_interactive_dashboard(
 
         activations = []
         for track in layer_tracks:
-            for obs in track.observations:
-                if obs.layer_idx == layer_idx:
-                    activations.append(obs.activation)
+            for layer, activation, _ in track.trajectory:
+                if layer == layer_idx:
+                    activations.append(activation)
 
         layer_stats.append({
             'layer': layer_idx,
@@ -313,11 +314,12 @@ def generate_html_dashboard(data: Dict) -> str:
                 'line': {'width': 2},
                 'marker': {'size': 6}
             }
-            for track in data['track_timeline'][:10]  # Top 10 tracks
+            for track in data['track_timeline'][:10]
         ])};
 
         const trajectoryLayout = {{
             title: 'Track Activation Trajectories (Top 10)',
+
             xaxis: {{title: 'Layer Index'}},
             yaxis: {{title: 'Activation'}},
             hovermode: 'closest'

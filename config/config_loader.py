@@ -29,7 +29,7 @@ class SAEConfig:
 class SAETrainingConfig:
     """SAE training configuration."""
     epochs: int = 20
-    batch_size: int = 256
+    batch_size: int = 2048
     learning_rate: float = 0.0001
     weight_decay: float = 0.0
     gradient_clip: float = 1.0

@@ -15,7 +15,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from models import GPT2WithResidualHooks
 from data.wikipedia_loader import WikipediaCorpus, HiddenStateExtractor
-from scripts.train_sae import train_sae_for_layer
+from train_sae import train_sae_for_layer
 from config import load_config
 
 

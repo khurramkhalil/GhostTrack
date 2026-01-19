@@ -1,0 +1,180 @@
+% GhostTrack: Multi-Hypothesis Tracking for Hallucination Detection
+% NeurIPS 2026 Template
+
+\documentclass{article}
+\usepackage[final]{neurips_2026}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\title{GhostTrack: Multi-Hypothesis Tracking for \\Interpretable Hallucination Detection}
+
+\author{
+  Anonymous Author(s) \\
+  \texttt{anonymous@example.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We introduce \textbf{GhostTrack}, a novel method for detecting hallucinations in large language models by tracking competing semantic hypotheses across transformer layers. Using Sparse Autoencoders (SAEs) to extract interpretable features from residual stream activations, we apply multi-object tracking techniques to monitor how semantic concepts are born, compete, and either stabilize (factual) or fragment (hallucinated). Our key insight is that hallucinations exhibit distinctive ``ghost tracks''---transient semantic hypotheses that appear, compete briefly, and disappear without resolution. On TruthfulQA, GhostTrack achieves \textbf{98.5\% AUROC} while providing interpretable explanations through entropy, stability, and dominance metrics. Ablation studies confirm that multi-hypothesis tracking is essential: removing it drops performance to 57\% AUROC. Our approach bridges mechanistic interpretability and practical hallucination detection, offering both strong performance and human-understandable explanations.
+\end{abstract}
+
+%==============================================================================
+\section{Introduction}
+%==============================================================================
+
+Large language models (LLMs) frequently generate plausible-sounding but factually incorrect statements---a phenomenon known as \textit{hallucination}. While existing detection methods achieve reasonable accuracy, they typically operate as black boxes, providing probability scores without explaining \textit{why} a particular output is classified as hallucinated.
+
+We propose \textbf{GhostTrack}, a method that detects hallucinations by analyzing how semantic hypotheses evolve across transformer layers. Our key contributions are:
+
+\begin{enumerate}
+    \item \textbf{Multi-Hypothesis Tracking}: We treat sparse autoencoder features as semantic hypotheses and track their competition across layers using techniques from multi-object tracking.
+    
+    \item \textbf{Interpretable Metrics}: We introduce entropy, stability, and dominance metrics that capture the ``competition'' between hypotheses---high entropy indicates confusion, low stability indicates flickering commitment.
+    
+    \item \textbf{Strong Performance}: We achieve 98.5\% AUROC on TruthfulQA with a simple Random Forest classifier trained on our tracking metrics.
+    
+    \item \textbf{Validation via Ablations}: We demonstrate that multi-hypothesis tracking is the critical component---removing it causes a 41-point AUROC drop.
+\end{enumerate}
+
+%==============================================================================
+\section{Background}
+%==============================================================================
+
+\subsection{Hallucination Detection}
+
+Prior work on hallucination detection includes uncertainty-based methods, self-consistency checking, and internal state probing. The Lie Detector approach (LSD) demonstrated that internal activations contain signal for detecting falsehoods. However, these methods lack interpretability.
+
+\subsection{Sparse Autoencoders for Interpretability}
+
+Sparse autoencoders (SAEs) have emerged as a powerful tool for mechanistic interpretability \cite{bricken2023monosemanticity}. By training autoencoders with sparsity constraints on transformer activations, SAEs learn to decompose the residual stream into interpretable features.
+
+\subsection{Multi-Object Tracking}
+
+Multi-object tracking (MOT) algorithms track multiple entities across video frames using association algorithms. We adapt these techniques to track semantic features across transformer layers.
+
+%==============================================================================
+\section{Method}
+%==============================================================================
+
+\subsection{Architecture Overview}
+
+GhostTrack processes text through four stages:
+\begin{enumerate}
+    \item \textbf{Feature Extraction}: GPT-2 generates residual stream activations at each layer
+    \item \textbf{SAE Encoding}: JumpReLU SAEs extract sparse feature activations
+    \item \textbf{Hypothesis Tracking}: Multi-object tracking associates features across layers
+    \item \textbf{Metric Computation}: Entropy, stability, and dominance metrics are computed
+\end{enumerate}
+
+\subsection{JumpReLU Sparse Autoencoders}
+
+We train 12 JumpReLU SAEs (one per GPT-2 layer) on residual stream activations. The JumpReLU activation provides adaptive thresholding:
+\[
+\text{JumpReLU}(x) = x \cdot \mathbf{1}[x > \theta]
+\]
+where $\theta$ is a learned threshold. This yields sparse, interpretable feature activations.
+
+\subsection{Hypothesis Tracking}
+
+We track the top-$k$ active features across layers using a cost-based association algorithm. The association cost combines:
+\begin{itemize}
+    \item \textbf{Semantic similarity}: Cosine similarity between feature embeddings
+    \item \textbf{Activation similarity}: Difference in activation magnitudes
+    \item \textbf{Position consistency}: Penalty for large position jumps
+\end{itemize}
+
+Tracks are born when features exceed a birth threshold and die when they cannot be associated.
+
+\subsection{Divergence Metrics}
+
+From the tracked hypotheses, we compute:
+\begin{itemize}
+    \item \textbf{Entropy}: Shannon entropy of activation distribution (high = confusion)
+    \item \textbf{Stability}: Inverse of activation variance (low = flickering)
+    \item \textbf{Dominance}: Ratio of strongest track to total (low = competition)
+\end{itemize}
+
+%==============================================================================
+\section{Experiments}
+%==============================================================================
+
+\subsection{Setup}
+
+\textbf{Dataset}: TruthfulQA (3,318 question-answer pairs) \\
+\textbf{Model}: GPT-2 (124M parameters) \\
+\textbf{SAEs}: 12 JumpReLU autoencoders, $d_{hidden}=4096$ \\
+\textbf{Classifier}: Random Forest (100 trees)
+
+\subsection{Main Results}
+
+\begin{table}[h]
+\centering
+\caption{Hallucination detection performance on TruthfulQA}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{AUROC} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} \\
+\midrule
+GhostTrack (Ours) & \textbf{98.5\%} & 93.0\% & 96.9\% & 88.8\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Feature Importance}
+
+The top predictive features are:
+\begin{enumerate}
+    \item \texttt{entropy\_std} (11.0\%) - Variation in hypothesis competition
+    \item \texttt{stability\_mean} (10.6\%) - Track consistency across layers
+    \item \texttt{entropy\_mean} (10.5\%) - Average hypothesis confusion
+    \item \texttt{dominance\_mean} (10.2\%) - Strength of leading hypothesis
+\end{enumerate}
+
+%==============================================================================
+\section{Ablation Studies}
+%==============================================================================
+
+\begin{table}[h]
+\centering
+\caption{Ablation study results}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Configuration} & \textbf{AUROC} & \textbf{$\Delta$ Baseline} \\
+\midrule
+Baseline (Full GhostTrack) & 98.5\% & --- \\
+Single Hypothesis (Top-1) & 57.0\% & \textbf{-41.5\%} \\
+No Association & 97.9\% & -0.6\% \\
+Feature ID Association & 97.6\% & -0.9\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Finding}: Removing multi-hypothesis tracking (Single Hypothesis ablation) causes a catastrophic 41-point drop in AUROC, confirming that tracking competing hypotheses is the core mechanism.
+
+%==============================================================================
+\section{Conclusion}
+%==============================================================================
+
+GhostTrack demonstrates that hallucination detection can be both accurate and interpretable. By framing the problem as multi-hypothesis tracking, we achieve 98.5\% AUROC while providing human-understandable explanations through entropy, stability, and dominance metrics. Our ablations confirm that tracking competition---not just individual features---is essential.
+
+\textbf{Future Work}: Extending GhostTrack to larger models (GPT-2-XL, Llama) and additional datasets (HaluEval, FActScore).
+
+%==============================================================================
+% References
+%==============================================================================
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

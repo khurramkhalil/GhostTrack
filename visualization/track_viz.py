@@ -33,22 +33,22 @@ def plot_track_trajectories(
     fig.suptitle('Track Trajectories Across Layers', fontsize=16, fontweight='bold')
 
     # Get top tracks by max activation
-    all_tracks = tracker.get_all_tracks()
+    all_tracks = tracker.tracks
     if not all_tracks:
         return fig
 
     # Sort by max activation
     sorted_tracks = sorted(
         all_tracks,
-        key=lambda t: max([obs.activation for obs in t.observations]),
+        key=lambda t: max([act for _, act, _ in t.trajectory]),
         reverse=True
     )[:show_top_k]
 
     # Plot 1: Activation trajectories
     ax1 = axes[0, 0]
     for track in sorted_tracks:
-        layers = [obs.layer_idx for obs in track.observations]
-        activations = [obs.activation for obs in track.observations]
+        layers = [layer for layer, _, _ in track.trajectory]
+        activations = [act for _, act, _ in track.trajectory]
         ax1.plot(layers, activations, marker='o', alpha=0.6, linewidth=2)
 
     ax1.set_xlabel('Layer Index', fontsize=12)
@@ -59,7 +59,7 @@ def plot_track_trajectories(
     # Plot 2: Track lifespans
     ax2 = axes[0, 1]
     for i, track in enumerate(sorted_tracks):
-        layers = [obs.layer_idx for obs in track.observations]
+        layers = [layer for layer, _, _ in track.trajectory]
         ax2.barh(i, len(layers), left=min(layers), alpha=0.6)
 
     ax2.set_xlabel('Layer Index', fontsize=12)
@@ -73,7 +73,7 @@ def plot_track_trajectories(
     ax3 = axes[1, 0]
     all_activations = []
     for track in all_tracks:
-        all_activations.extend([obs.activation for obs in track.observations])
+        all_activations.extend([act for _, act, _ in track.trajectory])
 
     if all_activations:
         ax3.hist(all_activations, bins=50, alpha=0.7, edgecolor='black')
@@ -86,8 +86,8 @@ def plot_track_trajectories(
     ax4 = axes[1, 1]
     layer_counts = {}
     for track in all_tracks:
-        for obs in track.observations:
-            layer_counts[obs.layer_idx] = layer_counts.get(obs.layer_idx, 0) + 1
+        for layer, _, _ in track.trajectory:
+            layer_counts[layer] = layer_counts.get(layer, 0) + 1
 
     if layer_counts:
         layers = sorted(layer_counts.keys())
@@ -126,7 +126,7 @@ def plot_competition_heatmap(
         Matplotlib figure.
     """
     # Build competition matrix: tracks x layers
-    all_tracks = tracker.get_all_tracks()
+    all_tracks = tracker.tracks
     if not all_tracks:
         return plt.figure()
 
@@ -138,9 +138,9 @@ def plot_competition_heatmap(
     activation_matrix = np.zeros((num_tracks, num_layers))
 
     for i, track in enumerate(sorted_tracks):
-        for obs in track.observations:
-            if obs.layer_idx < num_layers:
-                activation_matrix[i, obs.layer_idx] = obs.activation
+        for layer, activation, _ in track.trajectory:
+            if layer < num_layers:
+                activation_matrix[i, layer] = activation
 
     # Create figure
     fig, ax = plt.subplots(figsize=figsize)
@@ -268,7 +268,7 @@ def plot_activation_timeline(
     fig, axes = plt.subplots(2, 1, figsize=figsize)
     fig.suptitle('Track Birth/Death Timeline', fontsize=16, fontweight='bold')
 
-    all_tracks = tracker.get_all_tracks()
+    all_tracks = tracker.tracks
     if not all_tracks:
         return fig
 

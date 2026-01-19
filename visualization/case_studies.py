@@ -53,10 +53,12 @@ class CaseStudyGenerator:
         output_path.mkdir(parents=True, exist_ok=True)
 
         # Compute metrics for both
-        metrics_factual = DivergenceMetrics.compute_all_metrics(
+        # Compute metrics for both
+        metrics_computer = DivergenceMetrics()
+        metrics_factual = metrics_computer.compute_all_metrics(
             tracker_factual, self.num_layers
         )
-        metrics_hallucinated = DivergenceMetrics.compute_all_metrics(
+        metrics_hallucinated = metrics_computer.compute_all_metrics(
             tracker_hallucinated, self.num_layers
         )
 
@@ -81,7 +83,7 @@ class CaseStudyGenerator:
             'predictions': {
                 'factual': float(pred_factual),
                 'hallucinated': float(pred_hallucinated),
-                'correct_classification': pred_hallucinated > pred_factual
+                'correct_classification': bool(pred_hallucinated > pred_factual)
             },
             'metrics': {
                 'factual': {k: float(v) for k, v in metrics_factual.items()},
@@ -135,14 +137,14 @@ class CaseStudyGenerator:
                 'hallucinated': float(halluc_val),
                 'difference': float(diff),
                 'percent_change': float(pct_change),
-                'higher_in_hallucination': halluc_val > factual_val
+                'higher_in_hallucination': bool(halluc_val > factual_val)
             }
 
         return comparison
 
     def _analyze_tracks(self, tracker: HypothesisTracker) -> Dict:
         """Analyze tracks in tracker."""
-        all_tracks = tracker.get_all_tracks()
+        all_tracks = tracker.tracks
 
         if not all_tracks:
             return {
@@ -152,16 +154,16 @@ class CaseStudyGenerator:
                 'competition_score': 0
             }
 
-        lifespans = [len(t.observations) for t in all_tracks]
+        lifespans = [len(t.trajectory) for t in all_tracks]
         max_activations = [
-            max([obs.activation for obs in t.observations])
+            max([act for _, act, _ in t.trajectory])
             for t in all_tracks
         ]
 
         # Compute competition: variance in activations
         all_activations = []
         for track in all_tracks:
-            all_activations.extend([obs.activation for obs in track.observations])
+            all_activations.extend([act for _, act, _ in track.trajectory])
 
         competition = np.var(all_activations) if all_activations else 0
 

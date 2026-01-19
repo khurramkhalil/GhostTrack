@@ -49,7 +49,8 @@ class WikipediaCorpus:
             f'{self.date}.{self.language}',
             split='train',
             cache_dir=str(self.cache_dir),
-            streaming=True  # Use streaming to avoid loading entire dataset
+            streaming=True,  # Use streaming to avoid loading entire dataset
+            trust_remote_code=True  # Required for Wikipedia dataset
         )
 
         print("Wikipedia dataset loaded (streaming mode)")

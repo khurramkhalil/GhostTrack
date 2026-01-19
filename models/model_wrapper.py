@@ -227,10 +227,12 @@ class GPT2WithResidualHooks:
             Dictionary with logits and all cached activations.
         """
         encoded = self.encode_text(text, max_length)
-        return self.forward_with_cache(
+        result = self.forward_with_cache(
             encoded['input_ids'],
             encoded['attention_mask']
         )
+        result['attention_mask'] = encoded['attention_mask']
+        return result
 
     def get_activation_shape(self) -> Tuple[int, int]:
         """

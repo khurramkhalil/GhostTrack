@@ -79,11 +79,49 @@ class LayerwiseFeatureExtractor:
 
         return layer_features
 
+    def extract_batch_features(self, texts: List[str], max_length: int = 512) -> List[Dict]:
+        """
+        Extract SAE features for a batch of texts.
+        
+        Args:
+            texts: List of input strings.
+            max_length: Maximum sequence length.
+            
+        Returns:
+            List of dicts per layer, containing batched tensors.
+        """
+        # Get model activations (batched)
+        outputs = self.model.process_text(texts, max_length=max_length)
+        mask = outputs['attention_mask'] # [batch, seq]
+        
+        layer_features = []
+
+        with torch.no_grad():
+            for layer_idx in range(self.n_layers):
+                # Get hidden states for this layer
+                hidden = outputs['residual_stream'][layer_idx]  # [batch, seq, d_model]
+
+                # Pass through SAE
+                sae_output = self.saes[layer_idx].forward(hidden)
+
+                layer_features.append({
+                    'layer': layer_idx,
+                    'features': sae_output['features'],  # [batch, seq, d_hidden]
+                    'activations': sae_output['features'],
+                    'error': sae_output['error'],  # [batch, seq, d_model]
+                    'hidden_state': hidden,  # [batch, seq, d_model]
+                    'attention_mask': mask, # [batch, seq]
+                    'sparsity': sae_output['sparsity'].item()
+                })
+
+        return layer_features
+
     def get_top_k_features(
         self,
         layer_features: Dict,
         k: int = 50,
-        token_pos: Optional[int] = None
+        token_pos: Optional[int] = None,
+        attention_mask: Optional[torch.Tensor] = None
     ) -> List[Tuple[int, float, np.ndarray]]:
         """
         Get top-k activated features from a layer.
@@ -97,6 +135,14 @@ class LayerwiseFeatureExtractor:
             List of (feature_id, activation, embedding) tuples.
         """
         features = layer_features['activations']  # [seq_len, d_hidden]
+
+        if attention_mask is not None:
+            # Zero out padding tokens
+            # mask is [seq_len], features is [seq_len, d_hidden]
+            # Ensure mask is on same device
+            if attention_mask.device != features.device:
+                attention_mask = attention_mask.to(features.device)
+            features = features * attention_mask.unsqueeze(-1)
 
         if token_pos is not None:
             # Use specific token position

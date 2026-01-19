@@ -237,3 +237,51 @@ def greedy_association(
             remaining_features.pop(best_idx)
 
     return associations, remaining_features
+
+
+def associate_by_feature_id(
+    prev_tracks: List,
+    curr_features: List[Tuple[int, float, np.ndarray]],
+    config: Dict
+) -> Tuple[List[Tuple], List[Tuple]]:
+    """
+    Associate features purely by matching Feature IDs (indices).
+    This serves as a random/null baseline for ablation studies.
+    
+    Args:
+        prev_tracks: List of Track objects (must have 'last_feat_id' in metadata).
+        curr_features: List of (feat_id, activation, embedding) tuples.
+        config: Configuration dict (unused but kept for API consistency).
+        
+    Returns:
+        Tuple of (associations, unmatched_features).
+    """
+    alive_tracks = [t for t in prev_tracks if t.is_alive()]
+    
+    if not alive_tracks or not curr_features:
+        return [], curr_features
+
+    associations = []
+    
+    # Map feat_id -> (feat_id, act, emb) for O(1) lookup
+    # Note: If multiple features have same ID (unlikely in ONE layer), this overwrites.
+    # But current_features comes from one layer of one SAE, so IDs are unique.
+    feature_map = {f[0]: f for f in curr_features}
+    matched_feat_ids = set()
+    
+    for track in alive_tracks:
+        # We rely on Track metadata to store the feature ID it represents
+        last_feat_id = track.metadata.get('last_feat_id', -1)
+        
+        if last_feat_id in feature_map:
+            # Match found!
+            associations.append((track, feature_map[last_feat_id]))
+            matched_feat_ids.add(last_feat_id)
+            
+    # Identify unmatched features
+    unmatched_features = [
+        f for f in curr_features 
+        if f[0] not in matched_feat_ids
+    ]
+    
+    return associations, unmatched_features

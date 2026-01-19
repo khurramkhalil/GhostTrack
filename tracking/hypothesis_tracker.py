@@ -6,7 +6,7 @@ from typing import List, Optional, Dict
 import numpy as np
 
 from .track import Track
-from .track_association import associate_features_between_layers, greedy_association
+from .track_association import associate_features_between_layers, greedy_association, associate_by_feature_id
 
 
 class HypothesisTracker:
@@ -72,6 +72,7 @@ class HypothesisTracker:
                     birth_layer=0,
                     token_pos=token_pos
                 )
+                track.metadata['last_feat_id'] = feat_id
 
                 # Add initial observation
                 track.update(0, activation, embedding.copy())
@@ -105,7 +106,16 @@ class HypothesisTracker:
             current_features: List of (feature_id, activation, embedding) tuples.
         """
         # Choose association algorithm
-        if self.config.get('use_greedy', False):
+        # Choose association algorithm
+        if self.config.get('disable_association', False):
+            # No association: all features start new tracks
+            associations = []
+            unmatched_features = current_features
+        elif self.config.get('use_feature_id_matching', False):
+            associations, unmatched_features = associate_by_feature_id(
+                self.tracks, current_features, self.config
+            )
+        elif self.config.get('use_greedy', False):
             associations, unmatched_features = greedy_association(
                 self.tracks, current_features, self.config
             )
@@ -120,6 +130,7 @@ class HypothesisTracker:
         # Update matched tracks
         for track, (feat_id, activation, embedding) in associations:
             track.update(layer_idx, activation, embedding.copy())
+            track.metadata['last_feat_id'] = feat_id
             matched_track_ids.add(track.track_id)
 
         # Mark unmatched alive tracks as dead
@@ -143,6 +154,7 @@ class HypothesisTracker:
                     birth_layer=layer_idx,
                     token_pos=feat_id  # Using feat_id as proxy for position
                 )
+                track.metadata['last_feat_id'] = feat_id
 
                 track.update(layer_idx, activation, embedding.copy())
 
