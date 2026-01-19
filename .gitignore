@@ -209,3 +209,9 @@ __marimo__/
 *.pt
 *.pth
 *.pyc
+
+.DS_Store
+.agent/
+.example.sbatch.txt
+results_downloaded/
+
