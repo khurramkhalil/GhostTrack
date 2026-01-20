@@ -24,7 +24,7 @@ git push
 echo ""
 
 # Step 2: Deploy to Hellbender and launch
-echo -e "${GREEN}Step 3: Deploying to Hellbender and launching job...${NC}"
+echo -e "${GREEN}Step 3: Connecting to Hellbender (hellbender-login.rnet.missouri.edu)...${NC}"
 echo ""
 
 ssh hellbender << 'ENDSSH'
