@@ -1,0 +1,64 @@
+# GhostTrack Configuration for GPT-2 Medium
+# 24 layers, 1024 hidden dim
+
+project:
+  name: GhostTrack
+  version: 1.0.0
+  description: Multi-Hypothesis Tracking for GPT-2 Medium
+
+model:
+  base_model: gpt2-medium
+  d_model: 1024
+  n_layers: 24
+  device: cuda
+
+sae:
+  architecture: JumpReLU
+  d_model: 1024
+  d_hidden: 5120  # 5x expansion ratio (same as small)
+  threshold: 0.1
+  lambda_sparse: 0.01
+
+sae_training:
+  epochs: 20
+  batch_size: 128  # Reduced from 256 for larger model
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  gradient_clip: 1.0
+  num_tokens: 100000000
+  max_length: 512
+  validation_every: 1000
+  target_recon_loss: 0.01
+  target_sparsity_min: 50
+  target_sparsity_max: 100
+
+paths:
+  data_dir: ./data
+  cache_dir: ./data/cache/gpt2-medium
+  models_dir: ./models/checkpoints/gpt2-medium
+  results_dir: ./results/gpt2-medium
+  logs_dir: ./logs/gpt2-medium
+
+tracking:
+  top_k_features: 50
+  semantic_weight: 0.6
+  activation_weight: 0.2
+  position_weight: 0.2
+  association_threshold: 0.5
+  birth_threshold: 0.5
+  death_threshold: 0.1
+
+detection:
+  entropy_threshold: 1.5
+  churn_threshold: 0.3
+  entropy_weight: 0.4
+  churn_weight: 0.3
+  ml_weight: 0.3
+  threshold: 0.5
+
+dataset:
+  primary: truthful_qa
+  split_train: 0.7
+  split_val: 0.15
+  split_test: 0.15
+  stratify_by: category
