@@ -135,7 +135,7 @@ def main():
             'is_factual': result['is_factual'],
             'predicted': int(predictions[i]),
             'probability': float(probabilities[i, 1]),
-            'correct': (predictions[i] == 0) == result['is_factual']
+            'correct': bool((predictions[i] == 0) == result['is_factual'])
         })
     
     predictions_file = output_dir / 'predictions.json'
