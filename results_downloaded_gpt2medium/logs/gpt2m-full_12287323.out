@@ -1,0 +1,4758 @@
+================================================================
+GhostTrack GPT-2 Medium - Full Pipeline
+Job started at Tue Jan 20 13:30:18 CST 2026
+Running on host: g008.mgmt.hellbender
+Job ID: 12287323
+================================================================
+Tue Jan 20 13:30:20 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  |   00000000:17:00.0 Off |                    0 |
+| N/A   44C    P0             58W /  300W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100 80GB PCIe          On  |   00000000:65:00.0 Off |                    0 |
+| N/A   42C    P0             59W /  300W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100 80GB PCIe          On  |   00000000:CA:00.0 Off |                    0 |
+| N/A   44C    P0             58W /  300W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100 80GB PCIe          On  |   00000000:E3:00.0 Off |                    0 |
+| N/A   44C    P0             54W /  300W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA_VISIBLE_DEVICES: 0,1,2,3
+
+Configuration:
+  Model: GPT-2 Medium (24 layers, 1024 dim)
+  Tokens per layer: 10000000
+  Extraction batch size: 16
+  Training batch size: 128
+
+================================================================
+PHASE 1: EXTRACTING HIDDEN STATES (24 layers, 4 GPUs)
+================================================================
+GPU allocation: 6 layers per GPU
+
+Extraction PIDs: 702540 702541 702542 702543
+Waiting for all extraction jobs to complete...
+Loading configuration...
+
+Processing layers: [0, 1, 2, 3, 4, 5]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 1: EXTRACTING HIDDEN STATES
+======================================================================
+
+Loading GPT-2 model...
+Loading gpt2-medium on cuda...
+Model loaded: 24 layers, d_model=1024
+Loading Wikipedia corpus...
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+
+======================================================================
+Extracting layer 0/23
+======================================================================
+
+Extracting hidden states for layer 0...
+Target: 10,000,000 tokens
+Loading configuration...
+
+Processing layers: [12, 13, 14, 15, 16, 17]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 1: EXTRACTING HIDDEN STATES
+======================================================================
+
+Loading GPT-2 model...
+Loading gpt2-medium on cuda...
+Model loaded: 24 layers, d_model=1024
+Loading Wikipedia corpus...
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+
+======================================================================
+Extracting layer 12/23
+======================================================================
+
+Extracting hidden states for layer 12...
+Target: 10,000,000 tokens
+Loading configuration...
+
+Processing layers: [18, 19, 20, 21, 22, 23]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 1: EXTRACTING HIDDEN STATES
+======================================================================
+
+Loading GPT-2 model...
+Loading gpt2-medium on cuda...
+Model loaded: 24 layers, d_model=1024
+Loading Wikipedia corpus...
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+
+======================================================================
+Extracting layer 18/23
+======================================================================
+
+Extracting hidden states for layer 18...
+Target: 10,000,000 tokens
+Loading configuration...
+
+Processing layers: [6, 7, 8, 9, 10, 11]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 1: EXTRACTING HIDDEN STATES
+======================================================================
+
+Loading GPT-2 model...
+Loading gpt2-medium on cuda...
+Model loaded: 24 layers, d_model=1024
+Loading Wikipedia corpus...
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+Loading Wikipedia dataset (en, 20220301)...
+Wikipedia dataset loaded (streaming mode)
+
+======================================================================
+Extracting layer 6/23
+======================================================================
+
+Extracting hidden states for layer 6...
+Target: 10,000,000 tokens
+Registering hooks...
+Registered 72 hooks
+
+Collected 10,005,776 tokens for layer 12
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_12_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_12_states.pt
+
+======================================================================
+Extracting layer 13/23
+======================================================================
+
+Extracting hidden states for layer 13...
+Target: 10,000,000 tokens
+Registering hooks...
+Registered 72 hooks
+
+Collected 10,005,776 tokens for layer 6
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_6_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_6_states.pt
+
+======================================================================
+Extracting layer 7/23
+======================================================================
+
+Extracting hidden states for layer 7...
+Target: 10,000,000 tokens
+Registering hooks...
+Registered 72 hooks
+
+Collected 10,005,776 tokens for layer 18
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_18_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_18_states.pt
+
+======================================================================
+Extracting layer 19/23
+======================================================================
+
+Extracting hidden states for layer 19...
+Target: 10,000,000 tokens
+Registering hooks...
+Registered 72 hooks
+
+Collected 10,005,776 tokens for layer 0
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_0_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_0_states.pt
+
+======================================================================
+Extracting layer 1/23
+======================================================================
+
+Extracting hidden states for layer 1...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 13
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_13_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_13_states.pt
+
+======================================================================
+Extracting layer 14/23
+======================================================================
+
+Extracting hidden states for layer 14...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 7
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_7_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_7_states.pt
+
+======================================================================
+Extracting layer 8/23
+======================================================================
+
+Extracting hidden states for layer 8...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 19
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_19_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_19_states.pt
+
+======================================================================
+Extracting layer 20/23
+======================================================================
+
+Extracting hidden states for layer 20...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 1
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_1_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_1_states.pt
+
+======================================================================
+Extracting layer 2/23
+======================================================================
+
+Extracting hidden states for layer 2...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 14
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_14_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_14_states.pt
+
+======================================================================
+Extracting layer 15/23
+======================================================================
+
+Extracting hidden states for layer 15...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 8
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_8_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_8_states.pt
+
+======================================================================
+Extracting layer 9/23
+======================================================================
+
+Extracting hidden states for layer 9...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 20
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_20_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_20_states.pt
+
+======================================================================
+Extracting layer 21/23
+======================================================================
+
+Extracting hidden states for layer 21...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 2
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_2_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_2_states.pt
+
+======================================================================
+Extracting layer 3/23
+======================================================================
+
+Extracting hidden states for layer 3...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 15
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_15_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_15_states.pt
+
+======================================================================
+Extracting layer 16/23
+======================================================================
+
+Extracting hidden states for layer 16...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 21
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_21_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_21_states.pt
+
+======================================================================
+Extracting layer 22/23
+======================================================================
+
+Extracting hidden states for layer 22...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 9
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_9_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_9_states.pt
+
+======================================================================
+Extracting layer 10/23
+======================================================================
+
+Extracting hidden states for layer 10...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 3
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_3_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_3_states.pt
+
+======================================================================
+Extracting layer 4/23
+======================================================================
+
+Extracting hidden states for layer 4...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 16
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_16_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_16_states.pt
+
+======================================================================
+Extracting layer 17/23
+======================================================================
+
+Extracting hidden states for layer 17...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 10
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_10_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_10_states.pt
+
+======================================================================
+Extracting layer 11/23
+======================================================================
+
+Extracting hidden states for layer 11...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 22
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_22_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_22_states.pt
+
+======================================================================
+Extracting layer 23/23
+======================================================================
+
+Extracting hidden states for layer 23...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 4
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_4_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_4_states.pt
+
+======================================================================
+Extracting layer 5/23
+======================================================================
+
+Extracting hidden states for layer 5...
+Target: 10,000,000 tokens
+
+Collected 10,005,776 tokens for layer 17
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_17_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_17_states.pt
+
+======================================================================
+EXTRACTION COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Collected 10,005,776 tokens for layer 23
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_23_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_23_states.pt
+
+======================================================================
+EXTRACTION COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Collected 10,005,776 tokens for layer 11
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_11_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_11_states.pt
+
+======================================================================
+EXTRACTION COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Collected 10,005,776 tokens for layer 5
+Saving 10,005,776 tokens to data/cache/gpt2-medium/hidden_states/layer_5_states.pt
+✓ Saved to data/cache/gpt2-medium/hidden_states/layer_5_states.pt
+
+======================================================================
+EXTRACTION COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Extraction phase completed with status: 0
+
+=== Hidden States Summary ===
+total 917G
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 15:27 layer_0_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 22:09 layer_10_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 23:51 layer_11_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 15:10 layer_12_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 16:53 layer_13_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 18:37 layer_14_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 20:15 layer_15_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 22:00 layer_16_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 23:36 layer_17_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 15:16 layer_18_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 17:00 layer_19_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 17:12 layer_1_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 18:43 layer_20_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 20:23 layer_21_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 22:10 layer_22_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 23:49 layer_23_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 18:56 layer_2_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 20:40 layer_3_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 22:21 layer_4_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 23:54 layer_5_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 15:16 layer_6_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 16:59 layer_7_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 18:40 layer_8_states.pt
+-rw-rw-r-- 1 kkfdh kkfdh 39G Jan 20 20:24 layer_9_states.pt
+917G	./data/cache/gpt2-medium/hidden_states/
+
+================================================================
+PHASE 2: TRAINING SAEs (24 layers, 4 GPUs)
+================================================================
+Training configuration:
+  Batch size: 128
+  D_model: 1024, D_hidden: 5120
+  Epochs: 20
+
+Training PIDs: 1000755 1000756 1000757 1000758
+Waiting for all training jobs to complete...
+Loading configuration...
+
+Processing layers: [6, 7, 8, 9, 10, 11]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 2: TRAINING SAEs
+======================================================================
+
+======================================================================
+Training SAE for layer 6/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_6_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 6
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+Loading configuration...
+
+Processing layers: [0, 1, 2, 3, 4, 5]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 2: TRAINING SAEs
+======================================================================
+
+======================================================================
+Training SAE for layer 0/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_0_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 0
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+Loading configuration...
+
+Processing layers: [12, 13, 14, 15, 16, 17]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 2: TRAINING SAEs
+======================================================================
+
+======================================================================
+Training SAE for layer 12/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_12_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 12
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+Loading configuration...
+
+Processing layers: [18, 19, 20, 21, 22, 23]
+Device: cuda
+Num tokens per layer: 10,000,000
+
+======================================================================
+PHASE 2: TRAINING SAEs
+======================================================================
+
+======================================================================
+Training SAE for layer 18/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_18_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 18
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 1/20
+  Train Loss: 0.018421
+  Val Recon Loss: 0.003459
+  Val Sparsity: 0.2948
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.003459
+
+Epoch 1/20
+  Train Loss: 0.089665
+  Val Recon Loss: 0.022800
+  Val Sparsity: 0.5574
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.022800
+
+Epoch 1/20
+  Train Loss: 0.132019
+  Val Recon Loss: 0.015055
+  Val Sparsity: 0.6042
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.015055
+
+Epoch 1/20
+  Train Loss: 0.254491
+  Val Recon Loss: 0.035863
+  Val Sparsity: 0.6290
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.035863
+
+Epoch 2/20
+  Train Loss: 0.006255
+  Val Recon Loss: 0.002557
+  Val Sparsity: 0.2274
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.002557
+
+Epoch 2/20
+  Train Loss: 0.025047
+  Val Recon Loss: 0.032911
+  Val Sparsity: 0.5402
+  LR: 0.000099
+
+Epoch 2/20
+  Train Loss: 0.035436
+  Val Recon Loss: 0.033205
+  Val Sparsity: 0.6032
+  LR: 0.000099
+
+Epoch 2/20
+  Train Loss: 0.058603
+  Val Recon Loss: 0.024439
+  Val Sparsity: 0.6286
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.024439
+
+Epoch 3/20
+  Train Loss: 0.005572
+  Val Recon Loss: 0.002060
+  Val Sparsity: 0.1994
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.002060
+
+Epoch 3/20
+  Train Loss: 0.021188
+  Val Recon Loss: 0.005193
+  Val Sparsity: 0.5148
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.005193
+
+Epoch 3/20
+  Train Loss: 0.032577
+  Val Recon Loss: 0.029980
+  Val Sparsity: 0.6024
+  LR: 0.000098
+
+Epoch 3/20
+  Train Loss: 0.052393
+  Val Recon Loss: 0.026236
+  Val Sparsity: 0.6284
+  LR: 0.000098
+
+Epoch 4/20
+  Train Loss: 0.005231
+  Val Recon Loss: 0.001962
+  Val Sparsity: 0.1845
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001962
+
+Epoch 4/20
+  Train Loss: 0.018709
+  Val Recon Loss: 0.004425
+  Val Sparsity: 0.4879
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.004425
+
+Epoch 4/20
+  Train Loss: 0.029705
+  Val Recon Loss: 0.015499
+  Val Sparsity: 0.6019
+  LR: 0.000095
+
+Epoch 4/20
+  Train Loss: 0.048429
+  Val Recon Loss: 0.025328
+  Val Sparsity: 0.6283
+  LR: 0.000095
+
+Epoch 5/20
+  Train Loss: 0.005027
+  Val Recon Loss: 0.001878
+  Val Sparsity: 0.1756
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001878
+
+Epoch 5/20
+  Train Loss: 0.016873
+  Val Recon Loss: 0.007152
+  Val Sparsity: 0.4673
+  LR: 0.000090
+
+Epoch 5/20
+  Train Loss: 0.027104
+  Val Recon Loss: 0.008780
+  Val Sparsity: 0.6015
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.008780
+
+Epoch 5/20
+  Train Loss: 0.045219
+  Val Recon Loss: 0.025586
+  Val Sparsity: 0.6278
+  LR: 0.000090
+
+Epoch 6/20
+  Train Loss: 0.004875
+  Val Recon Loss: 0.001799
+  Val Sparsity: 0.1686
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001799
+
+Epoch 6/20
+  Train Loss: 0.015103
+  Val Recon Loss: 0.005199
+  Val Sparsity: 0.4503
+  LR: 0.000085
+
+Epoch 6/20
+  Train Loss: 0.024817
+  Val Recon Loss: 0.017804
+  Val Sparsity: 0.6006
+  LR: 0.000085
+
+Epoch 6/20
+  Train Loss: 0.042231
+  Val Recon Loss: 0.017527
+  Val Sparsity: 0.6281
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.017527
+
+Epoch 7/20
+  Train Loss: 0.004754
+  Val Recon Loss: 0.001717
+  Val Sparsity: 0.1632
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001717
+
+Epoch 7/20
+  Train Loss: 0.013803
+  Val Recon Loss: 0.016537
+  Val Sparsity: 0.4368
+  LR: 0.000079
+
+Epoch 7/20
+  Train Loss: 0.022707
+  Val Recon Loss: 0.005974
+  Val Sparsity: 0.6001
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.005974
+
+Epoch 7/20
+  Train Loss: 0.039477
+  Val Recon Loss: 0.011528
+  Val Sparsity: 0.6281
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.011528
+
+Epoch 8/20
+  Train Loss: 0.004651
+  Val Recon Loss: 0.001648
+  Val Sparsity: 0.1596
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001648
+
+Epoch 8/20
+  Train Loss: 0.012674
+  Val Recon Loss: 0.002990
+  Val Sparsity: 0.4241
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.002990
+
+Epoch 8/20
+  Train Loss: 0.020910
+  Val Recon Loss: 0.009099
+  Val Sparsity: 0.5992
+  LR: 0.000073
+
+Epoch 8/20
+  Train Loss: 0.036833
+  Val Recon Loss: 0.012494
+  Val Sparsity: 0.6281
+  LR: 0.000073
+
+Epoch 9/20
+  Train Loss: 0.004564
+  Val Recon Loss: 0.001535
+  Val Sparsity: 0.1569
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001535
+
+Epoch 9/20
+  Train Loss: 0.011692
+  Val Recon Loss: 0.008126
+  Val Sparsity: 0.4113
+  LR: 0.000065
+
+Epoch 9/20
+  Train Loss: 0.019518
+  Val Recon Loss: 0.005638
+  Val Sparsity: 0.5980
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.005638
+
+Epoch 9/20
+  Train Loss: 0.034584
+  Val Recon Loss: 0.014248
+  Val Sparsity: 0.6281
+  LR: 0.000065
+
+Epoch 10/20
+  Train Loss: 0.004490
+  Val Recon Loss: 0.001476
+  Val Sparsity: 0.1542
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001476
+
+Epoch 10/20
+  Train Loss: 0.010982
+  Val Recon Loss: 0.003699
+  Val Sparsity: 0.4053
+  LR: 0.000058
+
+Epoch 10/20
+  Train Loss: 0.018154
+  Val Recon Loss: 0.005194
+  Val Sparsity: 0.5965
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.005194
+
+Epoch 10/20
+  Train Loss: 0.032431
+  Val Recon Loss: 0.010913
+  Val Sparsity: 0.6282
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.010913
+
+Epoch 11/20
+  Train Loss: 0.004423
+  Val Recon Loss: 0.001440
+  Val Sparsity: 0.1521
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001440
+
+Epoch 11/20
+  Train Loss: 0.010363
+  Val Recon Loss: 0.002268
+  Val Sparsity: 0.3976
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.002268
+
+Epoch 11/20
+  Train Loss: 0.017067
+  Val Recon Loss: 0.004389
+  Val Sparsity: 0.5943
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.004389
+
+Epoch 11/20
+  Train Loss: 0.030617
+  Val Recon Loss: 0.006997
+  Val Sparsity: 0.6284
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.006997
+
+Epoch 12/20
+  Train Loss: 0.004364
+  Val Recon Loss: 0.001416
+  Val Sparsity: 0.1508
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001416
+
+Epoch 12/20
+  Train Loss: 0.009917
+  Val Recon Loss: 0.001743
+  Val Sparsity: 0.3915
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001743
+
+Epoch 12/20
+  Train Loss: 0.016151
+  Val Recon Loss: 0.004140
+  Val Sparsity: 0.5914
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.004140
+
+Epoch 12/20
+  Train Loss: 0.028905
+  Val Recon Loss: 0.009225
+  Val Sparsity: 0.6284
+  LR: 0.000042
+
+Epoch 13/20
+  Train Loss: 0.004319
+  Val Recon Loss: 0.001373
+  Val Sparsity: 0.1497
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001373
+
+Epoch 13/20
+  Train Loss: 0.009560
+  Val Recon Loss: 0.001674
+  Val Sparsity: 0.3855
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001674
+
+Epoch 13/20
+  Train Loss: 0.015420
+  Val Recon Loss: 0.004495
+  Val Sparsity: 0.5890
+  LR: 0.000035
+
+Epoch 13/20
+  Train Loss: 0.027404
+  Val Recon Loss: 0.004327
+  Val Sparsity: 0.6286
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.004327
+
+Epoch 14/20
+  Train Loss: 0.004280
+  Val Recon Loss: 0.001332
+  Val Sparsity: 0.1488
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001332
+
+Epoch 14/20
+  Train Loss: 0.014844
+  Val Recon Loss: 0.002488
+  Val Sparsity: 0.5851
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.002488
+
+Epoch 14/20
+  Train Loss: 0.009249
+  Val Recon Loss: 0.001738
+  Val Sparsity: 0.3796
+  LR: 0.000027
+
+Epoch 14/20
+  Train Loss: 0.026315
+  Val Recon Loss: 0.004394
+  Val Sparsity: 0.6285
+  LR: 0.000027
+
+Epoch 15/20
+  Train Loss: 0.004248
+  Val Recon Loss: 0.001328
+  Val Sparsity: 0.1480
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001328
+
+Epoch 15/20
+  Train Loss: 0.014337
+  Val Recon Loss: 0.002155
+  Val Sparsity: 0.5834
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.002155
+
+Epoch 15/20
+  Train Loss: 0.008985
+  Val Recon Loss: 0.001338
+  Val Sparsity: 0.3757
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001338
+
+Epoch 15/20
+  Train Loss: 0.025531
+  Val Recon Loss: 0.003352
+  Val Sparsity: 0.6285
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.003352
+
+Epoch 16/20
+  Train Loss: 0.004221
+  Val Recon Loss: 0.001300
+  Val Sparsity: 0.1474
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001300
+
+Epoch 16/20
+  Train Loss: 0.013968
+  Val Recon Loss: 0.002055
+  Val Sparsity: 0.5811
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.002055
+
+Epoch 16/20
+  Train Loss: 0.008800
+  Val Recon Loss: 0.001231
+  Val Sparsity: 0.3724
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001231
+
+Epoch 16/20
+  Train Loss: 0.024971
+  Val Recon Loss: 0.003097
+  Val Sparsity: 0.6286
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.003097
+
+Epoch 17/20
+  Train Loss: 0.004201
+  Val Recon Loss: 0.001275
+  Val Sparsity: 0.1469
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001275
+
+Epoch 17/20
+  Train Loss: 0.013711
+  Val Recon Loss: 0.001756
+  Val Sparsity: 0.5785
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.001756
+
+Epoch 17/20
+  Train Loss: 0.008675
+  Val Recon Loss: 0.001126
+  Val Sparsity: 0.3695
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001126
+
+Epoch 17/20
+  Train Loss: 0.024555
+  Val Recon Loss: 0.002729
+  Val Sparsity: 0.6285
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.002729
+
+Epoch 18/20
+  Train Loss: 0.004184
+  Val Recon Loss: 0.001264
+  Val Sparsity: 0.1465
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001264
+
+Epoch 18/20
+  Train Loss: 0.008585
+  Val Recon Loss: 0.001106
+  Val Sparsity: 0.3686
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001106
+
+Epoch 18/20
+  Train Loss: 0.013535
+  Val Recon Loss: 0.001650
+  Val Sparsity: 0.5773
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.001650
+
+Epoch 18/20
+  Train Loss: 0.024251
+  Val Recon Loss: 0.002552
+  Val Sparsity: 0.6285
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.002552
+
+Epoch 19/20
+  Train Loss: 0.004172
+  Val Recon Loss: 0.001249
+  Val Sparsity: 0.1463
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001249
+
+Epoch 19/20
+  Train Loss: 0.008529
+  Val Recon Loss: 0.001058
+  Val Sparsity: 0.3681
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001058
+
+Epoch 19/20
+  Train Loss: 0.013421
+  Val Recon Loss: 0.001584
+  Val Sparsity: 0.5761
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.001584
+
+Epoch 19/20
+  Train Loss: 0.024040
+  Val Recon Loss: 0.002383
+  Val Sparsity: 0.6285
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.002383
+
+Epoch 20/20
+  Train Loss: 0.004163
+  Val Recon Loss: 0.001247
+  Val Sparsity: 0.1462
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_best.pt
+  ✓ New best validation loss: 0.001247
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_0_final.pt
+
+Training complete!
+Best validation recon loss: 0.001247
+
+✓ Layer 0 training complete
+  Best recon loss: 0.001265
+
+======================================================================
+Training SAE for layer 1/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_1_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 1
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 20/20
+  Train Loss: 0.008496
+  Val Recon Loss: 0.001037
+  Val Sparsity: 0.3679
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_best.pt
+  ✓ New best validation loss: 0.001037
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_6_final.pt
+
+Training complete!
+Best validation recon loss: 0.001037
+
+✓ Layer 6 training complete
+  Best recon loss: 0.000990
+
+======================================================================
+Training SAE for layer 7/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_7_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 7
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 20/20
+  Train Loss: 0.013354
+  Val Recon Loss: 0.001530
+  Val Sparsity: 0.5757
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_best.pt
+  ✓ New best validation loss: 0.001530
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_12_final.pt
+
+Training complete!
+Best validation recon loss: 0.001530
+
+✓ Layer 12 training complete
+  Best recon loss: 0.001425
+
+======================================================================
+Training SAE for layer 13/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_13_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 13
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 20/20
+  Train Loss: 0.023910
+  Val Recon Loss: 0.002312
+  Val Sparsity: 0.6285
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_best.pt
+  ✓ New best validation loss: 0.002312
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_18_final.pt
+
+Training complete!
+Best validation recon loss: 0.002312
+
+✓ Layer 18 training complete
+  Best recon loss: 0.002041
+
+======================================================================
+Training SAE for layer 19/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_19_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 19
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 1/20
+  Train Loss: 0.021942
+  Val Recon Loss: 0.003338
+  Val Sparsity: 0.3251
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.003338
+
+Epoch 1/20
+  Train Loss: 0.097959
+  Val Recon Loss: 0.017617
+  Val Sparsity: 0.5696
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.017617
+
+Epoch 1/20
+  Train Loss: 0.150459
+  Val Recon Loss: 0.024302
+  Val Sparsity: 0.6199
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.024302
+
+Epoch 1/20
+  Train Loss: 0.290813
+  Val Recon Loss: 0.040565
+  Val Sparsity: 0.6335
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.040565
+
+Epoch 2/20
+  Train Loss: 0.007057
+  Val Recon Loss: 0.002462
+  Val Sparsity: 0.2479
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.002462
+
+Epoch 2/20
+  Train Loss: 0.026897
+  Val Recon Loss: 0.007432
+  Val Sparsity: 0.5631
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.007432
+
+Epoch 2/20
+  Train Loss: 0.038025
+  Val Recon Loss: 0.014637
+  Val Sparsity: 0.6190
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.014637
+
+Epoch 3/20
+  Train Loss: 0.006204
+  Val Recon Loss: 0.002203
+  Val Sparsity: 0.2177
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.002203
+
+Epoch 2/20
+  Train Loss: 0.064408
+  Val Recon Loss: 0.020645
+  Val Sparsity: 0.6330
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.020645
+
+Epoch 3/20
+  Train Loss: 0.023736
+  Val Recon Loss: 0.015044
+  Val Sparsity: 0.5485
+  LR: 0.000098
+
+Epoch 3/20
+  Train Loss: 0.034519
+  Val Recon Loss: 0.025365
+  Val Sparsity: 0.6186
+  LR: 0.000098
+
+Epoch 4/20
+  Train Loss: 0.005814
+  Val Recon Loss: 0.002156
+  Val Sparsity: 0.2002
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.002156
+
+Epoch 3/20
+  Train Loss: 0.057831
+  Val Recon Loss: 0.021907
+  Val Sparsity: 0.6327
+  LR: 0.000098
+
+Epoch 4/20
+  Train Loss: 0.021287
+  Val Recon Loss: 0.008823
+  Val Sparsity: 0.5285
+  LR: 0.000095
+
+Epoch 4/20
+  Train Loss: 0.031116
+  Val Recon Loss: 0.031498
+  Val Sparsity: 0.6181
+  LR: 0.000095
+
+Epoch 5/20
+  Train Loss: 0.005559
+  Val Recon Loss: 0.001923
+  Val Sparsity: 0.1889
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001923
+
+Epoch 4/20
+  Train Loss: 0.053968
+  Val Recon Loss: 0.024972
+  Val Sparsity: 0.6326
+  LR: 0.000095
+
+Epoch 5/20
+  Train Loss: 0.019074
+  Val Recon Loss: 0.012277
+  Val Sparsity: 0.5104
+  LR: 0.000090
+
+Epoch 5/20
+  Train Loss: 0.028216
+  Val Recon Loss: 0.010470
+  Val Sparsity: 0.6184
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.010470
+
+Epoch 6/20
+  Train Loss: 0.005379
+  Val Recon Loss: 0.001842
+  Val Sparsity: 0.1821
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001842
+
+Epoch 5/20
+  Train Loss: 0.050496
+  Val Recon Loss: 0.024815
+  Val Sparsity: 0.6325
+  LR: 0.000090
+
+Epoch 6/20
+  Train Loss: 0.017310
+  Val Recon Loss: 0.012187
+  Val Sparsity: 0.4936
+  LR: 0.000085
+
+Epoch 6/20
+  Train Loss: 0.025904
+  Val Recon Loss: 0.014615
+  Val Sparsity: 0.6177
+  LR: 0.000085
+
+Epoch 7/20
+  Train Loss: 0.005242
+  Val Recon Loss: 0.001752
+  Val Sparsity: 0.1769
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001752
+
+Epoch 6/20
+  Train Loss: 0.047183
+  Val Recon Loss: 0.017428
+  Val Sparsity: 0.6326
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.017428
+
+Epoch 7/20
+  Train Loss: 0.015879
+  Val Recon Loss: 0.016623
+  Val Sparsity: 0.4790
+  LR: 0.000079
+
+Epoch 7/20
+  Train Loss: 0.023948
+  Val Recon Loss: 0.007102
+  Val Sparsity: 0.6174
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.007102
+
+Epoch 8/20
+  Train Loss: 0.005127
+  Val Recon Loss: 0.001707
+  Val Sparsity: 0.1730
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001707
+
+Epoch 7/20
+  Train Loss: 0.044250
+  Val Recon Loss: 0.015764
+  Val Sparsity: 0.6326
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.015764
+
+Epoch 8/20
+  Train Loss: 0.014644
+  Val Recon Loss: 0.005097
+  Val Sparsity: 0.4691
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.005097
+
+Epoch 8/20
+  Train Loss: 0.022188
+  Val Recon Loss: 0.005767
+  Val Sparsity: 0.6168
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.005767
+
+Epoch 9/20
+  Train Loss: 0.005027
+  Val Recon Loss: 0.001719
+  Val Sparsity: 0.1699
+  LR: 0.000065
+
+Epoch 8/20
+  Train Loss: 0.041452
+  Val Recon Loss: 0.014536
+  Val Sparsity: 0.6326
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.014536
+
+Epoch 9/20
+  Train Loss: 0.013462
+  Val Recon Loss: 0.004407
+  Val Sparsity: 0.4600
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.004407
+
+Epoch 9/20
+  Train Loss: 0.020717
+  Val Recon Loss: 0.006253
+  Val Sparsity: 0.6161
+  LR: 0.000065
+
+Epoch 10/20
+  Train Loss: 0.004941
+  Val Recon Loss: 0.001612
+  Val Sparsity: 0.1676
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001612
+
+Epoch 9/20
+  Train Loss: 0.038781
+  Val Recon Loss: 0.011119
+  Val Sparsity: 0.6326
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.011119
+
+Epoch 10/20
+  Train Loss: 0.012567
+  Val Recon Loss: 0.003598
+  Val Sparsity: 0.4506
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.003598
+
+Epoch 10/20
+  Train Loss: 0.019456
+  Val Recon Loss: 0.005471
+  Val Sparsity: 0.6155
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.005471
+
+Epoch 11/20
+  Train Loss: 0.004869
+  Val Recon Loss: 0.001549
+  Val Sparsity: 0.1648
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001549
+
+Epoch 10/20
+  Train Loss: 0.036391
+  Val Recon Loss: 0.013507
+  Val Sparsity: 0.6326
+  LR: 0.000058
+
+Epoch 11/20
+  Train Loss: 0.011736
+  Val Recon Loss: 0.003032
+  Val Sparsity: 0.4413
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.003032
+
+Epoch 11/20
+  Train Loss: 0.018323
+  Val Recon Loss: 0.004879
+  Val Sparsity: 0.6142
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.004879
+
+Epoch 12/20
+  Train Loss: 0.004803
+  Val Recon Loss: 0.001523
+  Val Sparsity: 0.1631
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001523
+
+Epoch 11/20
+  Train Loss: 0.034269
+  Val Recon Loss: 0.007721
+  Val Sparsity: 0.6328
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.007721
+
+Epoch 12/20
+  Train Loss: 0.011064
+  Val Recon Loss: 0.002363
+  Val Sparsity: 0.4332
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.002363
+
+Epoch 12/20
+  Train Loss: 0.017431
+  Val Recon Loss: 0.003745
+  Val Sparsity: 0.6123
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.003745
+
+Epoch 13/20
+  Train Loss: 0.004748
+  Val Recon Loss: 0.001464
+  Val Sparsity: 0.1617
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001464
+
+Epoch 12/20
+  Train Loss: 0.032433
+  Val Recon Loss: 0.006060
+  Val Sparsity: 0.6327
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.006060
+
+Epoch 13/20
+  Train Loss: 0.010524
+  Val Recon Loss: 0.002380
+  Val Sparsity: 0.4266
+  LR: 0.000035
+
+Epoch 13/20
+  Train Loss: 0.016668
+  Val Recon Loss: 0.002932
+  Val Sparsity: 0.6099
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.002932
+
+Epoch 14/20
+  Train Loss: 0.004703
+  Val Recon Loss: 0.001435
+  Val Sparsity: 0.1603
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001435
+
+Epoch 13/20
+  Train Loss: 0.030863
+  Val Recon Loss: 0.005397
+  Val Sparsity: 0.6329
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.005397
+
+Epoch 14/20
+  Train Loss: 0.010107
+  Val Recon Loss: 0.001637
+  Val Sparsity: 0.4182
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001637
+
+Epoch 14/20
+  Train Loss: 0.016055
+  Val Recon Loss: 0.002801
+  Val Sparsity: 0.6081
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.002801
+
+Epoch 15/20
+  Train Loss: 0.004663
+  Val Recon Loss: 0.001397
+  Val Sparsity: 0.1590
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001397
+
+Epoch 14/20
+  Train Loss: 0.029489
+  Val Recon Loss: 0.005429
+  Val Sparsity: 0.6329
+  LR: 0.000027
+
+Epoch 15/20
+  Train Loss: 0.009769
+  Val Recon Loss: 0.001353
+  Val Sparsity: 0.4137
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001353
+
+Epoch 15/20
+  Train Loss: 0.015569
+  Val Recon Loss: 0.002377
+  Val Sparsity: 0.6065
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.002377
+
+Epoch 16/20
+  Train Loss: 0.004630
+  Val Recon Loss: 0.001376
+  Val Sparsity: 0.1582
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001376
+
+Epoch 15/20
+  Train Loss: 0.028529
+  Val Recon Loss: 0.003998
+  Val Sparsity: 0.6329
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.003998
+
+Epoch 16/20
+  Train Loss: 0.009521
+  Val Recon Loss: 0.001225
+  Val Sparsity: 0.4095
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001225
+
+Epoch 16/20
+  Train Loss: 0.015190
+  Val Recon Loss: 0.002062
+  Val Sparsity: 0.6054
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.002062
+
+Epoch 17/20
+  Train Loss: 0.004604
+  Val Recon Loss: 0.001354
+  Val Sparsity: 0.1576
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001354
+
+Epoch 16/20
+  Train Loss: 0.027892
+  Val Recon Loss: 0.003238
+  Val Sparsity: 0.6329
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.003238
+
+Epoch 17/20
+  Train Loss: 0.009335
+  Val Recon Loss: 0.001114
+  Val Sparsity: 0.4073
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001114
+
+Epoch 17/20
+  Train Loss: 0.014919
+  Val Recon Loss: 0.001865
+  Val Sparsity: 0.6041
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.001865
+
+Epoch 18/20
+  Train Loss: 0.004584
+  Val Recon Loss: 0.001349
+  Val Sparsity: 0.1572
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001349
+
+Epoch 17/20
+  Train Loss: 0.027422
+  Val Recon Loss: 0.003018
+  Val Sparsity: 0.6330
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.003018
+
+Epoch 18/20
+  Train Loss: 0.009203
+  Val Recon Loss: 0.001086
+  Val Sparsity: 0.4058
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001086
+
+Epoch 18/20
+  Train Loss: 0.014727
+  Val Recon Loss: 0.001795
+  Val Sparsity: 0.6035
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.001795
+
+Epoch 19/20
+  Train Loss: 0.004570
+  Val Recon Loss: 0.001336
+  Val Sparsity: 0.1571
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_best.pt
+  ✓ New best validation loss: 0.001336
+
+Epoch 18/20
+  Train Loss: 0.027080
+  Val Recon Loss: 0.002770
+  Val Sparsity: 0.6329
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.002770
+
+Epoch 19/20
+  Train Loss: 0.009143
+  Val Recon Loss: 0.001054
+  Val Sparsity: 0.4055
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001054
+
+Epoch 19/20
+  Train Loss: 0.014598
+  Val Recon Loss: 0.001704
+  Val Sparsity: 0.6031
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.001704
+
+Epoch 20/20
+  Train Loss: 0.004562
+  Val Recon Loss: 0.001337
+  Val Sparsity: 0.1570
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_1_final.pt
+
+Training complete!
+Best validation recon loss: 0.001336
+
+✓ Layer 1 training complete
+  Best recon loss: 0.001345
+
+======================================================================
+Training SAE for layer 2/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_2_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 2
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 19/20
+  Train Loss: 0.026841
+  Val Recon Loss: 0.002623
+  Val Sparsity: 0.6329
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.002623
+
+Epoch 20/20
+  Train Loss: 0.009114
+  Val Recon Loss: 0.001031
+  Val Sparsity: 0.4053
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_best.pt
+  ✓ New best validation loss: 0.001031
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_7_final.pt
+
+Training complete!
+Best validation recon loss: 0.001031
+
+✓ Layer 7 training complete
+  Best recon loss: 0.000954
+
+======================================================================
+Training SAE for layer 8/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_8_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 8
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 1/20
+  Train Loss: 0.024666
+  Val Recon Loss: 0.002880
+  Val Sparsity: 0.3416
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.002880
+
+Epoch 20/20
+  Train Loss: 0.014521
+  Val Recon Loss: 0.001639
+  Val Sparsity: 0.6030
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_best.pt
+  ✓ New best validation loss: 0.001639
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_13_final.pt
+
+Training complete!
+Best validation recon loss: 0.001639
+
+✓ Layer 13 training complete
+  Best recon loss: 0.001518
+
+======================================================================
+Training SAE for layer 14/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_14_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 14
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 20/20
+  Train Loss: 0.026694
+  Val Recon Loss: 0.002525
+  Val Sparsity: 0.6329
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_best.pt
+  ✓ New best validation loss: 0.002525
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_19_final.pt
+
+Training complete!
+Best validation recon loss: 0.002525
+
+✓ Layer 19 training complete
+  Best recon loss: 0.002219
+
+======================================================================
+Training SAE for layer 20/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_20_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 20
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 1/20
+  Train Loss: 0.100774
+  Val Recon Loss: 0.014019
+  Val Sparsity: 0.5745
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.014019
+
+Epoch 2/20
+  Train Loss: 0.007359
+  Val Recon Loss: 0.001955
+  Val Sparsity: 0.2617
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001955
+
+Epoch 1/20
+  Train Loss: 0.164418
+  Val Recon Loss: 0.023528
+  Val Sparsity: 0.6202
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.023528
+
+Epoch 2/20
+  Train Loss: 0.027647
+  Val Recon Loss: 0.008287
+  Val Sparsity: 0.5704
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.008287
+
+Epoch 1/20
+  Train Loss: 0.336277
+  Val Recon Loss: 0.051816
+  Val Sparsity: 0.6212
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.051816
+
+Epoch 3/20
+  Train Loss: 0.006483
+  Val Recon Loss: 0.001842
+  Val Sparsity: 0.2308
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001842
+
+Epoch 2/20
+  Train Loss: 0.042290
+  Val Recon Loss: 0.014287
+  Val Sparsity: 0.6191
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.014287
+
+Epoch 3/20
+  Train Loss: 0.024796
+  Val Recon Loss: 0.009866
+  Val Sparsity: 0.5634
+  LR: 0.000098
+
+Epoch 4/20
+  Train Loss: 0.006087
+  Val Recon Loss: 0.002309
+  Val Sparsity: 0.2150
+  LR: 0.000095
+
+Epoch 2/20
+  Train Loss: 0.070752
+  Val Recon Loss: 0.032465
+  Val Sparsity: 0.6207
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.032465
+
+Epoch 3/20
+  Train Loss: 0.038731
+  Val Recon Loss: 0.018519
+  Val Sparsity: 0.6188
+  LR: 0.000098
+
+Epoch 5/20
+  Train Loss: 0.005848
+  Val Recon Loss: 0.001488
+  Val Sparsity: 0.2056
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001488
+
+Epoch 4/20
+  Train Loss: 0.022520
+  Val Recon Loss: 0.008264
+  Val Sparsity: 0.5549
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.008264
+
+Epoch 3/20
+  Train Loss: 0.064418
+  Val Recon Loss: 0.034570
+  Val Sparsity: 0.6207
+  LR: 0.000098
+
+Epoch 4/20
+  Train Loss: 0.035914
+  Val Recon Loss: 0.011101
+  Val Sparsity: 0.6187
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.011101
+
+Epoch 6/20
+  Train Loss: 0.005691
+  Val Recon Loss: 0.001447
+  Val Sparsity: 0.1989
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001447
+
+Epoch 4/20
+  Train Loss: 0.059817
+  Val Recon Loss: 0.025358
+  Val Sparsity: 0.6206
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.025358
+
+Epoch 5/20
+  Train Loss: 0.020252
+  Val Recon Loss: 0.015883
+  Val Sparsity: 0.5392
+  LR: 0.000090
+
+Epoch 5/20
+  Train Loss: 0.032956
+  Val Recon Loss: 0.017975
+  Val Sparsity: 0.6182
+  LR: 0.000090
+
+Epoch 7/20
+  Train Loss: 0.005554
+  Val Recon Loss: 0.001423
+  Val Sparsity: 0.1938
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001423
+
+Epoch 5/20
+  Train Loss: 0.056315
+  Val Recon Loss: 0.018902
+  Val Sparsity: 0.6204
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.018902
+
+Epoch 6/20
+  Train Loss: 0.018435
+  Val Recon Loss: 0.006074
+  Val Sparsity: 0.5241
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.006074
+
+Epoch 6/20
+  Train Loss: 0.030331
+  Val Recon Loss: 0.012639
+  Val Sparsity: 0.6183
+  LR: 0.000085
+
+Epoch 8/20
+  Train Loss: 0.005449
+  Val Recon Loss: 0.001377
+  Val Sparsity: 0.1901
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001377
+
+Epoch 6/20
+  Train Loss: 0.052684
+  Val Recon Loss: 0.031301
+  Val Sparsity: 0.6205
+  LR: 0.000085
+
+Epoch 7/20
+  Train Loss: 0.017061
+  Val Recon Loss: 0.005544
+  Val Sparsity: 0.5118
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.005544
+
+Epoch 7/20
+  Train Loss: 0.027722
+  Val Recon Loss: 0.012253
+  Val Sparsity: 0.6182
+  LR: 0.000079
+
+Epoch 9/20
+  Train Loss: 0.005354
+  Val Recon Loss: 0.003232
+  Val Sparsity: 0.1866
+  LR: 0.000065
+
+Epoch 7/20
+  Train Loss: 0.049344
+  Val Recon Loss: 0.017842
+  Val Sparsity: 0.6205
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.017842
+
+Epoch 8/20
+  Train Loss: 0.015676
+  Val Recon Loss: 0.011825
+  Val Sparsity: 0.5036
+  LR: 0.000073
+
+Epoch 8/20
+  Train Loss: 0.025673
+  Val Recon Loss: 0.007717
+  Val Sparsity: 0.6182
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.007717
+
+Epoch 10/20
+  Train Loss: 0.005273
+  Val Recon Loss: 0.001250
+  Val Sparsity: 0.1850
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001250
+
+Epoch 8/20
+  Train Loss: 0.046212
+  Val Recon Loss: 0.018906
+  Val Sparsity: 0.6205
+  LR: 0.000073
+
+Epoch 9/20
+  Train Loss: 0.014486
+  Val Recon Loss: 0.005361
+  Val Sparsity: 0.4941
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.005361
+
+Epoch 9/20
+  Train Loss: 0.023659
+  Val Recon Loss: 0.006712
+  Val Sparsity: 0.6181
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.006712
+
+Epoch 11/20
+  Train Loss: 0.005203
+  Val Recon Loss: 0.001209
+  Val Sparsity: 0.1834
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001209
+
+Epoch 10/20
+  Train Loss: 0.013506
+  Val Recon Loss: 0.002969
+  Val Sparsity: 0.4857
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.002969
+
+Epoch 9/20
+  Train Loss: 0.043247
+  Val Recon Loss: 0.012708
+  Val Sparsity: 0.6206
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.012708
+
+Epoch 10/20
+  Train Loss: 0.021958
+  Val Recon Loss: 0.007896
+  Val Sparsity: 0.6174
+  LR: 0.000058
+
+Epoch 12/20
+  Train Loss: 0.005142
+  Val Recon Loss: 0.001245
+  Val Sparsity: 0.1820
+  LR: 0.000042
+
+Epoch 11/20
+  Train Loss: 0.012627
+  Val Recon Loss: 0.003786
+  Val Sparsity: 0.4762
+  LR: 0.000050
+
+Epoch 10/20
+  Train Loss: 0.040602
+  Val Recon Loss: 0.011225
+  Val Sparsity: 0.6206
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.011225
+
+Epoch 11/20
+  Train Loss: 0.020636
+  Val Recon Loss: 0.006236
+  Val Sparsity: 0.6173
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.006236
+
+Epoch 13/20
+  Train Loss: 0.005093
+  Val Recon Loss: 0.001178
+  Val Sparsity: 0.1808
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001178
+
+Epoch 12/20
+  Train Loss: 0.011889
+  Val Recon Loss: 0.002341
+  Val Sparsity: 0.4680
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.002341
+
+Epoch 11/20
+  Train Loss: 0.038161
+  Val Recon Loss: 0.009012
+  Val Sparsity: 0.6207
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.009012
+
+Epoch 12/20
+  Train Loss: 0.019461
+  Val Recon Loss: 0.004922
+  Val Sparsity: 0.6173
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.004922
+
+Epoch 14/20
+  Train Loss: 0.005049
+  Val Recon Loss: 0.001162
+  Val Sparsity: 0.1798
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001162
+
+Epoch 13/20
+  Train Loss: 0.011313
+  Val Recon Loss: 0.002008
+  Val Sparsity: 0.4616
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.002008
+
+Epoch 12/20
+  Train Loss: 0.036116
+  Val Recon Loss: 0.006563
+  Val Sparsity: 0.6208
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.006563
+
+Epoch 13/20
+  Train Loss: 0.018531
+  Val Recon Loss: 0.004088
+  Val Sparsity: 0.6170
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.004088
+
+Epoch 15/20
+  Train Loss: 0.005014
+  Val Recon Loss: 0.001142
+  Val Sparsity: 0.1787
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001142
+
+Epoch 14/20
+  Train Loss: 0.010815
+  Val Recon Loss: 0.001780
+  Val Sparsity: 0.4560
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001780
+
+Epoch 13/20
+  Train Loss: 0.034418
+  Val Recon Loss: 0.005455
+  Val Sparsity: 0.6208
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.005455
+
+Epoch 14/20
+  Train Loss: 0.017744
+  Val Recon Loss: 0.003121
+  Val Sparsity: 0.6170
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.003121
+
+Epoch 16/20
+  Train Loss: 0.004984
+  Val Recon Loss: 0.001122
+  Val Sparsity: 0.1782
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001122
+
+Epoch 15/20
+  Train Loss: 0.010461
+  Val Recon Loss: 0.001742
+  Val Sparsity: 0.4512
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001742
+
+Epoch 14/20
+  Train Loss: 0.033066
+  Val Recon Loss: 0.005187
+  Val Sparsity: 0.6209
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.005187
+
+Epoch 15/20
+  Train Loss: 0.017147
+  Val Recon Loss: 0.002600
+  Val Sparsity: 0.6170
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.002600
+
+Epoch 17/20
+  Train Loss: 0.004960
+  Val Recon Loss: 0.001102
+  Val Sparsity: 0.1778
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001102
+
+Epoch 16/20
+  Train Loss: 0.010191
+  Val Recon Loss: 0.001364
+  Val Sparsity: 0.4465
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001364
+
+Epoch 15/20
+  Train Loss: 0.031925
+  Val Recon Loss: 0.004341
+  Val Sparsity: 0.6209
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.004341
+
+Epoch 16/20
+  Train Loss: 0.016675
+  Val Recon Loss: 0.002197
+  Val Sparsity: 0.6165
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.002197
+
+Epoch 18/20
+  Train Loss: 0.004942
+  Val Recon Loss: 0.001102
+  Val Sparsity: 0.1775
+  LR: 0.000005
+
+Epoch 17/20
+  Train Loss: 0.010015
+  Val Recon Loss: 0.001274
+  Val Sparsity: 0.4428
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001274
+
+Epoch 16/20
+  Train Loss: 0.031171
+  Val Recon Loss: 0.003650
+  Val Sparsity: 0.6209
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.003650
+
+Epoch 17/20
+  Train Loss: 0.016344
+  Val Recon Loss: 0.001904
+  Val Sparsity: 0.6163
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.001904
+
+Epoch 19/20
+  Train Loss: 0.004929
+  Val Recon Loss: 0.001091
+  Val Sparsity: 0.1774
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001091
+
+Epoch 18/20
+  Train Loss: 0.009894
+  Val Recon Loss: 0.001192
+  Val Sparsity: 0.4405
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001192
+
+Epoch 17/20
+  Train Loss: 0.030654
+  Val Recon Loss: 0.003455
+  Val Sparsity: 0.6209
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.003455
+
+Epoch 18/20
+  Train Loss: 0.016125
+  Val Recon Loss: 0.001810
+  Val Sparsity: 0.6163
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.001810
+
+Epoch 19/20
+  Train Loss: 0.009818
+  Val Recon Loss: 0.001154
+  Val Sparsity: 0.4393
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001154
+
+Epoch 20/20
+  Train Loss: 0.004921
+  Val Recon Loss: 0.001088
+  Val Sparsity: 0.1774
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_best.pt
+  ✓ New best validation loss: 0.001088
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_2_final.pt
+
+Training complete!
+Best validation recon loss: 0.001088
+
+✓ Layer 2 training complete
+  Best recon loss: 0.001072
+
+======================================================================
+Training SAE for layer 3/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_3_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 3
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 18/20
+  Train Loss: 0.030279
+  Val Recon Loss: 0.003090
+  Val Sparsity: 0.6209
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.003090
+
+Epoch 19/20
+  Train Loss: 0.015985
+  Val Recon Loss: 0.001699
+  Val Sparsity: 0.6163
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.001699
+
+Epoch 1/20
+  Train Loss: 0.070941
+  Val Recon Loss: 0.026771
+  Val Sparsity: 0.4610
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.026771
+
+Epoch 20/20
+  Train Loss: 0.009776
+  Val Recon Loss: 0.001120
+  Val Sparsity: 0.4389
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_best.pt
+  ✓ New best validation loss: 0.001120
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_8_final.pt
+
+Training complete!
+Best validation recon loss: 0.001120
+
+✓ Layer 8 training complete
+  Best recon loss: 0.001061
+
+======================================================================
+Training SAE for layer 9/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_9_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 9
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 19/20
+  Train Loss: 0.030015
+  Val Recon Loss: 0.002910
+  Val Sparsity: 0.6208
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.002910
+
+Epoch 20/20
+  Train Loss: 0.015903
+  Val Recon Loss: 0.001650
+  Val Sparsity: 0.6163
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_best.pt
+  ✓ New best validation loss: 0.001650
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_14_final.pt
+
+Training complete!
+Best validation recon loss: 0.001650
+
+✓ Layer 14 training complete
+  Best recon loss: 0.001499
+
+======================================================================
+Training SAE for layer 15/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_15_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 15
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 2/20
+  Train Loss: 0.017992
+  Val Recon Loss: 0.009249
+  Val Sparsity: 0.3781
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.009249
+
+Epoch 1/20
+  Train Loss: 0.109418
+  Val Recon Loss: 0.024923
+  Val Sparsity: 0.5852
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.024923
+
+Epoch 20/20
+  Train Loss: 0.029852
+  Val Recon Loss: 0.002813
+  Val Sparsity: 0.6208
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_best.pt
+  ✓ New best validation loss: 0.002813
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_20_final.pt
+
+Training complete!
+Best validation recon loss: 0.002813
+
+✓ Layer 20 training complete
+  Best recon loss: 0.002433
+
+======================================================================
+Training SAE for layer 21/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_21_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 21
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 1/20
+  Train Loss: 0.190180
+  Val Recon Loss: 0.027796
+  Val Sparsity: 0.6205
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.027796
+
+Epoch 3/20
+  Train Loss: 0.014340
+  Val Recon Loss: 0.007793
+  Val Sparsity: 0.3346
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.007793
+
+Epoch 2/20
+  Train Loss: 0.029053
+  Val Recon Loss: 0.013673
+  Val Sparsity: 0.5832
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.013673
+
+Epoch 2/20
+  Train Loss: 0.046085
+  Val Recon Loss: 0.021441
+  Val Sparsity: 0.6203
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.021441
+
+Epoch 1/20
+  Train Loss: 0.402862
+  Val Recon Loss: 0.038231
+  Val Sparsity: 0.6136
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.038231
+
+Epoch 4/20
+  Train Loss: 0.012120
+  Val Recon Loss: 0.002917
+  Val Sparsity: 0.3105
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.002917
+
+Epoch 3/20
+  Train Loss: 0.026281
+  Val Recon Loss: 0.013656
+  Val Sparsity: 0.5801
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.013656
+
+Epoch 3/20
+  Train Loss: 0.042393
+  Val Recon Loss: 0.015061
+  Val Sparsity: 0.6199
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.015061
+
+Epoch 2/20
+  Train Loss: 0.082082
+  Val Recon Loss: 0.047831
+  Val Sparsity: 0.6133
+  LR: 0.000099
+
+Epoch 5/20
+  Train Loss: 0.010879
+  Val Recon Loss: 0.008677
+  Val Sparsity: 0.2923
+  LR: 0.000090
+
+Epoch 4/20
+  Train Loss: 0.023983
+  Val Recon Loss: 0.007390
+  Val Sparsity: 0.5747
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.007390
+
+Epoch 4/20
+  Train Loss: 0.039259
+  Val Recon Loss: 0.023013
+  Val Sparsity: 0.6195
+  LR: 0.000095
+
+Epoch 3/20
+  Train Loss: 0.074386
+  Val Recon Loss: 0.027486
+  Val Sparsity: 0.6132
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.027486
+
+Epoch 6/20
+  Train Loss: 0.009841
+  Val Recon Loss: 0.003504
+  Val Sparsity: 0.2792
+  LR: 0.000085
+
+Epoch 5/20
+  Train Loss: 0.021854
+  Val Recon Loss: 0.016733
+  Val Sparsity: 0.5658
+  LR: 0.000090
+
+Epoch 5/20
+  Train Loss: 0.036455
+  Val Recon Loss: 0.016902
+  Val Sparsity: 0.6195
+  LR: 0.000090
+
+Epoch 4/20
+  Train Loss: 0.069102
+  Val Recon Loss: 0.030690
+  Val Sparsity: 0.6130
+  LR: 0.000095
+
+Epoch 7/20
+  Train Loss: 0.008915
+  Val Recon Loss: 0.004788
+  Val Sparsity: 0.2692
+  LR: 0.000079
+
+Epoch 6/20
+  Train Loss: 0.020016
+  Val Recon Loss: 0.008492
+  Val Sparsity: 0.5566
+  LR: 0.000085
+
+Epoch 6/20
+  Train Loss: 0.033462
+  Val Recon Loss: 0.013053
+  Val Sparsity: 0.6191
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.013053
+
+Epoch 5/20
+  Train Loss: 0.064887
+  Val Recon Loss: 0.029002
+  Val Sparsity: 0.6130
+  LR: 0.000090
+
+Epoch 8/20
+  Train Loss: 0.008233
+  Val Recon Loss: 0.007792
+  Val Sparsity: 0.2605
+  LR: 0.000073
+
+Epoch 7/20
+  Train Loss: 0.018375
+  Val Recon Loss: 0.005974
+  Val Sparsity: 0.5480
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.005974
+
+Epoch 7/20
+  Train Loss: 0.030813
+  Val Recon Loss: 0.019424
+  Val Sparsity: 0.6192
+  LR: 0.000079
+
+Epoch 6/20
+  Train Loss: 0.060743
+  Val Recon Loss: 0.027504
+  Val Sparsity: 0.6130
+  LR: 0.000085
+
+Epoch 9/20
+  Train Loss: 0.007690
+  Val Recon Loss: 0.001784
+  Val Sparsity: 0.2517
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.001784
+
+Epoch 8/20
+  Train Loss: 0.016818
+  Val Recon Loss: 0.009955
+  Val Sparsity: 0.5395
+  LR: 0.000073
+
+Epoch 8/20
+  Train Loss: 0.028424
+  Val Recon Loss: 0.009221
+  Val Sparsity: 0.6196
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.009221
+
+Epoch 7/20
+  Train Loss: 0.056926
+  Val Recon Loss: 0.022246
+  Val Sparsity: 0.6130
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.022246
+
+Epoch 10/20
+  Train Loss: 0.007241
+  Val Recon Loss: 0.001546
+  Val Sparsity: 0.2452
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.001546
+
+Epoch 9/20
+  Train Loss: 0.015573
+  Val Recon Loss: 0.004889
+  Val Sparsity: 0.5290
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.004889
+
+Epoch 9/20
+  Train Loss: 0.026273
+  Val Recon Loss: 0.006770
+  Val Sparsity: 0.6197
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.006770
+
+Epoch 8/20
+  Train Loss: 0.053196
+  Val Recon Loss: 0.020138
+  Val Sparsity: 0.6130
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.020138
+
+Epoch 11/20
+  Train Loss: 0.006864
+  Val Recon Loss: 0.001953
+  Val Sparsity: 0.2407
+  LR: 0.000050
+
+Epoch 10/20
+  Train Loss: 0.014516
+  Val Recon Loss: 0.005251
+  Val Sparsity: 0.5213
+  LR: 0.000058
+
+Epoch 10/20
+  Train Loss: 0.024359
+  Val Recon Loss: 0.006286
+  Val Sparsity: 0.6197
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.006286
+
+Epoch 9/20
+  Train Loss: 0.049712
+  Val Recon Loss: 0.015605
+  Val Sparsity: 0.6131
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.015605
+
+Epoch 12/20
+  Train Loss: 0.006584
+  Val Recon Loss: 0.001287
+  Val Sparsity: 0.2368
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.001287
+
+Epoch 11/20
+  Train Loss: 0.013651
+  Val Recon Loss: 0.003689
+  Val Sparsity: 0.5145
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.003689
+
+Epoch 11/20
+  Train Loss: 0.022891
+  Val Recon Loss: 0.005521
+  Val Sparsity: 0.6195
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.005521
+
+Epoch 10/20
+  Train Loss: 0.046477
+  Val Recon Loss: 0.012612
+  Val Sparsity: 0.6131
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.012612
+
+Epoch 13/20
+  Train Loss: 0.006340
+  Val Recon Loss: 0.001102
+  Val Sparsity: 0.2330
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.001102
+
+Epoch 12/20
+  Train Loss: 0.012835
+  Val Recon Loss: 0.003964
+  Val Sparsity: 0.5067
+  LR: 0.000042
+
+Epoch 12/20
+  Train Loss: 0.021527
+  Val Recon Loss: 0.004269
+  Val Sparsity: 0.6200
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.004269
+
+Epoch 11/20
+  Train Loss: 0.043616
+  Val Recon Loss: 0.009292
+  Val Sparsity: 0.6132
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.009292
+
+Epoch 14/20
+  Train Loss: 0.006127
+  Val Recon Loss: 0.001120
+  Val Sparsity: 0.2316
+  LR: 0.000027
+
+Epoch 13/20
+  Train Loss: 0.012267
+  Val Recon Loss: 0.002551
+  Val Sparsity: 0.5000
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.002551
+
+Epoch 13/20
+  Train Loss: 0.020488
+  Val Recon Loss: 0.004204
+  Val Sparsity: 0.6200
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.004204
+
+Epoch 12/20
+  Train Loss: 0.041185
+  Val Recon Loss: 0.009403
+  Val Sparsity: 0.6133
+  LR: 0.000042
+
+Epoch 15/20
+  Train Loss: 0.005975
+  Val Recon Loss: 0.001065
+  Val Sparsity: 0.2300
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.001065
+
+Epoch 14/20
+  Train Loss: 0.011787
+  Val Recon Loss: 0.002373
+  Val Sparsity: 0.4950
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.002373
+
+Epoch 14/20
+  Train Loss: 0.019608
+  Val Recon Loss: 0.003954
+  Val Sparsity: 0.6200
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.003954
+
+Epoch 13/20
+  Train Loss: 0.039211
+  Val Recon Loss: 0.006994
+  Val Sparsity: 0.6133
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.006994
+
+Epoch 16/20
+  Train Loss: 0.005873
+  Val Recon Loss: 0.000855
+  Val Sparsity: 0.2287
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.000855
+
+Epoch 15/20
+  Train Loss: 0.011409
+  Val Recon Loss: 0.001902
+  Val Sparsity: 0.4913
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.001902
+
+Epoch 15/20
+  Train Loss: 0.018926
+  Val Recon Loss: 0.002621
+  Val Sparsity: 0.6202
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.002621
+
+Epoch 14/20
+  Train Loss: 0.037606
+  Val Recon Loss: 0.005977
+  Val Sparsity: 0.6133
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.005977
+
+Epoch 17/20
+  Train Loss: 0.005803
+  Val Recon Loss: 0.000857
+  Val Sparsity: 0.2277
+  LR: 0.000010
+
+Epoch 16/20
+  Train Loss: 0.011131
+  Val Recon Loss: 0.001555
+  Val Sparsity: 0.4867
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.001555
+
+Epoch 16/20
+  Train Loss: 0.018398
+  Val Recon Loss: 0.002267
+  Val Sparsity: 0.6203
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.002267
+
+Epoch 15/20
+  Train Loss: 0.036410
+  Val Recon Loss: 0.004785
+  Val Sparsity: 0.6134
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.004785
+
+Epoch 18/20
+  Train Loss: 0.005754
+  Val Recon Loss: 0.000830
+  Val Sparsity: 0.2270
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.000830
+
+Epoch 17/20
+  Train Loss: 0.010934
+  Val Recon Loss: 0.001403
+  Val Sparsity: 0.4836
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.001403
+
+Epoch 17/20
+  Train Loss: 0.018026
+  Val Recon Loss: 0.002014
+  Val Sparsity: 0.6203
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.002014
+
+Epoch 16/20
+  Train Loss: 0.035536
+  Val Recon Loss: 0.004242
+  Val Sparsity: 0.6134
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.004242
+
+Epoch 19/20
+  Train Loss: 0.005723
+  Val Recon Loss: 0.000790
+  Val Sparsity: 0.2265
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.000790
+
+Epoch 18/20
+  Train Loss: 0.010807
+  Val Recon Loss: 0.001379
+  Val Sparsity: 0.4809
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.001379
+
+Epoch 18/20
+  Train Loss: 0.017779
+  Val Recon Loss: 0.001912
+  Val Sparsity: 0.6202
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.001912
+
+Epoch 17/20
+  Train Loss: 0.034910
+  Val Recon Loss: 0.003776
+  Val Sparsity: 0.6134
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.003776
+
+Epoch 20/20
+  Train Loss: 0.005705
+  Val Recon Loss: 0.000773
+  Val Sparsity: 0.2265
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_best.pt
+  ✓ New best validation loss: 0.000773
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_3_final.pt
+
+Training complete!
+Best validation recon loss: 0.000773
+
+✓ Layer 3 training complete
+  Best recon loss: 0.000744
+
+======================================================================
+Training SAE for layer 4/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_4_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 4
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 19/20
+  Train Loss: 0.010722
+  Val Recon Loss: 0.001303
+  Val Sparsity: 0.4796
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.001303
+
+Epoch 19/20
+  Train Loss: 0.017625
+  Val Recon Loss: 0.001792
+  Val Sparsity: 0.6203
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.001792
+
+Epoch 18/20
+  Train Loss: 0.034478
+  Val Recon Loss: 0.003446
+  Val Sparsity: 0.6134
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.003446
+
+Epoch 1/20
+  Train Loss: 0.079770
+  Val Recon Loss: 0.005982
+  Val Sparsity: 0.5198
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.005982
+
+Epoch 20/20
+  Train Loss: 0.010673
+  Val Recon Loss: 0.001272
+  Val Sparsity: 0.4791
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_best.pt
+  ✓ New best validation loss: 0.001272
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_9_final.pt
+
+Training complete!
+Best validation recon loss: 0.001272
+
+✓ Layer 9 training complete
+  Best recon loss: 0.001198
+
+======================================================================
+Training SAE for layer 10/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_10_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 10
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 20/20
+  Train Loss: 0.017539
+  Val Recon Loss: 0.001741
+  Val Sparsity: 0.6202
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_best.pt
+  ✓ New best validation loss: 0.001741
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_15_final.pt
+
+Training complete!
+Best validation recon loss: 0.001741
+
+✓ Layer 15 training complete
+  Best recon loss: 0.001544
+
+======================================================================
+Training SAE for layer 16/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_16_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 16
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 19/20
+  Train Loss: 0.034177
+  Val Recon Loss: 0.003296
+  Val Sparsity: 0.6133
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.003296
+
+Epoch 2/20
+  Train Loss: 0.020785
+  Val Recon Loss: 0.017719
+  Val Sparsity: 0.4591
+  LR: 0.000099
+
+Epoch 1/20
+  Train Loss: 0.108974
+  Val Recon Loss: 0.012938
+  Val Sparsity: 0.5931
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.012938
+
+Epoch 1/20
+  Train Loss: 0.205184
+  Val Recon Loss: 0.025407
+  Val Sparsity: 0.6267
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.025407
+
+Epoch 20/20
+  Train Loss: 0.033990
+  Val Recon Loss: 0.003184
+  Val Sparsity: 0.6133
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_best.pt
+  ✓ New best validation loss: 0.003184
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_21_final.pt
+
+Training complete!
+Best validation recon loss: 0.003184
+
+✓ Layer 21 training complete
+  Best recon loss: 0.002694
+
+======================================================================
+Training SAE for layer 22/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_22_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 22
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 3/20
+  Train Loss: 0.016736
+  Val Recon Loss: 0.004418
+  Val Sparsity: 0.4131
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.004418
+
+Epoch 2/20
+  Train Loss: 0.030812
+  Val Recon Loss: 0.012290
+  Val Sparsity: 0.5916
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.012290
+
+Epoch 2/20
+  Train Loss: 0.050286
+  Val Recon Loss: 0.029437
+  Val Sparsity: 0.6264
+  LR: 0.000099
+
+Epoch 1/20
+  Train Loss: 0.492392
+  Val Recon Loss: 0.060680
+  Val Sparsity: 0.5977
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.060680
+
+Epoch 4/20
+  Train Loss: 0.014353
+  Val Recon Loss: 0.004713
+  Val Sparsity: 0.3860
+  LR: 0.000095
+
+Epoch 3/20
+  Train Loss: 0.027831
+  Val Recon Loss: 0.012795
+  Val Sparsity: 0.5909
+  LR: 0.000098
+
+Epoch 3/20
+  Train Loss: 0.046619
+  Val Recon Loss: 0.021021
+  Val Sparsity: 0.6257
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.021021
+
+Epoch 2/20
+  Train Loss: 0.096909
+  Val Recon Loss: 0.035482
+  Val Sparsity: 0.5975
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.035482
+
+Epoch 5/20
+  Train Loss: 0.012678
+  Val Recon Loss: 0.011183
+  Val Sparsity: 0.3615
+  LR: 0.000090
+
+Epoch 4/20
+  Train Loss: 0.025557
+  Val Recon Loss: 0.013740
+  Val Sparsity: 0.5881
+  LR: 0.000095
+
+Epoch 4/20
+  Train Loss: 0.043022
+  Val Recon Loss: 0.026786
+  Val Sparsity: 0.6259
+  LR: 0.000095
+
+Epoch 6/20
+  Train Loss: 0.011557
+  Val Recon Loss: 0.003397
+  Val Sparsity: 0.3484
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.003397
+
+Epoch 3/20
+  Train Loss: 0.086783
+  Val Recon Loss: 0.038462
+  Val Sparsity: 0.5975
+  LR: 0.000098
+
+Epoch 5/20
+  Train Loss: 0.023217
+  Val Recon Loss: 0.007643
+  Val Sparsity: 0.5841
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.007643
+
+Epoch 5/20
+  Train Loss: 0.040032
+  Val Recon Loss: 0.020096
+  Val Sparsity: 0.6256
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.020096
+
+Epoch 7/20
+  Train Loss: 0.010603
+  Val Recon Loss: 0.002394
+  Val Sparsity: 0.3378
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.002394
+
+Epoch 4/20
+  Train Loss: 0.080723
+  Val Recon Loss: 0.030105
+  Val Sparsity: 0.5974
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.030105
+
+Epoch 6/20
+  Train Loss: 0.021144
+  Val Recon Loss: 0.032783
+  Val Sparsity: 0.5770
+  LR: 0.000085
+
+Epoch 6/20
+  Train Loss: 0.037153
+  Val Recon Loss: 0.011999
+  Val Sparsity: 0.6255
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.011999
+
+Epoch 8/20
+  Train Loss: 0.009828
+  Val Recon Loss: 0.004015
+  Val Sparsity: 0.3277
+  LR: 0.000073
+
+Epoch 5/20
+  Train Loss: 0.075390
+  Val Recon Loss: 0.040568
+  Val Sparsity: 0.5974
+  LR: 0.000090
+
+Epoch 7/20
+  Train Loss: 0.019546
+  Val Recon Loss: 0.006479
+  Val Sparsity: 0.5714
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.006479
+
+Epoch 7/20
+  Train Loss: 0.034260
+  Val Recon Loss: 0.012111
+  Val Sparsity: 0.6255
+  LR: 0.000079
+
+Epoch 9/20
+  Train Loss: 0.009147
+  Val Recon Loss: 0.002213
+  Val Sparsity: 0.3185
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.002213
+
+Epoch 6/20
+  Train Loss: 0.070491
+  Val Recon Loss: 0.032377
+  Val Sparsity: 0.5974
+  LR: 0.000085
+
+Epoch 8/20
+  Train Loss: 0.017999
+  Val Recon Loss: 0.005921
+  Val Sparsity: 0.5649
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.005921
+
+Epoch 8/20
+  Train Loss: 0.031695
+  Val Recon Loss: 0.011220
+  Val Sparsity: 0.6257
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.011220
+
+Epoch 10/20
+  Train Loss: 0.008585
+  Val Recon Loss: 0.002408
+  Val Sparsity: 0.3111
+  LR: 0.000058
+
+Epoch 7/20
+  Train Loss: 0.065911
+  Val Recon Loss: 0.029768
+  Val Sparsity: 0.5974
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.029768
+
+Epoch 9/20
+  Train Loss: 0.016713
+  Val Recon Loss: 0.005051
+  Val Sparsity: 0.5577
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.005051
+
+Epoch 9/20
+  Train Loss: 0.029382
+  Val Recon Loss: 0.024146
+  Val Sparsity: 0.6257
+  LR: 0.000065
+
+Epoch 11/20
+  Train Loss: 0.008141
+  Val Recon Loss: 0.001514
+  Val Sparsity: 0.3041
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.001514
+
+Epoch 8/20
+  Train Loss: 0.061257
+  Val Recon Loss: 0.033376
+  Val Sparsity: 0.5975
+  LR: 0.000073
+
+Epoch 10/20
+  Train Loss: 0.015597
+  Val Recon Loss: 0.004112
+  Val Sparsity: 0.5506
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.004112
+
+Epoch 10/20
+  Train Loss: 0.027261
+  Val Recon Loss: 0.006981
+  Val Sparsity: 0.6260
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.006981
+
+Epoch 12/20
+  Train Loss: 0.007788
+  Val Recon Loss: 0.001593
+  Val Sparsity: 0.2988
+  LR: 0.000042
+
+Epoch 9/20
+  Train Loss: 0.057051
+  Val Recon Loss: 0.022726
+  Val Sparsity: 0.5975
+  LR: 0.000065
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.022726
+
+Epoch 11/20
+  Train Loss: 0.014603
+  Val Recon Loss: 0.003173
+  Val Sparsity: 0.5443
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.003173
+
+Epoch 11/20
+  Train Loss: 0.025368
+  Val Recon Loss: 0.007813
+  Val Sparsity: 0.6259
+  LR: 0.000050
+
+Epoch 13/20
+  Train Loss: 0.007516
+  Val Recon Loss: 0.001377
+  Val Sparsity: 0.2935
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.001377
+
+Epoch 10/20
+  Train Loss: 0.053135
+  Val Recon Loss: 0.018237
+  Val Sparsity: 0.5977
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.018237
+
+Epoch 12/20
+  Train Loss: 0.013826
+  Val Recon Loss: 0.003101
+  Val Sparsity: 0.5372
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.003101
+
+Epoch 12/20
+  Train Loss: 0.023946
+  Val Recon Loss: 0.004929
+  Val Sparsity: 0.6261
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.004929
+
+Epoch 14/20
+  Train Loss: 0.007266
+  Val Recon Loss: 0.001134
+  Val Sparsity: 0.2896
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.001134
+
+Epoch 11/20
+  Train Loss: 0.049622
+  Val Recon Loss: 0.013273
+  Val Sparsity: 0.5977
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.013273
+
+Epoch 13/20
+  Train Loss: 0.013157
+  Val Recon Loss: 0.002639
+  Val Sparsity: 0.5302
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.002639
+
+Epoch 13/20
+  Train Loss: 0.022714
+  Val Recon Loss: 0.003536
+  Val Sparsity: 0.6263
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.003536
+
+Epoch 15/20
+  Train Loss: 0.007087
+  Val Recon Loss: 0.001114
+  Val Sparsity: 0.2859
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.001114
+
+Epoch 12/20
+  Train Loss: 0.046663
+  Val Recon Loss: 0.011891
+  Val Sparsity: 0.5978
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.011891
+
+Epoch 14/20
+  Train Loss: 0.012645
+  Val Recon Loss: 0.002820
+  Val Sparsity: 0.5246
+  LR: 0.000027
+
+Epoch 14/20
+  Train Loss: 0.021743
+  Val Recon Loss: 0.003523
+  Val Sparsity: 0.6264
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.003523
+
+Epoch 16/20
+  Train Loss: 0.006959
+  Val Recon Loss: 0.000951
+  Val Sparsity: 0.2838
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.000951
+
+Epoch 13/20
+  Train Loss: 0.044214
+  Val Recon Loss: 0.008258
+  Val Sparsity: 0.5978
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.008258
+
+Epoch 15/20
+  Train Loss: 0.012220
+  Val Recon Loss: 0.001946
+  Val Sparsity: 0.5200
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.001946
+
+Epoch 15/20
+  Train Loss: 0.020989
+  Val Recon Loss: 0.003220
+  Val Sparsity: 0.6264
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.003220
+
+Epoch 17/20
+  Train Loss: 0.006876
+  Val Recon Loss: 0.000929
+  Val Sparsity: 0.2815
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.000929
+
+Epoch 14/20
+  Train Loss: 0.042293
+  Val Recon Loss: 0.006249
+  Val Sparsity: 0.5978
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.006249
+
+Epoch 16/20
+  Train Loss: 0.011908
+  Val Recon Loss: 0.001597
+  Val Sparsity: 0.5156
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.001597
+
+Epoch 16/20
+  Train Loss: 0.020434
+  Val Recon Loss: 0.002346
+  Val Sparsity: 0.6265
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.002346
+
+Epoch 18/20
+  Train Loss: 0.006817
+  Val Recon Loss: 0.000882
+  Val Sparsity: 0.2795
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.000882
+
+Epoch 15/20
+  Train Loss: 0.040858
+  Val Recon Loss: 0.005067
+  Val Sparsity: 0.5979
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.005067
+
+Epoch 17/20
+  Train Loss: 0.011692
+  Val Recon Loss: 0.001535
+  Val Sparsity: 0.5121
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.001535
+
+Epoch 17/20
+  Train Loss: 0.020014
+  Val Recon Loss: 0.002176
+  Val Sparsity: 0.6265
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.002176
+
+Epoch 19/20
+  Train Loss: 0.006773
+  Val Recon Loss: 0.000847
+  Val Sparsity: 0.2790
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.000847
+
+Epoch 16/20
+  Train Loss: 0.039852
+  Val Recon Loss: 0.004454
+  Val Sparsity: 0.5979
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.004454
+
+Epoch 18/20
+  Train Loss: 0.011547
+  Val Recon Loss: 0.001432
+  Val Sparsity: 0.5098
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.001432
+
+Epoch 18/20
+  Train Loss: 0.019745
+  Val Recon Loss: 0.002090
+  Val Sparsity: 0.6265
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.002090
+
+Epoch 20/20
+  Train Loss: 0.006751
+  Val Recon Loss: 0.000833
+  Val Sparsity: 0.2787
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_best.pt
+  ✓ New best validation loss: 0.000833
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_4_final.pt
+
+Training complete!
+Best validation recon loss: 0.000833
+
+✓ Layer 4 training complete
+  Best recon loss: 0.000800
+
+======================================================================
+Training SAE for layer 5/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_5_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 5
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 17/20
+  Train Loss: 0.039206
+  Val Recon Loss: 0.003997
+  Val Sparsity: 0.5979
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.003997
+
+Epoch 19/20
+  Train Loss: 0.011453
+  Val Recon Loss: 0.001359
+  Val Sparsity: 0.5091
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.001359
+
+Epoch 19/20
+  Train Loss: 0.019575
+  Val Recon Loss: 0.001911
+  Val Sparsity: 0.6265
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.001911
+
+Epoch 1/20
+  Train Loss: 0.078683
+  Val Recon Loss: 0.010329
+  Val Sparsity: 0.5488
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.010329
+
+Epoch 18/20
+  Train Loss: 0.038747
+  Val Recon Loss: 0.003703
+  Val Sparsity: 0.5978
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.003703
+
+Epoch 20/20
+  Train Loss: 0.011401
+  Val Recon Loss: 0.001316
+  Val Sparsity: 0.5087
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_best.pt
+  ✓ New best validation loss: 0.001316
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_10_final.pt
+
+Training complete!
+Best validation recon loss: 0.001316
+
+✓ Layer 10 training complete
+  Best recon loss: 0.001225
+
+======================================================================
+Training SAE for layer 11/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_11_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 11
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 20/20
+  Train Loss: 0.019478
+  Val Recon Loss: 0.001864
+  Val Sparsity: 0.6265
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_best.pt
+  ✓ New best validation loss: 0.001864
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_16_final.pt
+
+Training complete!
+Best validation recon loss: 0.001864
+
+✓ Layer 16 training complete
+  Best recon loss: 0.001644
+
+======================================================================
+Training SAE for layer 17/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_17_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 17
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 2/20
+  Train Loss: 0.022968
+  Val Recon Loss: 0.008673
+  Val Sparsity: 0.5111
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.008673
+
+Epoch 19/20
+  Train Loss: 0.038425
+  Val Recon Loss: 0.003479
+  Val Sparsity: 0.5978
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.003479
+
+Epoch 1/20
+  Train Loss: 0.126071
+  Val Recon Loss: 0.033764
+  Val Sparsity: 0.6049
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.033764
+
+Epoch 1/20
+  Train Loss: 0.218912
+  Val Recon Loss: 0.026408
+  Val Sparsity: 0.6356
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.026408
+
+Epoch 3/20
+  Train Loss: 0.019079
+  Val Recon Loss: 0.004111
+  Val Sparsity: 0.4705
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.004111
+
+Epoch 2/20
+  Train Loss: 0.032939
+  Val Recon Loss: 0.014265
+  Val Sparsity: 0.6032
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.014265
+
+Epoch 20/20
+  Train Loss: 0.038226
+  Val Recon Loss: 0.003363
+  Val Sparsity: 0.5978
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_best.pt
+  ✓ New best validation loss: 0.003363
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_22_final.pt
+
+Training complete!
+Best validation recon loss: 0.003363
+
+✓ Layer 22 training complete
+  Best recon loss: 0.002747
+
+======================================================================
+Training SAE for layer 23/23
+======================================================================
+Loading hidden states from data/cache/gpt2-medium/hidden_states/layer_23_states.pt...
+Loaded 10,005,776 tokens
+
+Training SAE for layer 23
+Train samples: 9,505,488
+Val samples: 500,288
+Epochs: 20
+Batch size: 128
+
+
+Epoch 2/20
+  Train Loss: 0.053725
+  Val Recon Loss: 0.033446
+  Val Sparsity: 0.6350
+  LR: 0.000099
+
+Epoch 4/20
+  Train Loss: 0.016319
+  Val Recon Loss: 0.004339
+  Val Sparsity: 0.4416
+  LR: 0.000095
+
+Epoch 3/20
+  Train Loss: 0.030110
+  Val Recon Loss: 0.012519
+  Val Sparsity: 0.6018
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.012519
+
+Epoch 1/20
+  Train Loss: 0.712565
+  Val Recon Loss: 0.094665
+  Val Sparsity: 0.5798
+  LR: 0.000100
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.094665
+
+Epoch 3/20
+  Train Loss: 0.048022
+  Val Recon Loss: 0.017588
+  Val Sparsity: 0.6349
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.017588
+
+Epoch 5/20
+  Train Loss: 0.014533
+  Val Recon Loss: 0.003907
+  Val Sparsity: 0.4214
+  LR: 0.000090
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.003907
+
+Epoch 4/20
+  Train Loss: 0.027637
+  Val Recon Loss: 0.012518
+  Val Sparsity: 0.6014
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.012518
+
+Epoch 2/20
+  Train Loss: 0.130242
+  Val Recon Loss: 0.057207
+  Val Sparsity: 0.5796
+  LR: 0.000099
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.057207
+
+Epoch 4/20
+  Train Loss: 0.044129
+  Val Recon Loss: 0.018257
+  Val Sparsity: 0.6346
+  LR: 0.000095
+
+Epoch 6/20
+  Train Loss: 0.013184
+  Val Recon Loss: 0.005441
+  Val Sparsity: 0.4060
+  LR: 0.000085
+
+Epoch 5/20
+  Train Loss: 0.025080
+  Val Recon Loss: 0.021130
+  Val Sparsity: 0.6003
+  LR: 0.000090
+
+Epoch 3/20
+  Train Loss: 0.114702
+  Val Recon Loss: 0.045035
+  Val Sparsity: 0.5796
+  LR: 0.000098
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.045035
+
+Epoch 5/20
+  Train Loss: 0.041005
+  Val Recon Loss: 0.021650
+  Val Sparsity: 0.6345
+  LR: 0.000090
+
+Epoch 7/20
+  Train Loss: 0.012033
+  Val Recon Loss: 0.003857
+  Val Sparsity: 0.3897
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.003857
+
+Epoch 6/20
+  Train Loss: 0.022925
+  Val Recon Loss: 0.008033
+  Val Sparsity: 0.5969
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.008033
+
+Epoch 4/20
+  Train Loss: 0.104828
+  Val Recon Loss: 0.044755
+  Val Sparsity: 0.5797
+  LR: 0.000095
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.044755
+
+Epoch 6/20
+  Train Loss: 0.038060
+  Val Recon Loss: 0.011809
+  Val Sparsity: 0.6345
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.011809
+
+Epoch 8/20
+  Train Loss: 0.011177
+  Val Recon Loss: 0.002374
+  Val Sparsity: 0.3777
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.002374
+
+Epoch 7/20
+  Train Loss: 0.020991
+  Val Recon Loss: 0.006250
+  Val Sparsity: 0.5949
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.006250
+
+Epoch 5/20
+  Train Loss: 0.096603
+  Val Recon Loss: 0.050201
+  Val Sparsity: 0.5796
+  LR: 0.000090
+
+Epoch 7/20
+  Train Loss: 0.035652
+  Val Recon Loss: 0.011934
+  Val Sparsity: 0.6345
+  LR: 0.000079
+
+Epoch 9/20
+  Train Loss: 0.010337
+  Val Recon Loss: 0.002679
+  Val Sparsity: 0.3687
+  LR: 0.000065
+
+Epoch 8/20
+  Train Loss: 0.019412
+  Val Recon Loss: 0.007581
+  Val Sparsity: 0.5900
+  LR: 0.000073
+
+Epoch 6/20
+  Train Loss: 0.089419
+  Val Recon Loss: 0.041359
+  Val Sparsity: 0.5796
+  LR: 0.000085
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.041359
+
+Epoch 8/20
+  Train Loss: 0.033333
+  Val Recon Loss: 0.011341
+  Val Sparsity: 0.6344
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.011341
+
+Epoch 10/20
+  Train Loss: 0.009670
+  Val Recon Loss: 0.004072
+  Val Sparsity: 0.3601
+  LR: 0.000058
+
+Epoch 9/20
+  Train Loss: 0.018044
+  Val Recon Loss: 0.007746
+  Val Sparsity: 0.5854
+  LR: 0.000065
+
+Epoch 7/20
+  Train Loss: 0.082513
+  Val Recon Loss: 0.036498
+  Val Sparsity: 0.5797
+  LR: 0.000079
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.036498
+
+Epoch 9/20
+  Train Loss: 0.031275
+  Val Recon Loss: 0.020476
+  Val Sparsity: 0.6344
+  LR: 0.000065
+
+Epoch 11/20
+  Train Loss: 0.009206
+  Val Recon Loss: 0.002801
+  Val Sparsity: 0.3509
+  LR: 0.000050
+
+Epoch 10/20
+  Train Loss: 0.016760
+  Val Recon Loss: 0.004578
+  Val Sparsity: 0.5803
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.004578
+
+Epoch 8/20
+  Train Loss: 0.076170
+  Val Recon Loss: 0.035595
+  Val Sparsity: 0.5797
+  LR: 0.000073
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.035595
+
+Epoch 10/20
+  Train Loss: 0.029302
+  Val Recon Loss: 0.008927
+  Val Sparsity: 0.6346
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.008927
+
+Epoch 12/20
+  Train Loss: 0.008804
+  Val Recon Loss: 0.002199
+  Val Sparsity: 0.3456
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.002199
+
+Epoch 11/20
+  Train Loss: 0.015782
+  Val Recon Loss: 0.003872
+  Val Sparsity: 0.5749
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.003872
+
+Epoch 9/20
+  Train Loss: 0.070323
+  Val Recon Loss: 0.041293
+  Val Sparsity: 0.5798
+  LR: 0.000065
+
+Epoch 11/20
+  Train Loss: 0.027488
+  Val Recon Loss: 0.006806
+  Val Sparsity: 0.6347
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.006806
+
+Epoch 13/20
+  Train Loss: 0.008507
+  Val Recon Loss: 0.001522
+  Val Sparsity: 0.3393
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.001522
+
+Epoch 12/20
+  Train Loss: 0.014968
+  Val Recon Loss: 0.002768
+  Val Sparsity: 0.5706
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.002768
+
+Epoch 10/20
+  Train Loss: 0.065044
+  Val Recon Loss: 0.018892
+  Val Sparsity: 0.5799
+  LR: 0.000058
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.018892
+
+Epoch 12/20
+  Train Loss: 0.025871
+  Val Recon Loss: 0.008007
+  Val Sparsity: 0.6348
+  LR: 0.000042
+
+Epoch 14/20
+  Train Loss: 0.008235
+  Val Recon Loss: 0.001247
+  Val Sparsity: 0.3350
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.001247
+
+Epoch 13/20
+  Train Loss: 0.014258
+  Val Recon Loss: 0.002479
+  Val Sparsity: 0.5649
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.002479
+
+Epoch 11/20
+  Train Loss: 0.060401
+  Val Recon Loss: 0.015289
+  Val Sparsity: 0.5799
+  LR: 0.000050
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.015289
+
+Epoch 13/20
+  Train Loss: 0.024643
+  Val Recon Loss: 0.005691
+  Val Sparsity: 0.6349
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.005691
+
+Epoch 15/20
+  Train Loss: 0.008010
+  Val Recon Loss: 0.001116
+  Val Sparsity: 0.3311
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.001116
+
+Epoch 14/20
+  Train Loss: 0.013703
+  Val Recon Loss: 0.002482
+  Val Sparsity: 0.5609
+  LR: 0.000027
+
+Epoch 12/20
+  Train Loss: 0.056333
+  Val Recon Loss: 0.010778
+  Val Sparsity: 0.5800
+  LR: 0.000042
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.010778
+
+Epoch 14/20
+  Train Loss: 0.023715
+  Val Recon Loss: 0.004365
+  Val Sparsity: 0.6349
+  LR: 0.000027
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.004365
+
+Epoch 16/20
+  Train Loss: 0.007852
+  Val Recon Loss: 0.001043
+  Val Sparsity: 0.3284
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.001043
+
+Epoch 15/20
+  Train Loss: 0.013270
+  Val Recon Loss: 0.003064
+  Val Sparsity: 0.5557
+  LR: 0.000021
+
+Epoch 13/20
+  Train Loss: 0.053034
+  Val Recon Loss: 0.008711
+  Val Sparsity: 0.5800
+  LR: 0.000035
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.008711
+
+Epoch 15/20
+  Train Loss: 0.023020
+  Val Recon Loss: 0.002985
+  Val Sparsity: 0.6349
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.002985
+
+Epoch 17/20
+  Train Loss: 0.007750
+  Val Recon Loss: 0.001029
+  Val Sparsity: 0.3268
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.001029
+
+Epoch 16/20
+  Train Loss: 0.012923
+  Val Recon Loss: 0.001766
+  Val Sparsity: 0.5540
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.001766
+
+Epoch 14/20
+  Train Loss: 0.050435
+  Val Recon Loss: 0.008935
+  Val Sparsity: 0.5801
+  LR: 0.000027
+
+Epoch 16/20
+  Train Loss: 0.022500
+  Val Recon Loss: 0.002721
+  Val Sparsity: 0.6349
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.002721
+
+Epoch 18/20
+  Train Loss: 0.007682
+  Val Recon Loss: 0.000970
+  Val Sparsity: 0.3252
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.000970
+
+Epoch 17/20
+  Train Loss: 0.012691
+  Val Recon Loss: 0.001667
+  Val Sparsity: 0.5503
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.001667
+
+Epoch 15/20
+  Train Loss: 0.048496
+  Val Recon Loss: 0.006965
+  Val Sparsity: 0.5801
+  LR: 0.000021
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.006965
+
+Epoch 17/20
+  Train Loss: 0.022120
+  Val Recon Loss: 0.002543
+  Val Sparsity: 0.6349
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.002543
+
+Epoch 19/20
+  Train Loss: 0.007633
+  Val Recon Loss: 0.000935
+  Val Sparsity: 0.3246
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.000935
+
+Epoch 18/20
+  Train Loss: 0.012529
+  Val Recon Loss: 0.001565
+  Val Sparsity: 0.5489
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.001565
+
+Epoch 16/20
+  Train Loss: 0.047142
+  Val Recon Loss: 0.005646
+  Val Sparsity: 0.5801
+  LR: 0.000015
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.005646
+
+Epoch 18/20
+  Train Loss: 0.021841
+  Val Recon Loss: 0.002331
+  Val Sparsity: 0.6348
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.002331
+
+Epoch 20/20
+  Train Loss: 0.007606
+  Val Recon Loss: 0.000923
+  Val Sparsity: 0.3244
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_best.pt
+  ✓ New best validation loss: 0.000923
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_5_final.pt
+
+Training complete!
+Best validation recon loss: 0.000923
+
+✓ Layer 5 training complete
+  Best recon loss: 0.000883
+
+======================================================================
+TRAINING COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Epoch 19/20
+  Train Loss: 0.012424
+  Val Recon Loss: 0.001494
+  Val Sparsity: 0.5478
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.001494
+
+Epoch 17/20
+  Train Loss: 0.046272
+  Val Recon Loss: 0.004894
+  Val Sparsity: 0.5801
+  LR: 0.000010
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.004894
+
+Epoch 19/20
+  Train Loss: 0.021649
+  Val Recon Loss: 0.002202
+  Val Sparsity: 0.6348
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.002202
+
+Epoch 20/20
+  Train Loss: 0.012359
+  Val Recon Loss: 0.001457
+  Val Sparsity: 0.5478
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_best.pt
+  ✓ New best validation loss: 0.001457
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_11_final.pt
+
+Training complete!
+Best validation recon loss: 0.001457
+
+✓ Layer 11 training complete
+  Best recon loss: 0.001359
+
+======================================================================
+TRAINING COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Epoch 18/20
+  Train Loss: 0.045700
+  Val Recon Loss: 0.004455
+  Val Sparsity: 0.5801
+  LR: 0.000005
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.004455
+
+Epoch 20/20
+  Train Loss: 0.021532
+  Val Recon Loss: 0.002121
+  Val Sparsity: 0.6348
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_best.pt
+  ✓ New best validation loss: 0.002121
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_17_final.pt
+
+Training complete!
+Best validation recon loss: 0.002121
+
+✓ Layer 17 training complete
+  Best recon loss: 0.001908
+
+======================================================================
+TRAINING COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Epoch 19/20
+  Train Loss: 0.045304
+  Val Recon Loss: 0.004238
+  Val Sparsity: 0.5801
+  LR: 0.000002
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.004238
+
+Epoch 20/20
+  Train Loss: 0.045062
+  Val Recon Loss: 0.004094
+  Val Sparsity: 0.5801
+  LR: 0.000001
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_best.pt
+  ✓ New best validation loss: 0.004094
+Saved checkpoint to models/checkpoints/gpt2-medium/sae_layer_23_final.pt
+
+Training complete!
+Best validation recon loss: 0.004094
+
+✓ Layer 23 training complete
+  Best recon loss: 0.003226
+
+======================================================================
+TRAINING COMPLETE
+======================================================================
+
+
+All tasks complete!
+Checkpoints saved to: ./models/checkpoints/gpt2-medium
+
+Training phase completed with status: 0
+
+=== Trained Checkpoints Summary ===
+total 5.7G
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:46 sae_layer_0_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:46 sae_layer_0_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 00:46 sae_layer_0_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:19 sae_layer_10_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:19 sae_layer_10_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 04:19 sae_layer_10_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:11 sae_layer_11_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:11 sae_layer_11_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 05:11 sae_layer_11_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:48 sae_layer_12_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:48 sae_layer_12_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 00:48 sae_layer_12_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:41 sae_layer_13_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:41 sae_layer_13_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 01:41 sae_layer_13_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:34 sae_layer_14_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:34 sae_layer_14_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 02:34 sae_layer_14_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:27 sae_layer_15_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:27 sae_layer_15_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 03:27 sae_layer_15_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:20 sae_layer_16_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:20 sae_layer_16_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 04:20 sae_layer_16_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:12 sae_layer_17_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:12 sae_layer_17_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 05:12 sae_layer_17_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:49 sae_layer_18_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:49 sae_layer_18_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 00:49 sae_layer_18_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:43 sae_layer_19_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:43 sae_layer_19_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 01:43 sae_layer_19_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:36 sae_layer_1_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:38 sae_layer_1_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 01:38 sae_layer_1_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:37 sae_layer_20_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:37 sae_layer_20_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 02:37 sae_layer_20_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:30 sae_layer_21_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:30 sae_layer_21_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 03:30 sae_layer_21_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:24 sae_layer_22_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:24 sae_layer_22_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 04:24 sae_layer_22_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:16 sae_layer_23_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:16 sae_layer_23_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 05:16 sae_layer_23_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:30 sae_layer_2_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:30 sae_layer_2_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 02:30 sae_layer_2_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:23 sae_layer_3_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:23 sae_layer_3_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 03:23 sae_layer_3_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:15 sae_layer_4_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 04:15 sae_layer_4_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 04:15 sae_layer_4_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:07 sae_layer_5_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 05:07 sae_layer_5_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 05:07 sae_layer_5_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:48 sae_layer_6_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 00:48 sae_layer_6_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 00:48 sae_layer_6_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:41 sae_layer_7_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 01:41 sae_layer_7_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.7K Jan 21 01:41 sae_layer_7_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:33 sae_layer_8_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 02:33 sae_layer_8_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 02:33 sae_layer_8_history.json
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:26 sae_layer_9_best.pt
+-rw-rw-r-- 1 kkfdh kkfdh 121M Jan 21 03:26 sae_layer_9_final.pt
+-rw-rw-r-- 1 kkfdh kkfdh 3.6K Jan 21 03:26 sae_layer_9_history.json
+5.7G	./models/checkpoints/gpt2-medium/
+
+================================================================
+PHASE 3: HYPOTHESIS TRACKING
+================================================================
+
+
+Tracking phase completed with status: 1
+
+================================================================
+PHASE 4: HALLUCINATION DETECTION
+================================================================
+
+
+Detection phase completed with status: 1
+
+================================================================
+PHASE 5: EVALUATION & METRICS
+================================================================
+
+
+Evaluation phase completed with status: 1
+
+================================================================
+PIPELINE COMPLETE
+================================================================
+Job completed at Wed Jan 21 05:17:00 CST 2026
+
+Status Summary:
+  Phase 1 (Extraction):  0
+  Phase 2 (Training):    0
+  Phase 3 (Tracking):    1
+  Phase 4 (Detection):   1
+  Phase 5 (Evaluation):  1
+
+Results saved to: ./results/gpt2-medium/
+Checkpoints saved to: ./models/checkpoints/gpt2-medium/
+================================================================
+
+Total job duration: 15h 46m 42s
+
+=== Disk Usage Summary ===
+917G	./data/cache/gpt2-medium/
+5.7G	./models/checkpoints/gpt2-medium/
+0	./results/gpt2-medium/
