@@ -26,18 +26,19 @@ def load_saes(model_dir: Path, n_layers: int, device: str):
     for layer_idx in range(n_layers):
         sae_path = model_dir / f"sae_layer_{layer_idx}_best.pt"
         if sae_path.exists():
-            checkpoint = torch.load(sae_path, map_location=device)
+            checkpoint = torch.load(sae_path, map_location=device, weights_only=False)
             config = checkpoint.get('config', {})
             
             # Get model dimensions from checkpoint
             state_dict = checkpoint['model_state_dict']
-            d_model = state_dict['encoder.weight'].shape[1]
-            d_hidden = state_dict['encoder.weight'].shape[0]
+            # Keys are: 'threshold', 'W_enc.weight', 'W_enc.bias', 'W_dec.weight', 'W_dec.bias'
+            d_hidden = state_dict['W_enc.weight'].shape[0]
+            d_model = state_dict['W_enc.weight'].shape[1]
             
             sae = JumpReLUSAE(
                 d_model=d_model,
                 d_hidden=d_hidden,
-                threshold=config.get('threshold', 0.1),
+                threshold=float(state_dict.get('threshold', 0.1)),
                 lambda_sparse=config.get('lambda_sparse', 0.01)
             )
             sae.load_state_dict(state_dict)
