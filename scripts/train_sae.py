@@ -135,6 +135,9 @@ class SAETrainer:
 
             # Add sequence dimension: [batch_size, 1, d_model]
             x = x.unsqueeze(1)
+            
+            # SAE expects float32
+            x = x.to(dtype=torch.float32)
 
             # Zero gradients
             self.optimizer.zero_grad()
@@ -194,6 +197,7 @@ class SAETrainer:
             for batch in dataloader:
                 x = batch[0].to(self.device)
                 x = x.unsqueeze(1)
+                x = x.to(dtype=torch.float32)
 
                 loss_dict = self.sae.loss(x, return_components=True)
 
