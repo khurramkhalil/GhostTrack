@@ -6,7 +6,10 @@ import torch
 import numpy as np
 from pathlib import Path
 
-from models import GPT2WithResidualHooks
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from models import get_model_wrapper, GPT2WithResidualHooks
 from tracking import LayerwiseFeatureExtractor, HypothesisTracker
 from detection import HallucinationDetector
 from visualization import create_interactive_dashboard, CaseStudyGenerator
