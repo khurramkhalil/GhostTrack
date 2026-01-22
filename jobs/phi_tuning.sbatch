@@ -30,11 +30,35 @@ echo "Starting Phi-2 Hypothesis Tracking Pipeline..."
 echo "Job ID: $SLURM_JOB_ID"
 echo "Date: $(date)"
 
-# Run full pipeline with model override
-# We reuse the main pipeline but point to the phi config
-python3 scripts/run_detection_pipeline.py \
-    --config config/model_configs/phi-2.yaml \
-    --phases 1 2 3 4 \
-    --parallel
+# Result directories
+RESULTS_DIR="./results/phi-2"
+CHECKPOINT_DIR="./models/checkpoints/phi-2"
+CACHE_DIR="./data/cache/phi-2"
 
-echo "Pipeline finished at $(date)"
+mkdir -p $RESULTS_DIR/tracking
+mkdir -p $RESULTS_DIR/detection
+mkdir -p $CHECKPOINT_DIR
+mkdir -p $CACHE_DIR
+
+echo "--- Phase 1 & 2: Extraction and SAE Training ---"
+python3 scripts/extract_and_train.py \
+    --config config/model_configs/phi-2.yaml \
+    --save-dir $CHECKPOINT_DIR \
+    --cache-dir $CACHE_DIR \
+    --num-tokens 1000000 \
+    --device cuda
+
+echo "--- Phase 3: Hypothesis Tracking ---"
+python3 scripts/run_tracking.py \
+    --config config/model_configs/phi-2.yaml \
+    --model-dir $CHECKPOINT_DIR \
+    --output-dir $RESULTS_DIR/tracking \
+    --device cuda
+
+echo "--- Phase 4: Hallucination Detection ---"
+python3 scripts/run_detection.py \
+    --config config/model_configs/phi-2.yaml \
+    --model-dir $CHECKPOINT_DIR \
+    --tracking-dir $RESULTS_DIR/tracking \
+    --output-dir $RESULTS_DIR/detection \
+    --device cuda

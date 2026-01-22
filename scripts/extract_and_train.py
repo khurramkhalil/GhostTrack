@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent))
 
-from models import GPT2WithResidualHooks
+from models import get_model_wrapper
 from data.wikipedia_loader import WikipediaCorpus, HiddenStateExtractor
 from train_sae import train_sae_for_layer
 from config import load_config
@@ -100,7 +100,7 @@ def main():
 
         # Load model
         print("\nLoading GPT-2 model...")
-        model = GPT2WithResidualHooks(
+        model = get_model_wrapper(
             model_name=config.model.base_model,
             device=args.device
         )
