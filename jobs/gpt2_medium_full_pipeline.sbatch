@@ -212,11 +212,12 @@ echo "================================================================"
 echo ""
 
 # Run tracking on GPU 0 (single GPU sufficient)
-CUDA_VISIBLE_DEVICES=0 python tracking/hypothesis_tracker.py \
+CUDA_VISIBLE_DEVICES=0 python scripts/run_tracking.py \
     --config ${MODEL_CONFIG} \
     --model-dir ./models/checkpoints/gpt2-medium \
     --output-dir ./results/gpt2-medium/tracking \
-    --device cuda
+    --device cuda \
+    --num-samples 750
 
 TRACK_STATUS=$?
 
@@ -233,7 +234,7 @@ echo "================================================================"
 echo ""
 
 # Run detection on GPU 0
-CUDA_VISIBLE_DEVICES=0 python detection/detector.py \
+CUDA_VISIBLE_DEVICES=0 python scripts/run_detection.py \
     --config ${MODEL_CONFIG} \
     --model-dir ./models/checkpoints/gpt2-medium \
     --tracking-dir ./results/gpt2-medium/tracking \
@@ -254,7 +255,7 @@ echo "PHASE 5: EVALUATION & METRICS"
 echo "================================================================"
 echo ""
 
-python evaluation/pipeline.py \
+python scripts/run_evaluation.py \
     --config ${MODEL_CONFIG} \
     --results-dir ./results/gpt2-medium \
     --output-dir ./results/gpt2-medium/evaluation
