@@ -28,9 +28,8 @@ cp -r "$SRC_DIR/detection" "$DEST_DIR/"
 # Run visualization (Phase 5)
 echo "Running Phase 5: Visualization..."
 python3 scripts/run_visualization.py \
-    --config config/model_configs/gpt2-medium.yaml \
-    --tracking-dir "$DEST_DIR/tracking" \
-    --detection-dir "$DEST_DIR/detection" \
+    --checkpoint-dir ./models/checkpoints/gpt2-medium \
+    --detector-path "$DEST_DIR/detection/detector.pkl" \
     --output-dir "$DEST_DIR/visualization"
 
 echo "Promotion and visualization complete!"
