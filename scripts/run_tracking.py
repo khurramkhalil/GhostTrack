@@ -3,6 +3,7 @@
 Phase 3: Hypothesis Tracking Runner
 
 Runs hypothesis tracking on trained SAEs and evaluation dataset.
+Supports multiple model architectures (GPT-2, Phi, Qwen, Llama, etc.)
 """
 
 import argparse
@@ -14,10 +15,26 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from models import GPT2WithResidualHooks, JumpReLUSAE
+from models import get_model_wrapper, JumpReLUSAE
 from tracking.hypothesis_tracker import HypothesisTracker
+from detection.divergence_metrics import DivergenceMetrics
 from config import load_config
 from datasets import load_dataset
+
+
+class NumpyEncoder(json.JSONEncoder):
+    """Custom encoder for numpy data types"""
+    def default(self, obj):
+        if isinstance(obj, (np.int_, np.intc, np.intp, np.int8,
+            np.int16, np.int32, np.int64, np.uint8,
+            np.uint16, np.uint32, np.uint64)):
+            return int(obj)
+        elif isinstance(obj, (np.float_, np.float16, np.float32, 
+            np.float64)):
+            return float(obj)
+        elif isinstance(obj, (np.ndarray,)):
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
 
 
 def load_saes(model_dir: Path, n_layers: int, device: str):
@@ -71,17 +88,29 @@ def run_tracking_on_sample(model, saes, text: str, config, device: str):
         # Get SAE features
         with torch.no_grad():
             encoded = sae.encode(hidden)
-            # Get top-k active features
             activations = encoded[0].cpu().numpy()
-            active_indices = np.where(activations > 0)[0]
+            
+            # Get indices sorted by activation magnitude (descending)
+            # argsort gives ascending, so we reverse
+            top_indices = np.argsort(activations)[::-1]
             
             features = []
-            for feat_id in active_indices[:50]:  # Top 50 features
+            top_k = config.get('top_k_features', 50)
+            count = 0
+            
+            for feat_id in top_indices:
                 activation = float(activations[feat_id])
-                # Use feature index as embedding proxy
-                embedding = np.zeros(128)
-                embedding[feat_id % 128] = 1.0
+                if activation <= 0:
+                    break  # Sorted, so we can stop once we hit zero
+                    
+                # Use actual decoder weight as semantic embedding
+                # W_dec.weight is [d_model, d_hidden]
+                embedding = sae.W_dec.weight[:, feat_id].detach().cpu().numpy()
                 features.append((feat_id, activation, embedding))
+                
+                count += 1
+                if count >= top_k:
+                    break
         
         if layer_idx == 0:
             tracker.initialize_tracks(features, token_pos=0)
@@ -109,9 +138,9 @@ def main():
     print("Loading configuration...")
     config = load_config(args.config)
     
-    # Load model
+    # Load model (using factory for multi-model support)
     print(f"\nLoading {config.model.base_model}...")
-    model = GPT2WithResidualHooks(
+    model = get_model_wrapper(
         model_name=config.model.base_model,
         device=args.device
     )
@@ -126,8 +155,12 @@ def main():
     print("\nLoading TruthfulQA dataset...")
     dataset = load_dataset("truthful_qa", "generation", split="validation")
     
+    # Initialize metrics computer for full feature extraction
+    metrics_computer = DivergenceMetrics()
+    n_layers = config.model.n_layers
+    
     # Process samples
-    print(f"\nProcessing {args.num_samples} samples...")
+    print(f"\nProcessing {args.num_samples} factual samples...")
     results = []
     
     for i, sample in enumerate(dataset):
@@ -149,14 +182,18 @@ def main():
                 'association_threshold': config.tracking.association_threshold,
                 'birth_threshold': config.tracking.birth_threshold,
                 'death_threshold': config.tracking.death_threshold,
+                'use_feature_id_matching': getattr(config.tracking, 'use_feature_id_matching', False),
             }, args.device)
             
             stats = tracker.get_statistics()
+            divergence_metrics = metrics_computer.compute_all_metrics(tracker, n_layers)
+            
             results.append({
                 'sample_id': i,
                 'question': question,
                 'is_factual': True,  # Best answers are factual
-                'stats': stats
+                'stats': stats,
+                'metrics': divergence_metrics  # Full 26 features for detection
             })
             
             if (i + 1) % 50 == 0:
@@ -187,14 +224,18 @@ def main():
                     'association_threshold': config.tracking.association_threshold,
                     'birth_threshold': config.tracking.birth_threshold,
                     'death_threshold': config.tracking.death_threshold,
+                    'use_feature_id_matching': getattr(config.tracking, 'use_feature_id_matching', False),
                 }, args.device)
                 
                 stats = tracker.get_statistics()
+                divergence_metrics = metrics_computer.compute_all_metrics(tracker, n_layers)
+                
                 results.append({
                     'sample_id': args.num_samples + i,
                     'question': question,
                     'is_factual': False,  # Incorrect answers are hallucinated
-                    'stats': stats
+                    'stats': stats,
+                    'metrics': divergence_metrics  # Full 26 features for detection
                 })
             except Exception as e:
                 continue
@@ -202,7 +243,7 @@ def main():
     # Save results
     output_file = output_dir / 'tracking_results.json'
     with open(output_file, 'w') as f:
-        json.dump(results, f, indent=2)
+        json.dump(results, f, indent=2, cls=NumpyEncoder)
     
     print(f"\n✓ Saved {len(results)} tracking results to {output_file}")
     
@@ -220,7 +261,7 @@ def main():
     
     summary_file = output_dir / 'tracking_summary.json'
     with open(summary_file, 'w') as f:
-        json.dump(summary, f, indent=2)
+        json.dump(summary, f, indent=2, cls=NumpyEncoder)
     
     print(f"✓ Saved summary to {summary_file}")
     print("\nTracking complete!")

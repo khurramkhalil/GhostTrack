@@ -1,27 +1,27 @@
-# GhostTrack Configuration for GPT-2 Medium
-# 24 layers, 1024 hidden dim
+# GhostTrack Configuration for Phi-2
+# 32 layers, 2560 hidden dim
 
 project:
   name: GhostTrack
   version: 1.0.0
-  description: Multi-Hypothesis Tracking for GPT-2 Medium
+  description: Multi-Hypothesis Tracking for Microsoft Phi-2
 
 model:
-  base_model: gpt2-medium
-  d_model: 1024
-  n_layers: 24
+  base_model: microsoft/phi-2
+  d_model: 2560
+  n_layers: 32
   device: cuda
 
 sae:
   architecture: JumpReLU
-  d_model: 1024
-  d_hidden: 5120  # 5x expansion ratio (same as small)
-  threshold: 1.0  # Increased from 0.1 to encourage sparsity
-  lambda_sparse: 0.05  # Increased from 0.01 to enforce sparsity
+  d_model: 2560
+  d_hidden: 10240  # 4x expansion ratio (conservative start)
+  threshold: 0.1
+  lambda_sparse: 0.01
 
 sae_training:
   epochs: 20
-  batch_size: 128  # Reduced from 256 for larger model
+  batch_size: 64  # Smaller batch size for larger model
   learning_rate: 0.0001
   weight_decay: 0.0
   gradient_clip: 1.0
@@ -34,10 +34,10 @@ sae_training:
 
 paths:
   data_dir: ./data
-  cache_dir: ./data/cache/gpt2-medium
-  models_dir: ./models/checkpoints/gpt2-medium
-  results_dir: ./results/gpt2-medium
-  logs_dir: ./logs/gpt2-medium
+  cache_dir: ./data/cache/phi-2
+  models_dir: ./models/checkpoints/phi-2
+  results_dir: ./results/phi-2
+  logs_dir: ./logs/phi-2
 
 tracking:
   top_k_features: 50

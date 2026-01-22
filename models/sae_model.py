@@ -177,7 +177,8 @@ class JumpReLUSAE(nn.Module):
                 'total_loss': total_loss,
                 'recon_loss': recon_loss,
                 'sparsity_loss': sparsity_loss,
-                'sparsity': output['sparsity']
+                'sparsity': output['sparsity'],
+                'threshold': self.threshold.item()
             }
         else:
             return total_loss
