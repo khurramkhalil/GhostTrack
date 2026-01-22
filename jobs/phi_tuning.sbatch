@@ -12,11 +12,11 @@
 #SBATCH --partition=hoquek-lab-gpu
 
 # Load modules
-module load python/3.10
+module load miniconda3/4.10.3_gcc_9.5.0
 module load cuda/11.8
 
 # Activate environment
-source ~/venvs/ghosttrack/bin/activate
+source activate deepseek
 
 # Change to project directory
 cd /cluster/VAST/hoquek-lab/GhostTrack
