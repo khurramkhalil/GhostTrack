@@ -27,6 +27,7 @@ def main():
     parser.add_argument('--birth-threshold', type=float, default=0.5, help='Birth threshold')
     parser.add_argument('--assoc-threshold', type=float, default=0.5, help='Association threshold')
     parser.add_argument('--semantic-weight', type=float, default=0.6, help='Semantic weight')
+    parser.add_argument('--seed', type=int, default=42, help='Random seed')
     
     args = parser.parse_args()
     
