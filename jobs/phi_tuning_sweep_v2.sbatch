@@ -3,7 +3,8 @@
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 #SBATCH --account=hoquek-lab
-#SBATCH --partition=hoquek-lab-gpu
+#SBATCH --partition=gpu
+#SBATCH --exclude=g008,g039
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
