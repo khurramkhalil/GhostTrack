@@ -21,6 +21,7 @@ def main():
     parser.add_argument('--detector-path', type=str, default='./results/detection/detector.pkl', help='Path to trained detector')
     parser.add_argument('--output-dir', type=str, default='./results/visualization', help='Output directory')
     parser.add_argument('--device', type=str, default='cuda', help='Device to use')
+    parser.add_argument('--model-name', type=str, default='gpt2', help='Model architecture (gpt2, gpt2-medium)')
     parser.add_argument('--num-examples', type=int, default=10, help='Number of examples to visualize')
     parser.add_argument('--seed', type=int, default=42, help='Random seed')
     
@@ -35,6 +36,7 @@ def main():
     
     print("================================================================")
     print("GhostTrack Visualization Pipeline (Phase 5)")
+    print(f"Model: {args.model_name}")
     print(f"Device: {args.device}")
     print(f"Output: {args.output_dir}")
     print("================================================================")
@@ -50,7 +52,7 @@ def main():
 
     # 2. Load Model & SAEs
     print("\n[2/4] Loading Model and SAEs...")
-    model = GPT2WithResidualHooks('gpt2', device=args.device)
+    model = get_model_wrapper(args.model_name, device=args.device)
     
     extractor = LayerwiseFeatureExtractor.load_from_checkpoints(
         model_wrapper=model,
