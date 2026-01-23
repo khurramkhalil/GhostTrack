@@ -23,7 +23,10 @@ def main():
     parser.add_argument('--device', type=str, default='cuda', help='Device to use')
     parser.add_argument('--model-name', type=str, default='gpt2', help='Model architecture (gpt2, gpt2-medium)')
     parser.add_argument('--num-examples', type=int, default=10, help='Number of examples to visualize')
-    parser.add_argument('--seed', type=int, default=42, help='Random seed')
+    parser.add_argument('--top-k', type=int, default=50, help='Top-k features to track')
+    parser.add_argument('--birth-threshold', type=float, default=0.5, help='Birth threshold')
+    parser.add_argument('--assoc-threshold', type=float, default=0.5, help='Association threshold')
+    parser.add_argument('--semantic-weight', type=float, default=0.6, help='Semantic weight')
     
     args = parser.parse_args()
     
@@ -69,13 +72,16 @@ def main():
 
     detector = HallucinationDetector.load(args.detector_path)
     
-    # Tracking Config (match training)
+    # Tracking Config
     config = {
-        'birth_threshold': 0.5,
-        'association_threshold': 0.5,
-        'semantic_weight': 0.6,
-        'top_k_features': 50
+        'birth_threshold': args.birth_threshold,
+        'association_threshold': args.assoc_threshold,
+        'semantic_weight': args.semantic_weight,
+        'top_k_features': args.top_k
     }
+    print("Tracking Configuration:")
+    for k, v in config.items():
+        print(f"  {k}: {v}")
 
     # 4. Generate Visualizations
     print("\n[4/4] Generating Visualizations...")
