@@ -87,7 +87,8 @@ def run_tracking_on_sample(model, saes, text: str, config, device: str):
         
         # Get SAE features
         with torch.no_grad():
-            encoded = sae.encode(hidden)
+            # SAE expects float32
+            encoded = sae.encode(hidden.to(dtype=torch.float32))
             activations = encoded[0].cpu().numpy()
             
             # Get indices sorted by activation magnitude (descending)
