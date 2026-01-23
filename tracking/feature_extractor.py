@@ -66,7 +66,8 @@ class LayerwiseFeatureExtractor:
                 hidden = outputs['residual_stream'][layer_idx]  # [1, seq_len, d_model]
 
                 # Pass through SAE
-                sae_output = self.saes[layer_idx].forward(hidden)
+                # Ensure float32 for SAE
+                sae_output = self.saes[layer_idx].forward(hidden.to(dtype=torch.float32))
 
                 layer_features.append({
                     'layer': layer_idx,
@@ -102,7 +103,8 @@ class LayerwiseFeatureExtractor:
                 hidden = outputs['residual_stream'][layer_idx]  # [batch, seq, d_model]
 
                 # Pass through SAE
-                sae_output = self.saes[layer_idx].forward(hidden)
+                # Ensure float32 for SAE
+                sae_output = self.saes[layer_idx].forward(hidden.to(dtype=torch.float32))
 
                 layer_features.append({
                     'layer': layer_idx,
