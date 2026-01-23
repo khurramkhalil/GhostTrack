@@ -40,13 +40,13 @@ mkdir -p $RESULTS_DIR/detection
 mkdir -p $CHECKPOINT_DIR
 mkdir -p $CACHE_DIR
 
-echo "--- Phase 1 & 2: Extraction and SAE Training ---"
-python3 scripts/extract_and_train.py \
-    --config config/model_configs/phi-2.yaml \
-    --save-dir $CHECKPOINT_DIR \
-    --cache-dir $CACHE_DIR \
-    --num-tokens 1000000 \
-    --device cuda
+# echo "--- Phase 1 & 2: Extraction and SAE Training ---"
+# python3 scripts/extract_and_train.py \
+#     --config config/model_configs/phi-2.yaml \
+#     --save-dir $CHECKPOINT_DIR \
+#     --cache-dir $CACHE_DIR \
+#     --num-tokens 1000000 \
+#     --device cuda
 
 echo "--- Phase 3: Hypothesis Tracking ---"
 python3 scripts/run_tracking.py \
