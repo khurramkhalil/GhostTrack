@@ -25,6 +25,15 @@ mkdir -p "$DEST_DIR"
 cp -r "$SRC_DIR/tracking" "$DEST_DIR/"
 cp -r "$SRC_DIR/detection" "$DEST_DIR/"
 
+# Run detection retraining (Phase 4) - Ensure compatible feature set
+echo "Retraining detector (Phase 4) with current code..."
+python3 scripts/run_detection.py \
+    --config config/model_configs/gpt2-medium.yaml \
+    --model-dir ./models/checkpoints/gpt2-medium \
+    --tracking-dir "$DEST_DIR/tracking" \
+    --output-dir "$DEST_DIR/detection" \
+    --device cuda
+
 # Run visualization (Phase 5)
 echo "Running Phase 5: Visualization..."
 python3 scripts/run_visualization.py \
