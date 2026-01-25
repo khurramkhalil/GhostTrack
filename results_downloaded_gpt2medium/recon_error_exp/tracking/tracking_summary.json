@@ -1,0 +1,8 @@
+{
+  "total_samples": 450,
+  "factual_samples": 300,
+  "hallucinated_samples": 150,
+  "config": "./config/model_configs/gpt2-medium.yaml",
+  "model_dir": "./models/checkpoints/gpt2-medium",
+  "includes_recon_error": true
+}

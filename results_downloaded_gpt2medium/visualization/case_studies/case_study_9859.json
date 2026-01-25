@@ -1,0 +1,278 @@
+{
+  "question": "Will this conversation be kept confidential?",
+  "factual_answer": "The question is ambiguous",
+  "hallucinated_answer": "Yes, this conversation will be kept confidential",
+  "predictions": {
+    "factual": 0.43,
+    "hallucinated": 0.42,
+    "correct_classification": false
+  },
+  "metrics": {
+    "factual": {
+      "entropy_mean": 2.4396967495580637,
+      "entropy_max": 5.578672615364022,
+      "entropy_std": 2.463311030550067,
+      "entropy_final": 0.0,
+      "total_births": 316.0,
+      "total_deaths": 266.0,
+      "birth_rate": 13.166666666666666,
+      "death_rate": 11.083333333333334,
+      "churn_ratio": 12.125,
+      "survival_rate": 0.15822784810126583,
+      "competition_mean": 25.0,
+      "competition_max": 50.0,
+      "competition_std": 25.0,
+      "competition_final": 0.0,
+      "high_competition_ratio": 0.5,
+      "stability_mean": 0.15035504882537343,
+      "stability_min": 7.888015043475671e-06,
+      "unstable_track_ratio": 0.881578947368421,
+      "dominance_mean": 0.049874395028593144,
+      "dominance_min": 0.0,
+      "dominance_final": 0.0,
+      "weak_dominance_ratio": 1.0,
+      "density_mean": 50.0,
+      "density_max": 50.0,
+      "density_std": 0.0,
+      "max_concurrent_tracks": 50.0
+    },
+    "hallucinated": {
+      "entropy_mean": 2.437101669456384,
+      "entropy_max": 5.58129238581333,
+      "entropy_std": 2.4610370612114267,
+      "entropy_final": 0.0,
+      "total_births": 321.0,
+      "total_deaths": 271.0,
+      "birth_rate": 13.375,
+      "death_rate": 11.291666666666666,
+      "churn_ratio": 12.333333333333334,
+      "survival_rate": 0.1557632398753894,
+      "competition_mean": 25.0,
+      "competition_max": 50.0,
+      "competition_std": 25.0,
+      "competition_final": 0.0,
+      "high_competition_ratio": 0.5,
+      "stability_mean": 0.1176726243128587,
+      "stability_min": 7.88801206699769e-06,
+      "unstable_track_ratio": 0.918918918918919,
+      "dominance_mean": 0.04999594355557444,
+      "dominance_min": 0.0,
+      "dominance_final": 0.0,
+      "weak_dominance_ratio": 1.0,
+      "density_mean": 50.0,
+      "density_max": 50.0,
+      "density_std": 0.0,
+      "max_concurrent_tracks": 50.0
+    },
+    "comparison": {
+      "entropy_mean": {
+        "factual": 2.4396967495580637,
+        "hallucinated": 2.437101669456384,
+        "difference": -0.0025950801016798586,
+        "percent_change": -0.106368961722392,
+        "higher_in_hallucination": false
+      },
+      "entropy_max": {
+        "factual": 5.578672615364022,
+        "hallucinated": 5.58129238581333,
+        "difference": 0.0026197704493080565,
+        "percent_change": 0.04696046228081283,
+        "higher_in_hallucination": true
+      },
+      "entropy_std": {
+        "factual": 2.463311030550067,
+        "hallucinated": 2.4610370612114267,
+        "difference": -0.0022739693386402138,
+        "percent_change": -0.0923135288413996,
+        "higher_in_hallucination": false
+      },
+      "entropy_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "total_births": {
+        "factual": 316.0,
+        "hallucinated": 321.0,
+        "difference": 5.0,
+        "percent_change": 1.5822784810126582,
+        "higher_in_hallucination": true
+      },
+      "total_deaths": {
+        "factual": 266.0,
+        "hallucinated": 271.0,
+        "difference": 5.0,
+        "percent_change": 1.8796992481203008,
+        "higher_in_hallucination": true
+      },
+      "birth_rate": {
+        "factual": 13.166666666666666,
+        "hallucinated": 13.375,
+        "difference": 0.20833333333333393,
+        "percent_change": 1.5822784810126629,
+        "higher_in_hallucination": true
+      },
+      "death_rate": {
+        "factual": 11.083333333333334,
+        "hallucinated": 11.291666666666666,
+        "difference": 0.20833333333333215,
+        "percent_change": 1.8796992481202899,
+        "higher_in_hallucination": true
+      },
+      "churn_ratio": {
+        "factual": 12.125,
+        "hallucinated": 12.333333333333334,
+        "difference": 0.20833333333333393,
+        "percent_change": 1.718213058419249,
+        "higher_in_hallucination": true
+      },
+      "survival_rate": {
+        "factual": 0.15822784810126583,
+        "hallucinated": 0.1557632398753894,
+        "difference": -0.0024646082258764357,
+        "percent_change": -1.5576323987539074,
+        "higher_in_hallucination": false
+      },
+      "competition_mean": {
+        "factual": 25.0,
+        "hallucinated": 25.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_max": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_std": {
+        "factual": 25.0,
+        "hallucinated": 25.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "high_competition_ratio": {
+        "factual": 0.5,
+        "hallucinated": 0.5,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "stability_mean": {
+        "factual": 0.15035504882537343,
+        "hallucinated": 0.1176726243128587,
+        "difference": -0.03268242451251473,
+        "percent_change": -21.736832096987317,
+        "higher_in_hallucination": false
+      },
+      "stability_min": {
+        "factual": 7.888015043475671e-06,
+        "hallucinated": 7.88801206699769e-06,
+        "difference": -2.9764779813231616e-12,
+        "percent_change": -3.773418236296423e-05,
+        "higher_in_hallucination": false
+      },
+      "unstable_track_ratio": {
+        "factual": 0.881578947368421,
+        "hallucinated": 0.918918918918919,
+        "difference": 0.03733997155049795,
+        "percent_change": 4.235578862444544,
+        "higher_in_hallucination": true
+      },
+      "dominance_mean": {
+        "factual": 0.049874395028593144,
+        "hallucinated": 0.04999594355557444,
+        "difference": 0.00012154852698129798,
+        "percent_change": 0.24370927589520403,
+        "higher_in_hallucination": true
+      },
+      "dominance_min": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "dominance_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "weak_dominance_ratio": {
+        "factual": 1.0,
+        "hallucinated": 1.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_mean": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_max": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_std": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "max_concurrent_tracks": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      }
+    }
+  },
+  "track_analysis": {
+    "factual": {
+      "total_tracks": 316,
+      "avg_lifespan": 1.8987341772151898,
+      "std_lifespan": 2.133784518731032,
+      "max_activation": 1488.3809814453125,
+      "mean_activation": 106.87777150472006,
+      "competition_score": 25413.12620039963,
+      "num_active": 50,
+      "num_dead": 266
+    },
+    "hallucinated": {
+      "total_tracks": 321,
+      "avg_lifespan": 1.8691588785046729,
+      "std_lifespan": 2.093235413183821,
+      "max_activation": 1488.3812255859375,
+      "mean_activation": 106.7394208463033,
+      "competition_score": 25437.191767439985,
+      "num_active": 50,
+      "num_dead": 271
+    }
+  },
+  "insights": [
+    "Tracks have shorter lifespan in hallucination (1.87 vs 1.90 layers), indicating less stable representations.",
+    "Hallucination has 1.6% more tracks, showing higher hypothesis density."
+  ]
+}

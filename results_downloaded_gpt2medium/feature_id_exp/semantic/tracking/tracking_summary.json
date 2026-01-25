@@ -1,0 +1,7 @@
+{
+  "total_samples": 300,
+  "factual_samples": 200,
+  "hallucinated_samples": 100,
+  "config": "./config/feature_id_exp/semantic.yaml",
+  "model_dir": "./models/checkpoints/gpt2-medium"
+}

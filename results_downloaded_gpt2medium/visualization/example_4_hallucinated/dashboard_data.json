@@ -1,0 +1,5963 @@
+{
+  "metadata": {
+    "text": "Have Americans been working more hours over time? Yes, working hours have increased over time",
+    "text_length": 93,
+    "prediction": 0.4,
+    "is_hallucination": true,
+    "num_layers": 12
+  },
+  "track_stats": {
+    "total_tracks": 317,
+    "active_tracks": 50,
+    "dead_tracks": 267,
+    "avg_lifespan": 1.8927444794952681,
+    "max_activation": 1485.135009765625
+  },
+  "divergence_metrics": {
+    "entropy_mean": 4.86840849871512,
+    "entropy_max": 5.584978096093181,
+    "entropy_std": 0.4858211386910959,
+    "entropy_final": 4.972783374669527,
+    "total_births": 317.0,
+    "total_deaths": 267.0,
+    "birth_rate": 26.416666666666668,
+    "death_rate": 22.25,
+    "churn_ratio": 24.333333333333332,
+    "survival_rate": 0.15772870662460567,
+    "competition_mean": 50.0,
+    "competition_max": 50.0,
+    "competition_std": 0.0,
+    "competition_final": 50.0,
+    "high_competition_ratio": 1.0,
+    "stability_mean": 0.13473843711543035,
+    "stability_min": 7.5936079907894025e-06,
+    "unstable_track_ratio": 0.8717948717948718,
+    "dominance_mean": 0.0991956826020738,
+    "dominance_min": 0.0370788813311258,
+    "dominance_final": 0.08599243158779808,
+    "weak_dominance_ratio": 1.0,
+    "density_mean": 50.0,
+    "density_max": 50.0,
+    "density_std": 0.0,
+    "max_concurrent_tracks": 50.0
+  },
+  "track_timeline": [
+    {
+      "track_id": 0,
+      "birth_layer": 0,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 51.520912170410156,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 57.72084426879883,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 47.502105712890625,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 47.468990325927734,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 31.188337326049805,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 36.055721282958984,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 25.59499168395996,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 45.34377670288086,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 1,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 43.359439849853516,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 2,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 41.62461471557617,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 21.58550262451172,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 39.33591842651367,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 13.998974800109863,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 19.865022659301758,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 24.228490829467773,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 22.796680450439453,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 14.120656967163086,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 16.186567306518555,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 15.276037216186523,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 20.991785049438477,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 20.729938507080078,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 3,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 39.505252838134766,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 4,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 38.65195083618164,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 5,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 28.805702209472656,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 6,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 28.62026596069336,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 7,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 25.927146911621094,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 8,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 25.336462020874023,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 9,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 23.0047550201416,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 28.981609344482422,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 10,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 22.633214950561523,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 20.10215187072754,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 11,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 21.267850875854492,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 12,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 20.79778480529785,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 13,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 20.77728271484375,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 14,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 19.522294998168945,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 15,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 18.290311813354492,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 16,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 17.646081924438477,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 17,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 16.682273864746094,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 20.619266510009766,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 18,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 16.622272491455078,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 19,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 16.110471725463867,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 20,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 15.590524673461914,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 32.97854232788086,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 21,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 15.584485054016113,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 22,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 14.980364799499512,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 23,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 13.586228370666504,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 23.16963005065918,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 24,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 11.596785545349121,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 25,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 11.217748641967773,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 26,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 10.886430740356445,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 27,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 9.887054443359375,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 28,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 9.582051277160645,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 29,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 9.49893569946289,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 11.309940338134766,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 30,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 9.252867698669434,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 12.879598617553711,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 31,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 9.031110763549805,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 11.405517578125,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 32,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.862724304199219,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 33,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.776266098022461,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 34,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.77185344696045,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 35,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.763054847717285,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 12.91622543334961,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 36,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.470794677734375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 14.12833023071289,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 35.00959014892578,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 14.183539390563965,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 14.434408187866211,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 15.972817420959473,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 20.688995361328125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 14.874181747436523,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 28.21953582763672,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 16.55405616760254,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 25.78011131286621,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 25.529916763305664,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 37,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.439689636230469,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 38,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.836132526397705,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 9.980087280273438,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 39,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.6198811531066895,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 40,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.477813720703125,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 41,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.368384838104248,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 42,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.308335304260254,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 43,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.251923561096191,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 44,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.193042278289795,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 17.182270050048828,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 45,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.045084476470947,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 46,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.042693138122559,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 47,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.019794464111328,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 48,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 6.985101699829102,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 49,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 6.974976539611816,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 50,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 43.608497619628906,
+          "feature_id": -1,
+          "token_pos": 512
+        }
+      ]
+    },
+    {
+      "track_id": 51,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 38.48166275024414,
+          "feature_id": -1,
+          "token_pos": 4375
+        }
+      ]
+    },
+    {
+      "track_id": 52,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 36.02017593383789,
+          "feature_id": -1,
+          "token_pos": 939
+        }
+      ]
+    },
+    {
+      "track_id": 53,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 35.78032302856445,
+          "feature_id": -1,
+          "token_pos": 4925
+        }
+      ]
+    },
+    {
+      "track_id": 54,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 29.514272689819336,
+          "feature_id": -1,
+          "token_pos": 2031
+        }
+      ]
+    },
+    {
+      "track_id": 55,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 28.977012634277344,
+          "feature_id": -1,
+          "token_pos": 720
+        }
+      ]
+    },
+    {
+      "track_id": 56,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 28.452255249023438,
+          "feature_id": -1,
+          "token_pos": 3063
+        }
+      ]
+    },
+    {
+      "track_id": 57,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 26.166059494018555,
+          "feature_id": -1,
+          "token_pos": 1143
+        }
+      ]
+    },
+    {
+      "track_id": 58,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 25.16620635986328,
+          "feature_id": -1,
+          "token_pos": 1691
+        }
+      ]
+    },
+    {
+      "track_id": 59,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 24.93895149230957,
+          "feature_id": -1,
+          "token_pos": 2433
+        }
+      ]
+    },
+    {
+      "track_id": 60,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 24.104291915893555,
+          "feature_id": -1,
+          "token_pos": 3719
+        }
+      ]
+    },
+    {
+      "track_id": 61,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 23.766843795776367,
+          "feature_id": -1,
+          "token_pos": 4201
+        }
+      ]
+    },
+    {
+      "track_id": 62,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 20.98733901977539,
+          "feature_id": -1,
+          "token_pos": 5104
+        }
+      ]
+    },
+    {
+      "track_id": 63,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 20.852439880371094,
+          "feature_id": -1,
+          "token_pos": 4228
+        }
+      ]
+    },
+    {
+      "track_id": 64,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 20.83759307861328,
+          "feature_id": -1,
+          "token_pos": 333
+        }
+      ]
+    },
+    {
+      "track_id": 65,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 19.67178726196289,
+          "feature_id": -1,
+          "token_pos": 4029
+        }
+      ]
+    },
+    {
+      "track_id": 66,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 19.252708435058594,
+          "feature_id": -1,
+          "token_pos": 592
+        }
+      ]
+    },
+    {
+      "track_id": 67,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 19.214595794677734,
+          "feature_id": -1,
+          "token_pos": 4562
+        }
+      ]
+    },
+    {
+      "track_id": 68,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 17.685924530029297,
+          "feature_id": -1,
+          "token_pos": 2208
+        }
+      ]
+    },
+    {
+      "track_id": 69,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 16.8085994720459,
+          "feature_id": -1,
+          "token_pos": 1281
+        }
+      ]
+    },
+    {
+      "track_id": 70,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 16.78015899658203,
+          "feature_id": -1,
+          "token_pos": 430
+        }
+      ]
+    },
+    {
+      "track_id": 71,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 16.56081199645996,
+          "feature_id": -1,
+          "token_pos": 799
+        }
+      ]
+    },
+    {
+      "track_id": 72,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 15.443573951721191,
+          "feature_id": -1,
+          "token_pos": 151
+        }
+      ]
+    },
+    {
+      "track_id": 73,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 15.314197540283203,
+          "feature_id": -1,
+          "token_pos": 3158
+        }
+      ]
+    },
+    {
+      "track_id": 74,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 14.734278678894043,
+          "feature_id": -1,
+          "token_pos": 919
+        }
+      ]
+    },
+    {
+      "track_id": 75,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 14.22642707824707,
+          "feature_id": -1,
+          "token_pos": 3721
+        }
+      ]
+    },
+    {
+      "track_id": 76,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 13.094497680664062,
+          "feature_id": -1,
+          "token_pos": 3144
+        }
+      ]
+    },
+    {
+      "track_id": 77,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 12.996441841125488,
+          "feature_id": -1,
+          "token_pos": 2629
+        }
+      ]
+    },
+    {
+      "track_id": 78,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 12.287178039550781,
+          "feature_id": -1,
+          "token_pos": 235
+        }
+      ]
+    },
+    {
+      "track_id": 79,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 11.745682716369629,
+          "feature_id": -1,
+          "token_pos": 1369
+        }
+      ]
+    },
+    {
+      "track_id": 80,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 11.733614921569824,
+          "feature_id": -1,
+          "token_pos": 4319
+        }
+      ]
+    },
+    {
+      "track_id": 81,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 11.216272354125977,
+          "feature_id": -1,
+          "token_pos": 2224
+        }
+      ]
+    },
+    {
+      "track_id": 82,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 10.749991416931152,
+          "feature_id": -1,
+          "token_pos": 2581
+        }
+      ]
+    },
+    {
+      "track_id": 83,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 10.530379295349121,
+          "feature_id": -1,
+          "token_pos": 465
+        }
+      ]
+    },
+    {
+      "track_id": 84,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 10.455904006958008,
+          "feature_id": -1,
+          "token_pos": 109
+        }
+      ]
+    },
+    {
+      "track_id": 85,
+      "birth_layer": 1,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 10.22872543334961,
+          "feature_id": -1,
+          "token_pos": 2168
+        }
+      ]
+    },
+    {
+      "track_id": 86,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 71.32523345947266,
+          "feature_id": -1,
+          "token_pos": 4894
+        }
+      ]
+    },
+    {
+      "track_id": 87,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 64.48553466796875,
+          "feature_id": -1,
+          "token_pos": 3316
+        }
+      ]
+    },
+    {
+      "track_id": 88,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 62.09236145019531,
+          "feature_id": -1,
+          "token_pos": 4505
+        }
+      ]
+    },
+    {
+      "track_id": 89,
+      "birth_layer": 2,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 59.66753005981445,
+          "feature_id": -1,
+          "token_pos": 2091
+        },
+        {
+          "layer": 3,
+          "activation": 86.26327514648438,
+          "feature_id": -1,
+          "token_pos": 2091
+        }
+      ]
+    },
+    {
+      "track_id": 90,
+      "birth_layer": 2,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 59.22706985473633,
+          "feature_id": -1,
+          "token_pos": 4720
+        },
+        {
+          "layer": 3,
+          "activation": 79.15321350097656,
+          "feature_id": -1,
+          "token_pos": 4720
+        },
+        {
+          "layer": 4,
+          "activation": 77.61468505859375,
+          "feature_id": -1,
+          "token_pos": 4720
+        },
+        {
+          "layer": 5,
+          "activation": 36.505126953125,
+          "feature_id": -1,
+          "token_pos": 4720
+        },
+        {
+          "layer": 6,
+          "activation": 35.314273834228516,
+          "feature_id": -1,
+          "token_pos": 4720
+        },
+        {
+          "layer": 7,
+          "activation": 12.889835357666016,
+          "feature_id": -1,
+          "token_pos": 4720
+        },
+        {
+          "layer": 8,
+          "activation": 50.38438415527344,
+          "feature_id": -1,
+          "token_pos": 4720
+        }
+      ]
+    },
+    {
+      "track_id": 91,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 55.19083023071289,
+          "feature_id": -1,
+          "token_pos": 3573
+        }
+      ]
+    },
+    {
+      "track_id": 92,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 49.21870803833008,
+          "feature_id": -1,
+          "token_pos": 1988
+        }
+      ]
+    },
+    {
+      "track_id": 93,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 48.65492248535156,
+          "feature_id": -1,
+          "token_pos": 567
+        }
+      ]
+    },
+    {
+      "track_id": 94,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 48.325843811035156,
+          "feature_id": -1,
+          "token_pos": 4511
+        }
+      ]
+    },
+    {
+      "track_id": 95,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 45.98716354370117,
+          "feature_id": -1,
+          "token_pos": 1781
+        }
+      ]
+    },
+    {
+      "track_id": 96,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 45.33195114135742,
+          "feature_id": -1,
+          "token_pos": 293
+        }
+      ]
+    },
+    {
+      "track_id": 97,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 42.86806869506836,
+          "feature_id": -1,
+          "token_pos": 78
+        }
+      ]
+    },
+    {
+      "track_id": 98,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 42.7263298034668,
+          "feature_id": -1,
+          "token_pos": 2355
+        }
+      ]
+    },
+    {
+      "track_id": 99,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 42.60762023925781,
+          "feature_id": -1,
+          "token_pos": 1740
+        }
+      ]
+    },
+    {
+      "track_id": 100,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 41.95656967163086,
+          "feature_id": -1,
+          "token_pos": 2519
+        }
+      ]
+    },
+    {
+      "track_id": 101,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 41.06959533691406,
+          "feature_id": -1,
+          "token_pos": 98
+        }
+      ]
+    },
+    {
+      "track_id": 102,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 40.93566131591797,
+          "feature_id": -1,
+          "token_pos": 1661
+        }
+      ]
+    },
+    {
+      "track_id": 103,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 40.82612991333008,
+          "feature_id": -1,
+          "token_pos": 1449
+        }
+      ]
+    },
+    {
+      "track_id": 104,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 40.312232971191406,
+          "feature_id": -1,
+          "token_pos": 3810
+        }
+      ]
+    },
+    {
+      "track_id": 105,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 38.58732604980469,
+          "feature_id": -1,
+          "token_pos": 949
+        }
+      ]
+    },
+    {
+      "track_id": 106,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 38.47765350341797,
+          "feature_id": -1,
+          "token_pos": 103
+        }
+      ]
+    },
+    {
+      "track_id": 107,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 38.20223617553711,
+          "feature_id": -1,
+          "token_pos": 2030
+        }
+      ]
+    },
+    {
+      "track_id": 108,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 37.614681243896484,
+          "feature_id": -1,
+          "token_pos": 104
+        }
+      ]
+    },
+    {
+      "track_id": 109,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 37.52842712402344,
+          "feature_id": -1,
+          "token_pos": 3230
+        }
+      ]
+    },
+    {
+      "track_id": 110,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 37.28924560546875,
+          "feature_id": -1,
+          "token_pos": 1500
+        }
+      ]
+    },
+    {
+      "track_id": 111,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 34.547603607177734,
+          "feature_id": -1,
+          "token_pos": 3494
+        }
+      ]
+    },
+    {
+      "track_id": 112,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 34.209083557128906,
+          "feature_id": -1,
+          "token_pos": 366
+        }
+      ]
+    },
+    {
+      "track_id": 113,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 33.96397018432617,
+          "feature_id": -1,
+          "token_pos": 1822
+        }
+      ]
+    },
+    {
+      "track_id": 114,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 32.12450408935547,
+          "feature_id": -1,
+          "token_pos": 1459
+        }
+      ]
+    },
+    {
+      "track_id": 115,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 31.88260269165039,
+          "feature_id": -1,
+          "token_pos": 2899
+        }
+      ]
+    },
+    {
+      "track_id": 116,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 31.033172607421875,
+          "feature_id": -1,
+          "token_pos": 4667
+        }
+      ]
+    },
+    {
+      "track_id": 117,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 30.0887393951416,
+          "feature_id": -1,
+          "token_pos": 4923
+        }
+      ]
+    },
+    {
+      "track_id": 118,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 29.9759464263916,
+          "feature_id": -1,
+          "token_pos": 2664
+        }
+      ]
+    },
+    {
+      "track_id": 119,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 29.66082191467285,
+          "feature_id": -1,
+          "token_pos": 1357
+        }
+      ]
+    },
+    {
+      "track_id": 120,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 29.506011962890625,
+          "feature_id": -1,
+          "token_pos": 1180
+        }
+      ]
+    },
+    {
+      "track_id": 121,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 27.360595703125,
+          "feature_id": -1,
+          "token_pos": 3754
+        }
+      ]
+    },
+    {
+      "track_id": 122,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 27.221851348876953,
+          "feature_id": -1,
+          "token_pos": 4413
+        }
+      ]
+    },
+    {
+      "track_id": 123,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 27.07999610900879,
+          "feature_id": -1,
+          "token_pos": 2931
+        }
+      ]
+    },
+    {
+      "track_id": 124,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 26.739850997924805,
+          "feature_id": -1,
+          "token_pos": 4759
+        }
+      ]
+    },
+    {
+      "track_id": 125,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 26.634763717651367,
+          "feature_id": -1,
+          "token_pos": 2136
+        }
+      ]
+    },
+    {
+      "track_id": 126,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 26.271196365356445,
+          "feature_id": -1,
+          "token_pos": 1380
+        }
+      ]
+    },
+    {
+      "track_id": 127,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 26.14296531677246,
+          "feature_id": -1,
+          "token_pos": 4850
+        }
+      ]
+    },
+    {
+      "track_id": 128,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 25.832860946655273,
+          "feature_id": -1,
+          "token_pos": 4936
+        }
+      ]
+    },
+    {
+      "track_id": 129,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 25.676982879638672,
+          "feature_id": -1,
+          "token_pos": 959
+        }
+      ]
+    },
+    {
+      "track_id": 130,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 25.39162254333496,
+          "feature_id": -1,
+          "token_pos": 2435
+        }
+      ]
+    },
+    {
+      "track_id": 131,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 25.285688400268555,
+          "feature_id": -1,
+          "token_pos": 3084
+        }
+      ]
+    },
+    {
+      "track_id": 132,
+      "birth_layer": 2,
+      "death_layer": 2,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 24.620647430419922,
+          "feature_id": -1,
+          "token_pos": 4765
+        }
+      ]
+    },
+    {
+      "track_id": 133,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 369.9973449707031,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 4,
+          "activation": 572.3545532226562,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 5,
+          "activation": 982.99169921875,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 6,
+          "activation": 345.1319885253906,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 7,
+          "activation": 319.3763732910156,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 8,
+          "activation": 284.5879821777344,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 9,
+          "activation": 285.3938293457031,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 10,
+          "activation": 223.9068603515625,
+          "feature_id": -1,
+          "token_pos": 2141
+        },
+        {
+          "layer": 11,
+          "activation": 311.4358215332031,
+          "feature_id": -1,
+          "token_pos": 2141
+        }
+      ]
+    },
+    {
+      "track_id": 134,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 362.0656433105469,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 4,
+          "activation": 473.1729736328125,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 5,
+          "activation": 429.3906555175781,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 6,
+          "activation": 454.80999755859375,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 7,
+          "activation": 851.9520263671875,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 8,
+          "activation": 537.3148193359375,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 9,
+          "activation": 529.689697265625,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 10,
+          "activation": 488.5941162109375,
+          "feature_id": -1,
+          "token_pos": 4208
+        },
+        {
+          "layer": 11,
+          "activation": 316.08795166015625,
+          "feature_id": -1,
+          "token_pos": 4208
+        }
+      ]
+    },
+    {
+      "track_id": 135,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 357.55792236328125,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 4,
+          "activation": 358.1733703613281,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 5,
+          "activation": 159.21356201171875,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 6,
+          "activation": 164.536376953125,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 7,
+          "activation": 177.974609375,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 8,
+          "activation": 174.90599060058594,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 9,
+          "activation": 173.63180541992188,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 10,
+          "activation": 212.45164489746094,
+          "feature_id": -1,
+          "token_pos": 4587
+        },
+        {
+          "layer": 11,
+          "activation": 228.29910278320312,
+          "feature_id": -1,
+          "token_pos": 4587
+        }
+      ]
+    },
+    {
+      "track_id": 136,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 346.1955871582031,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 4,
+          "activation": 278.28179931640625,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 5,
+          "activation": 228.09783935546875,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 6,
+          "activation": 308.4509582519531,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 7,
+          "activation": 289.4547424316406,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 8,
+          "activation": 331.13006591796875,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 9,
+          "activation": 400.1185607910156,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 10,
+          "activation": 378.0756530761719,
+          "feature_id": -1,
+          "token_pos": 2220
+        },
+        {
+          "layer": 11,
+          "activation": 296.12420654296875,
+          "feature_id": -1,
+          "token_pos": 2220
+        }
+      ]
+    },
+    {
+      "track_id": 137,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 329.2864990234375,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 4,
+          "activation": 551.3558349609375,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 5,
+          "activation": 929.718505859375,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 6,
+          "activation": 388.99322509765625,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 7,
+          "activation": 577.2601318359375,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 8,
+          "activation": 422.3902587890625,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 9,
+          "activation": 455.7970886230469,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 10,
+          "activation": 395.57891845703125,
+          "feature_id": -1,
+          "token_pos": 2967
+        },
+        {
+          "layer": 11,
+          "activation": 367.38543701171875,
+          "feature_id": -1,
+          "token_pos": 2967
+        }
+      ]
+    },
+    {
+      "track_id": 138,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 324.38604736328125,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 4,
+          "activation": 480.48187255859375,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 5,
+          "activation": 176.2520751953125,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 6,
+          "activation": 194.20472717285156,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 7,
+          "activation": 149.3544921875,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 8,
+          "activation": 188.61492919921875,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 9,
+          "activation": 323.5379638671875,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 10,
+          "activation": 325.74420166015625,
+          "feature_id": -1,
+          "token_pos": 2592
+        },
+        {
+          "layer": 11,
+          "activation": 435.40185546875,
+          "feature_id": -1,
+          "token_pos": 2592
+        }
+      ]
+    },
+    {
+      "track_id": 139,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 310.4816589355469,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 4,
+          "activation": 429.9536437988281,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 5,
+          "activation": 261.333740234375,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 6,
+          "activation": 369.734130859375,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 7,
+          "activation": 265.6158447265625,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 8,
+          "activation": 238.77125549316406,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 9,
+          "activation": 153.9771270751953,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 10,
+          "activation": 92.9830551147461,
+          "feature_id": -1,
+          "token_pos": 2499
+        },
+        {
+          "layer": 11,
+          "activation": 57.38531494140625,
+          "feature_id": -1,
+          "token_pos": 2499
+        }
+      ]
+    },
+    {
+      "track_id": 140,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 302.29638671875,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 4,
+          "activation": 322.7760314941406,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 5,
+          "activation": 243.32977294921875,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 6,
+          "activation": 315.4443054199219,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 7,
+          "activation": 357.30291748046875,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 8,
+          "activation": 369.4369812011719,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 9,
+          "activation": 494.6780090332031,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 10,
+          "activation": 668.98291015625,
+          "feature_id": -1,
+          "token_pos": 2691
+        },
+        {
+          "layer": 11,
+          "activation": 577.7091674804688,
+          "feature_id": -1,
+          "token_pos": 2691
+        }
+      ]
+    },
+    {
+      "track_id": 141,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 283.61114501953125,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 4,
+          "activation": 523.5263671875,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 5,
+          "activation": 1001.2930908203125,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 6,
+          "activation": 1485.135009765625,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 7,
+          "activation": 636.725830078125,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 8,
+          "activation": 474.24298095703125,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 9,
+          "activation": 503.6341247558594,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 10,
+          "activation": 363.0314636230469,
+          "feature_id": -1,
+          "token_pos": 4270
+        },
+        {
+          "layer": 11,
+          "activation": 359.0918884277344,
+          "feature_id": -1,
+          "token_pos": 4270
+        }
+      ]
+    },
+    {
+      "track_id": 142,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 270.7589416503906,
+          "feature_id": -1,
+          "token_pos": 644
+        }
+      ]
+    },
+    {
+      "track_id": 143,
+      "birth_layer": 3,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 248.15298461914062,
+          "feature_id": -1,
+          "token_pos": 4998
+        },
+        {
+          "layer": 4,
+          "activation": 46.7479362487793,
+          "feature_id": -1,
+          "token_pos": 4998
+        },
+        {
+          "layer": 5,
+          "activation": 58.359561920166016,
+          "feature_id": -1,
+          "token_pos": 4998
+        },
+        {
+          "layer": 6,
+          "activation": 74.37284851074219,
+          "feature_id": -1,
+          "token_pos": 4998
+        },
+        {
+          "layer": 7,
+          "activation": 75.73394012451172,
+          "feature_id": -1,
+          "token_pos": 4998
+        },
+        {
+          "layer": 8,
+          "activation": 115.61524200439453,
+          "feature_id": -1,
+          "token_pos": 4998
+        }
+      ]
+    },
+    {
+      "track_id": 144,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 216.88653564453125,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 4,
+          "activation": 235.15084838867188,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 5,
+          "activation": 134.45863342285156,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 6,
+          "activation": 142.61106872558594,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 7,
+          "activation": 256.50390625,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 8,
+          "activation": 340.0667724609375,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 9,
+          "activation": 464.53411865234375,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 10,
+          "activation": 316.8154296875,
+          "feature_id": -1,
+          "token_pos": 4790
+        },
+        {
+          "layer": 11,
+          "activation": 263.0530090332031,
+          "feature_id": -1,
+          "token_pos": 4790
+        }
+      ]
+    },
+    {
+      "track_id": 145,
+      "birth_layer": 3,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 210.63523864746094,
+          "feature_id": -1,
+          "token_pos": 303
+        },
+        {
+          "layer": 4,
+          "activation": 184.99005126953125,
+          "feature_id": -1,
+          "token_pos": 303
+        },
+        {
+          "layer": 5,
+          "activation": 199.55520629882812,
+          "feature_id": -1,
+          "token_pos": 303
+        },
+        {
+          "layer": 6,
+          "activation": 343.0588073730469,
+          "feature_id": -1,
+          "token_pos": 303
+        },
+        {
+          "layer": 7,
+          "activation": 365.04388427734375,
+          "feature_id": -1,
+          "token_pos": 303
+        },
+        {
+          "layer": 8,
+          "activation": 321.9654541015625,
+          "feature_id": -1,
+          "token_pos": 303
+        }
+      ]
+    },
+    {
+      "track_id": 146,
+      "birth_layer": 3,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 203.50125122070312,
+          "feature_id": -1,
+          "token_pos": 4818
+        },
+        {
+          "layer": 4,
+          "activation": 100.18936920166016,
+          "feature_id": -1,
+          "token_pos": 4818
+        },
+        {
+          "layer": 5,
+          "activation": 90.96431732177734,
+          "feature_id": -1,
+          "token_pos": 4818
+        },
+        {
+          "layer": 6,
+          "activation": 105.61310577392578,
+          "feature_id": -1,
+          "token_pos": 4818
+        },
+        {
+          "layer": 7,
+          "activation": 105.31513977050781,
+          "feature_id": -1,
+          "token_pos": 4818
+        }
+      ]
+    },
+    {
+      "track_id": 147,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 202.3085479736328,
+          "feature_id": -1,
+          "token_pos": 2095
+        }
+      ]
+    },
+    {
+      "track_id": 148,
+      "birth_layer": 3,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 174.2050323486328,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 4,
+          "activation": 44.35420227050781,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 5,
+          "activation": 14.089824676513672,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 6,
+          "activation": 39.439056396484375,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 7,
+          "activation": 130.74649047851562,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 8,
+          "activation": 84.31730651855469,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 9,
+          "activation": 85.8050765991211,
+          "feature_id": -1,
+          "token_pos": 505
+        },
+        {
+          "layer": 10,
+          "activation": 67.79090118408203,
+          "feature_id": -1,
+          "token_pos": 505
+        }
+      ]
+    },
+    {
+      "track_id": 149,
+      "birth_layer": 3,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 67.94867706298828,
+          "feature_id": -1,
+          "token_pos": 3071
+        },
+        {
+          "layer": 4,
+          "activation": 50.88835525512695,
+          "feature_id": -1,
+          "token_pos": 3071
+        }
+      ]
+    },
+    {
+      "track_id": 150,
+      "birth_layer": 3,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 62.35206604003906,
+          "feature_id": -1,
+          "token_pos": 666
+        },
+        {
+          "layer": 4,
+          "activation": 59.74657440185547,
+          "feature_id": -1,
+          "token_pos": 666
+        },
+        {
+          "layer": 5,
+          "activation": 57.585052490234375,
+          "feature_id": -1,
+          "token_pos": 666
+        }
+      ]
+    },
+    {
+      "track_id": 151,
+      "birth_layer": 3,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 53.48616409301758,
+          "feature_id": -1,
+          "token_pos": 1904
+        },
+        {
+          "layer": 4,
+          "activation": 40.622283935546875,
+          "feature_id": -1,
+          "token_pos": 1904
+        },
+        {
+          "layer": 5,
+          "activation": 64.4207992553711,
+          "feature_id": -1,
+          "token_pos": 1904
+        },
+        {
+          "layer": 6,
+          "activation": 22.596967697143555,
+          "feature_id": -1,
+          "token_pos": 1904
+        },
+        {
+          "layer": 7,
+          "activation": 121.96703338623047,
+          "feature_id": -1,
+          "token_pos": 1904
+        },
+        {
+          "layer": 8,
+          "activation": 47.464717864990234,
+          "feature_id": -1,
+          "token_pos": 1904
+        }
+      ]
+    },
+    {
+      "track_id": 152,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 41.839881896972656,
+          "feature_id": -1,
+          "token_pos": 3621
+        }
+      ]
+    },
+    {
+      "track_id": 153,
+      "birth_layer": 3,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 28.153257369995117,
+          "feature_id": -1,
+          "token_pos": 2885
+        },
+        {
+          "layer": 4,
+          "activation": 36.36860656738281,
+          "feature_id": -1,
+          "token_pos": 2885
+        },
+        {
+          "layer": 5,
+          "activation": 13.560806274414062,
+          "feature_id": -1,
+          "token_pos": 2885
+        },
+        {
+          "layer": 6,
+          "activation": 13.432165145874023,
+          "feature_id": -1,
+          "token_pos": 2885
+        },
+        {
+          "layer": 7,
+          "activation": 146.3689727783203,
+          "feature_id": -1,
+          "token_pos": 2885
+        },
+        {
+          "layer": 8,
+          "activation": 58.963748931884766,
+          "feature_id": -1,
+          "token_pos": 2885
+        },
+        {
+          "layer": 9,
+          "activation": 47.78050994873047,
+          "feature_id": -1,
+          "token_pos": 2885
+        }
+      ]
+    },
+    {
+      "track_id": 154,
+      "birth_layer": 3,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 23.61164093017578,
+          "feature_id": -1,
+          "token_pos": 3627
+        },
+        {
+          "layer": 4,
+          "activation": 16.306396484375,
+          "feature_id": -1,
+          "token_pos": 3627
+        }
+      ]
+    },
+    {
+      "track_id": 155,
+      "birth_layer": 3,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 23.23122787475586,
+          "feature_id": -1,
+          "token_pos": 1315
+        },
+        {
+          "layer": 4,
+          "activation": 32.59115219116211,
+          "feature_id": -1,
+          "token_pos": 1315
+        },
+        {
+          "layer": 5,
+          "activation": 25.74001693725586,
+          "feature_id": -1,
+          "token_pos": 1315
+        }
+      ]
+    },
+    {
+      "track_id": 156,
+      "birth_layer": 3,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 20.50335121154785,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 4,
+          "activation": 16.22056770324707,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 5,
+          "activation": 16.55084228515625,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 6,
+          "activation": 16.81205940246582,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 7,
+          "activation": 16.93025016784668,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 8,
+          "activation": 29.462677001953125,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 9,
+          "activation": 29.07314109802246,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 10,
+          "activation": 23.52947425842285,
+          "feature_id": -1,
+          "token_pos": 4535
+        },
+        {
+          "layer": 11,
+          "activation": 24.787155151367188,
+          "feature_id": -1,
+          "token_pos": 4535
+        }
+      ]
+    },
+    {
+      "track_id": 157,
+      "birth_layer": 3,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 19.731061935424805,
+          "feature_id": -1,
+          "token_pos": 3269
+        },
+        {
+          "layer": 4,
+          "activation": 14.84750747680664,
+          "feature_id": -1,
+          "token_pos": 3269
+        },
+        {
+          "layer": 5,
+          "activation": 10.331586837768555,
+          "feature_id": -1,
+          "token_pos": 3269
+        },
+        {
+          "layer": 6,
+          "activation": 20.102933883666992,
+          "feature_id": -1,
+          "token_pos": 3269
+        },
+        {
+          "layer": 7,
+          "activation": 22.55301284790039,
+          "feature_id": -1,
+          "token_pos": 3269
+        }
+      ]
+    },
+    {
+      "track_id": 158,
+      "birth_layer": 3,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 19.659177780151367,
+          "feature_id": -1,
+          "token_pos": 2237
+        },
+        {
+          "layer": 4,
+          "activation": 10.29636001586914,
+          "feature_id": -1,
+          "token_pos": 2237
+        },
+        {
+          "layer": 5,
+          "activation": 16.36606788635254,
+          "feature_id": -1,
+          "token_pos": 2237
+        },
+        {
+          "layer": 6,
+          "activation": 14.680212020874023,
+          "feature_id": -1,
+          "token_pos": 2237
+        },
+        {
+          "layer": 7,
+          "activation": 12.210647583007812,
+          "feature_id": -1,
+          "token_pos": 2237
+        }
+      ]
+    },
+    {
+      "track_id": 159,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 17.26320457458496,
+          "feature_id": -1,
+          "token_pos": 563
+        }
+      ]
+    },
+    {
+      "track_id": 160,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 16.57538414001465,
+          "feature_id": -1,
+          "token_pos": 3938
+        }
+      ]
+    },
+    {
+      "track_id": 161,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 16.280742645263672,
+          "feature_id": -1,
+          "token_pos": 2371
+        }
+      ]
+    },
+    {
+      "track_id": 162,
+      "birth_layer": 3,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 15.774825096130371,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 4,
+          "activation": 10.377913475036621,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 5,
+          "activation": 17.555057525634766,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 6,
+          "activation": 15.9630126953125,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 7,
+          "activation": 20.57992172241211,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 8,
+          "activation": 20.764991760253906,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 9,
+          "activation": 16.074459075927734,
+          "feature_id": -1,
+          "token_pos": 2286
+        },
+        {
+          "layer": 10,
+          "activation": 15.454058647155762,
+          "feature_id": -1,
+          "token_pos": 2286
+        }
+      ]
+    },
+    {
+      "track_id": 163,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 13.730118751525879,
+          "feature_id": -1,
+          "token_pos": 2630
+        }
+      ]
+    },
+    {
+      "track_id": 164,
+      "birth_layer": 3,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 13.615679740905762,
+          "feature_id": -1,
+          "token_pos": 2796
+        },
+        {
+          "layer": 4,
+          "activation": 11.94948673248291,
+          "feature_id": -1,
+          "token_pos": 2796
+        }
+      ]
+    },
+    {
+      "track_id": 165,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 13.210281372070312,
+          "feature_id": -1,
+          "token_pos": 4199
+        }
+      ]
+    },
+    {
+      "track_id": 166,
+      "birth_layer": 3,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 13.2003755569458,
+          "feature_id": -1,
+          "token_pos": 2518
+        },
+        {
+          "layer": 4,
+          "activation": 10.166520118713379,
+          "feature_id": -1,
+          "token_pos": 2518
+        }
+      ]
+    },
+    {
+      "track_id": 167,
+      "birth_layer": 3,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 13.183253288269043,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 4,
+          "activation": 23.43761444091797,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 5,
+          "activation": 18.329200744628906,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 6,
+          "activation": 16.081727981567383,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 7,
+          "activation": 36.08220672607422,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 8,
+          "activation": 28.567302703857422,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 9,
+          "activation": 15.084237098693848,
+          "feature_id": -1,
+          "token_pos": 4298
+        },
+        {
+          "layer": 10,
+          "activation": 20.27299690246582,
+          "feature_id": -1,
+          "token_pos": 4298
+        }
+      ]
+    },
+    {
+      "track_id": 168,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 12.910208702087402,
+          "feature_id": -1,
+          "token_pos": 2909
+        }
+      ]
+    },
+    {
+      "track_id": 169,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 12.86428165435791,
+          "feature_id": -1,
+          "token_pos": 3197
+        }
+      ]
+    },
+    {
+      "track_id": 170,
+      "birth_layer": 3,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 12.40616512298584,
+          "feature_id": -1,
+          "token_pos": 2133
+        },
+        {
+          "layer": 4,
+          "activation": 12.509459495544434,
+          "feature_id": -1,
+          "token_pos": 2133
+        },
+        {
+          "layer": 5,
+          "activation": 10.278731346130371,
+          "feature_id": -1,
+          "token_pos": 2133
+        },
+        {
+          "layer": 6,
+          "activation": 10.863950729370117,
+          "feature_id": -1,
+          "token_pos": 2133
+        }
+      ]
+    },
+    {
+      "track_id": 171,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 12.098958015441895,
+          "feature_id": -1,
+          "token_pos": 1719
+        }
+      ]
+    },
+    {
+      "track_id": 172,
+      "birth_layer": 3,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 11.982501983642578,
+          "feature_id": -1,
+          "token_pos": 1107
+        },
+        {
+          "layer": 4,
+          "activation": 11.280268669128418,
+          "feature_id": -1,
+          "token_pos": 1107
+        },
+        {
+          "layer": 5,
+          "activation": 11.643653869628906,
+          "feature_id": -1,
+          "token_pos": 1107
+        },
+        {
+          "layer": 6,
+          "activation": 17.82822036743164,
+          "feature_id": -1,
+          "token_pos": 1107
+        },
+        {
+          "layer": 7,
+          "activation": 16.64007568359375,
+          "feature_id": -1,
+          "token_pos": 1107
+        }
+      ]
+    },
+    {
+      "track_id": 173,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 11.77587890625,
+          "feature_id": -1,
+          "token_pos": 4498
+        }
+      ]
+    },
+    {
+      "track_id": 174,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 11.774237632751465,
+          "feature_id": -1,
+          "token_pos": 417
+        }
+      ]
+    },
+    {
+      "track_id": 175,
+      "birth_layer": 3,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 11.696084022521973,
+          "feature_id": -1,
+          "token_pos": 1173
+        },
+        {
+          "layer": 4,
+          "activation": 10.389542579650879,
+          "feature_id": -1,
+          "token_pos": 1173
+        }
+      ]
+    },
+    {
+      "track_id": 176,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 10.685323715209961,
+          "feature_id": -1,
+          "token_pos": 1034
+        }
+      ]
+    },
+    {
+      "track_id": 177,
+      "birth_layer": 3,
+      "death_layer": 3,
+      "observations": [
+        {
+          "layer": 3,
+          "activation": 10.647098541259766,
+          "feature_id": -1,
+          "token_pos": 3051
+        }
+      ]
+    },
+    {
+      "track_id": 178,
+      "birth_layer": 4,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 31.43196678161621,
+          "feature_id": -1,
+          "token_pos": 1659
+        },
+        {
+          "layer": 5,
+          "activation": 10.431825637817383,
+          "feature_id": -1,
+          "token_pos": 1659
+        },
+        {
+          "layer": 6,
+          "activation": 13.515904426574707,
+          "feature_id": -1,
+          "token_pos": 1659
+        },
+        {
+          "layer": 7,
+          "activation": 13.146036148071289,
+          "feature_id": -1,
+          "token_pos": 1659
+        },
+        {
+          "layer": 8,
+          "activation": 17.23746681213379,
+          "feature_id": -1,
+          "token_pos": 1659
+        }
+      ]
+    },
+    {
+      "track_id": 179,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 20.023693084716797,
+          "feature_id": -1,
+          "token_pos": 613
+        }
+      ]
+    },
+    {
+      "track_id": 180,
+      "birth_layer": 4,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 16.93701934814453,
+          "feature_id": -1,
+          "token_pos": 2033
+        },
+        {
+          "layer": 5,
+          "activation": 11.856830596923828,
+          "feature_id": -1,
+          "token_pos": 2033
+        }
+      ]
+    },
+    {
+      "track_id": 181,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 15.428227424621582,
+          "feature_id": -1,
+          "token_pos": 1420
+        }
+      ]
+    },
+    {
+      "track_id": 182,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 13.04101848602295,
+          "feature_id": -1,
+          "token_pos": 3513
+        }
+      ]
+    },
+    {
+      "track_id": 183,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 13.032491683959961,
+          "feature_id": -1,
+          "token_pos": 1498
+        }
+      ]
+    },
+    {
+      "track_id": 184,
+      "birth_layer": 4,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 11.306937217712402,
+          "feature_id": -1,
+          "token_pos": 3157
+        },
+        {
+          "layer": 5,
+          "activation": 20.261783599853516,
+          "feature_id": -1,
+          "token_pos": 3157
+        }
+      ]
+    },
+    {
+      "track_id": 185,
+      "birth_layer": 4,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 11.23185920715332,
+          "feature_id": -1,
+          "token_pos": 1002
+        },
+        {
+          "layer": 5,
+          "activation": 9.658221244812012,
+          "feature_id": -1,
+          "token_pos": 1002
+        },
+        {
+          "layer": 6,
+          "activation": 10.08390998840332,
+          "feature_id": -1,
+          "token_pos": 1002
+        }
+      ]
+    },
+    {
+      "track_id": 186,
+      "birth_layer": 4,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 11.22939395904541,
+          "feature_id": -1,
+          "token_pos": 4776
+        },
+        {
+          "layer": 5,
+          "activation": 9.528153419494629,
+          "feature_id": -1,
+          "token_pos": 4776
+        }
+      ]
+    },
+    {
+      "track_id": 187,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 11.173608779907227,
+          "feature_id": -1,
+          "token_pos": 500
+        }
+      ]
+    },
+    {
+      "track_id": 188,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 11.160090446472168,
+          "feature_id": -1,
+          "token_pos": 2373
+        }
+      ]
+    },
+    {
+      "track_id": 189,
+      "birth_layer": 4,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 11.12802505493164,
+          "feature_id": -1,
+          "token_pos": 1575
+        },
+        {
+          "layer": 5,
+          "activation": 10.147480964660645,
+          "feature_id": -1,
+          "token_pos": 1575
+        },
+        {
+          "layer": 6,
+          "activation": 10.111577033996582,
+          "feature_id": -1,
+          "token_pos": 1575
+        }
+      ]
+    },
+    {
+      "track_id": 190,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 10.983141899108887,
+          "feature_id": -1,
+          "token_pos": 4873
+        }
+      ]
+    },
+    {
+      "track_id": 191,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 10.029894828796387,
+          "feature_id": -1,
+          "token_pos": 1910
+        }
+      ]
+    },
+    {
+      "track_id": 192,
+      "birth_layer": 4,
+      "death_layer": 4,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 10.015602111816406,
+          "feature_id": -1,
+          "token_pos": 938
+        }
+      ]
+    },
+    {
+      "track_id": 193,
+      "birth_layer": 4,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 4,
+          "activation": 9.905915260314941,
+          "feature_id": -1,
+          "token_pos": 4878
+        },
+        {
+          "layer": 5,
+          "activation": 11.849786758422852,
+          "feature_id": -1,
+          "token_pos": 4878
+        },
+        {
+          "layer": 6,
+          "activation": 11.354433059692383,
+          "feature_id": -1,
+          "token_pos": 4878
+        }
+      ]
+    },
+    {
+      "track_id": 194,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 35.35184097290039,
+          "feature_id": -1,
+          "token_pos": 45
+        }
+      ]
+    },
+    {
+      "track_id": 195,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 24.33241081237793,
+          "feature_id": -1,
+          "token_pos": 87
+        }
+      ]
+    },
+    {
+      "track_id": 196,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 23.86682891845703,
+          "feature_id": -1,
+          "token_pos": 1793
+        }
+      ]
+    },
+    {
+      "track_id": 197,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 15.354147911071777,
+          "feature_id": -1,
+          "token_pos": 3018
+        }
+      ]
+    },
+    {
+      "track_id": 198,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 12.77962589263916,
+          "feature_id": -1,
+          "token_pos": 2369
+        }
+      ]
+    },
+    {
+      "track_id": 199,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 12.294374465942383,
+          "feature_id": -1,
+          "token_pos": 297
+        }
+      ]
+    },
+    {
+      "track_id": 200,
+      "birth_layer": 5,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 11.507223129272461,
+          "feature_id": -1,
+          "token_pos": 3210
+        },
+        {
+          "layer": 6,
+          "activation": 9.6812105178833,
+          "feature_id": -1,
+          "token_pos": 3210
+        }
+      ]
+    },
+    {
+      "track_id": 201,
+      "birth_layer": 5,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 10.616113662719727,
+          "feature_id": -1,
+          "token_pos": 396
+        },
+        {
+          "layer": 6,
+          "activation": 11.065556526184082,
+          "feature_id": -1,
+          "token_pos": 396
+        }
+      ]
+    },
+    {
+      "track_id": 202,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 10.570077896118164,
+          "feature_id": -1,
+          "token_pos": 590
+        }
+      ]
+    },
+    {
+      "track_id": 203,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 10.357403755187988,
+          "feature_id": -1,
+          "token_pos": 4239
+        }
+      ]
+    },
+    {
+      "track_id": 204,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 9.602669715881348,
+          "feature_id": -1,
+          "token_pos": 1203
+        }
+      ]
+    },
+    {
+      "track_id": 205,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 9.553296089172363,
+          "feature_id": -1,
+          "token_pos": 4161
+        }
+      ]
+    },
+    {
+      "track_id": 206,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 9.341080665588379,
+          "feature_id": -1,
+          "token_pos": 481
+        }
+      ]
+    },
+    {
+      "track_id": 207,
+      "birth_layer": 5,
+      "death_layer": 5,
+      "observations": [
+        {
+          "layer": 5,
+          "activation": 9.15623950958252,
+          "feature_id": -1,
+          "token_pos": 4667
+        }
+      ]
+    },
+    {
+      "track_id": 208,
+      "birth_layer": 6,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 183.47023010253906,
+          "feature_id": -1,
+          "token_pos": 3528
+        },
+        {
+          "layer": 7,
+          "activation": 205.239990234375,
+          "feature_id": -1,
+          "token_pos": 3528
+        },
+        {
+          "layer": 8,
+          "activation": 288.1375427246094,
+          "feature_id": -1,
+          "token_pos": 3528
+        },
+        {
+          "layer": 9,
+          "activation": 218.24246215820312,
+          "feature_id": -1,
+          "token_pos": 3528
+        },
+        {
+          "layer": 10,
+          "activation": 250.94253540039062,
+          "feature_id": -1,
+          "token_pos": 3528
+        },
+        {
+          "layer": 11,
+          "activation": 400.336181640625,
+          "feature_id": -1,
+          "token_pos": 3528
+        }
+      ]
+    },
+    {
+      "track_id": 209,
+      "birth_layer": 6,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 137.0778350830078,
+          "feature_id": -1,
+          "token_pos": 1399
+        },
+        {
+          "layer": 7,
+          "activation": 256.54620361328125,
+          "feature_id": -1,
+          "token_pos": 1399
+        },
+        {
+          "layer": 8,
+          "activation": 304.0590515136719,
+          "feature_id": -1,
+          "token_pos": 1399
+        },
+        {
+          "layer": 9,
+          "activation": 238.5278778076172,
+          "feature_id": -1,
+          "token_pos": 1399
+        },
+        {
+          "layer": 10,
+          "activation": 245.9061279296875,
+          "feature_id": -1,
+          "token_pos": 1399
+        },
+        {
+          "layer": 11,
+          "activation": 289.1668395996094,
+          "feature_id": -1,
+          "token_pos": 1399
+        }
+      ]
+    },
+    {
+      "track_id": 210,
+      "birth_layer": 6,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 129.73179626464844,
+          "feature_id": -1,
+          "token_pos": 3163
+        },
+        {
+          "layer": 7,
+          "activation": 140.31446838378906,
+          "feature_id": -1,
+          "token_pos": 3163
+        },
+        {
+          "layer": 8,
+          "activation": 160.63722229003906,
+          "feature_id": -1,
+          "token_pos": 3163
+        },
+        {
+          "layer": 9,
+          "activation": 159.54417419433594,
+          "feature_id": -1,
+          "token_pos": 3163
+        }
+      ]
+    },
+    {
+      "track_id": 211,
+      "birth_layer": 6,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 122.29422760009766,
+          "feature_id": -1,
+          "token_pos": 3324
+        },
+        {
+          "layer": 7,
+          "activation": 159.6766815185547,
+          "feature_id": -1,
+          "token_pos": 3324
+        },
+        {
+          "layer": 8,
+          "activation": 157.27516174316406,
+          "feature_id": -1,
+          "token_pos": 3324
+        }
+      ]
+    },
+    {
+      "track_id": 212,
+      "birth_layer": 6,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 117.72378540039062,
+          "feature_id": -1,
+          "token_pos": 593
+        },
+        {
+          "layer": 7,
+          "activation": 152.80136108398438,
+          "feature_id": -1,
+          "token_pos": 593
+        },
+        {
+          "layer": 8,
+          "activation": 182.10813903808594,
+          "feature_id": -1,
+          "token_pos": 593
+        },
+        {
+          "layer": 9,
+          "activation": 242.7161102294922,
+          "feature_id": -1,
+          "token_pos": 593
+        },
+        {
+          "layer": 10,
+          "activation": 291.0748291015625,
+          "feature_id": -1,
+          "token_pos": 593
+        },
+        {
+          "layer": 11,
+          "activation": 205.23898315429688,
+          "feature_id": -1,
+          "token_pos": 593
+        }
+      ]
+    },
+    {
+      "track_id": 213,
+      "birth_layer": 6,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 90.8205795288086,
+          "feature_id": -1,
+          "token_pos": 3334
+        },
+        {
+          "layer": 7,
+          "activation": 85.7920913696289,
+          "feature_id": -1,
+          "token_pos": 3334
+        }
+      ]
+    },
+    {
+      "track_id": 214,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 32.88135528564453,
+          "feature_id": -1,
+          "token_pos": 3011
+        }
+      ]
+    },
+    {
+      "track_id": 215,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 16.9697208404541,
+          "feature_id": -1,
+          "token_pos": 744
+        }
+      ]
+    },
+    {
+      "track_id": 216,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 15.45223331451416,
+          "feature_id": -1,
+          "token_pos": 1115
+        }
+      ]
+    },
+    {
+      "track_id": 217,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 13.632756233215332,
+          "feature_id": -1,
+          "token_pos": 2900
+        }
+      ]
+    },
+    {
+      "track_id": 218,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 12.764625549316406,
+          "feature_id": -1,
+          "token_pos": 2810
+        }
+      ]
+    },
+    {
+      "track_id": 219,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 11.905487060546875,
+          "feature_id": -1,
+          "token_pos": 4525
+        }
+      ]
+    },
+    {
+      "track_id": 220,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 11.706148147583008,
+          "feature_id": -1,
+          "token_pos": 3154
+        }
+      ]
+    },
+    {
+      "track_id": 221,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 11.64111614227295,
+          "feature_id": -1,
+          "token_pos": 1819
+        }
+      ]
+    },
+    {
+      "track_id": 222,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 10.90629768371582,
+          "feature_id": -1,
+          "token_pos": 3995
+        }
+      ]
+    },
+    {
+      "track_id": 223,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 10.155265808105469,
+          "feature_id": -1,
+          "token_pos": 4123
+        }
+      ]
+    },
+    {
+      "track_id": 224,
+      "birth_layer": 6,
+      "death_layer": 6,
+      "observations": [
+        {
+          "layer": 6,
+          "activation": 9.107242584228516,
+          "feature_id": -1,
+          "token_pos": 467
+        }
+      ]
+    },
+    {
+      "track_id": 225,
+      "birth_layer": 7,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 265.7466125488281,
+          "feature_id": -1,
+          "token_pos": 1881
+        },
+        {
+          "layer": 8,
+          "activation": 302.4434814453125,
+          "feature_id": -1,
+          "token_pos": 1881
+        },
+        {
+          "layer": 9,
+          "activation": 228.30824279785156,
+          "feature_id": -1,
+          "token_pos": 1881
+        },
+        {
+          "layer": 10,
+          "activation": 591.3247680664062,
+          "feature_id": -1,
+          "token_pos": 1881
+        },
+        {
+          "layer": 11,
+          "activation": 294.13568115234375,
+          "feature_id": -1,
+          "token_pos": 1881
+        }
+      ]
+    },
+    {
+      "track_id": 226,
+      "birth_layer": 7,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 249.22401428222656,
+          "feature_id": -1,
+          "token_pos": 261
+        },
+        {
+          "layer": 8,
+          "activation": 227.39456176757812,
+          "feature_id": -1,
+          "token_pos": 261
+        },
+        {
+          "layer": 9,
+          "activation": 230.50523376464844,
+          "feature_id": -1,
+          "token_pos": 261
+        },
+        {
+          "layer": 10,
+          "activation": 219.708740234375,
+          "feature_id": -1,
+          "token_pos": 261
+        },
+        {
+          "layer": 11,
+          "activation": 168.2892608642578,
+          "feature_id": -1,
+          "token_pos": 261
+        }
+      ]
+    },
+    {
+      "track_id": 227,
+      "birth_layer": 7,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 205.16201782226562,
+          "feature_id": -1,
+          "token_pos": 3105
+        },
+        {
+          "layer": 8,
+          "activation": 232.59347534179688,
+          "feature_id": -1,
+          "token_pos": 3105
+        },
+        {
+          "layer": 9,
+          "activation": 262.34881591796875,
+          "feature_id": -1,
+          "token_pos": 3105
+        },
+        {
+          "layer": 10,
+          "activation": 287.13250732421875,
+          "feature_id": -1,
+          "token_pos": 3105
+        },
+        {
+          "layer": 11,
+          "activation": 346.4146423339844,
+          "feature_id": -1,
+          "token_pos": 3105
+        }
+      ]
+    },
+    {
+      "track_id": 228,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 92.34629821777344,
+          "feature_id": -1,
+          "token_pos": 3977
+        }
+      ]
+    },
+    {
+      "track_id": 229,
+      "birth_layer": 7,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 81.69418334960938,
+          "feature_id": -1,
+          "token_pos": 1860
+        },
+        {
+          "layer": 8,
+          "activation": 140.506591796875,
+          "feature_id": -1,
+          "token_pos": 1860
+        },
+        {
+          "layer": 9,
+          "activation": 130.02503967285156,
+          "feature_id": -1,
+          "token_pos": 1860
+        },
+        {
+          "layer": 10,
+          "activation": 122.8558578491211,
+          "feature_id": -1,
+          "token_pos": 1860
+        },
+        {
+          "layer": 11,
+          "activation": 107.1635513305664,
+          "feature_id": -1,
+          "token_pos": 1860
+        }
+      ]
+    },
+    {
+      "track_id": 230,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 74.00305938720703,
+          "feature_id": -1,
+          "token_pos": 2363
+        }
+      ]
+    },
+    {
+      "track_id": 231,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 54.154380798339844,
+          "feature_id": -1,
+          "token_pos": 1273
+        }
+      ]
+    },
+    {
+      "track_id": 232,
+      "birth_layer": 7,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 49.1893424987793,
+          "feature_id": -1,
+          "token_pos": 15
+        },
+        {
+          "layer": 8,
+          "activation": 108.33876037597656,
+          "feature_id": -1,
+          "token_pos": 15
+        },
+        {
+          "layer": 9,
+          "activation": 134.09353637695312,
+          "feature_id": -1,
+          "token_pos": 15
+        }
+      ]
+    },
+    {
+      "track_id": 233,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 46.688690185546875,
+          "feature_id": -1,
+          "token_pos": 3872
+        }
+      ]
+    },
+    {
+      "track_id": 234,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 46.159393310546875,
+          "feature_id": -1,
+          "token_pos": 3211
+        }
+      ]
+    },
+    {
+      "track_id": 235,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 43.497894287109375,
+          "feature_id": -1,
+          "token_pos": 3993
+        }
+      ]
+    },
+    {
+      "track_id": 236,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 40.42952346801758,
+          "feature_id": -1,
+          "token_pos": 1147
+        }
+      ]
+    },
+    {
+      "track_id": 237,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 20.456504821777344,
+          "feature_id": -1,
+          "token_pos": 4656
+        }
+      ]
+    },
+    {
+      "track_id": 238,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 18.283998489379883,
+          "feature_id": -1,
+          "token_pos": 792
+        }
+      ]
+    },
+    {
+      "track_id": 239,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 18.179916381835938,
+          "feature_id": -1,
+          "token_pos": 3420
+        }
+      ]
+    },
+    {
+      "track_id": 240,
+      "birth_layer": 7,
+      "death_layer": 7,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 14.46120834350586,
+          "feature_id": -1,
+          "token_pos": 4624
+        }
+      ]
+    },
+    {
+      "track_id": 241,
+      "birth_layer": 7,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 7,
+          "activation": 11.62382984161377,
+          "feature_id": -1,
+          "token_pos": 2869
+        },
+        {
+          "layer": 8,
+          "activation": 24.575485229492188,
+          "feature_id": -1,
+          "token_pos": 2869
+        },
+        {
+          "layer": 9,
+          "activation": 75.57141876220703,
+          "feature_id": -1,
+          "token_pos": 2869
+        }
+      ]
+    },
+    {
+      "track_id": 242,
+      "birth_layer": 8,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 279.303955078125,
+          "feature_id": -1,
+          "token_pos": 3122
+        },
+        {
+          "layer": 9,
+          "activation": 466.0423889160156,
+          "feature_id": -1,
+          "token_pos": 3122
+        },
+        {
+          "layer": 10,
+          "activation": 506.1470642089844,
+          "feature_id": -1,
+          "token_pos": 3122
+        },
+        {
+          "layer": 11,
+          "activation": 650.7897338867188,
+          "feature_id": -1,
+          "token_pos": 3122
+        }
+      ]
+    },
+    {
+      "track_id": 243,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 190.08682250976562,
+          "feature_id": -1,
+          "token_pos": 3293
+        }
+      ]
+    },
+    {
+      "track_id": 244,
+      "birth_layer": 8,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 178.2141876220703,
+          "feature_id": -1,
+          "token_pos": 1665
+        },
+        {
+          "layer": 9,
+          "activation": 188.021728515625,
+          "feature_id": -1,
+          "token_pos": 1665
+        },
+        {
+          "layer": 10,
+          "activation": 175.98521423339844,
+          "feature_id": -1,
+          "token_pos": 1665
+        },
+        {
+          "layer": 11,
+          "activation": 165.58001708984375,
+          "feature_id": -1,
+          "token_pos": 1665
+        }
+      ]
+    },
+    {
+      "track_id": 245,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 156.37814331054688,
+          "feature_id": -1,
+          "token_pos": 1078
+        }
+      ]
+    },
+    {
+      "track_id": 246,
+      "birth_layer": 8,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 122.96305847167969,
+          "feature_id": -1,
+          "token_pos": 3878
+        },
+        {
+          "layer": 9,
+          "activation": 123.89352416992188,
+          "feature_id": -1,
+          "token_pos": 3878
+        },
+        {
+          "layer": 10,
+          "activation": 82.1090087890625,
+          "feature_id": -1,
+          "token_pos": 3878
+        },
+        {
+          "layer": 11,
+          "activation": 67.80033874511719,
+          "feature_id": -1,
+          "token_pos": 3878
+        }
+      ]
+    },
+    {
+      "track_id": 247,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 122.22966766357422,
+          "feature_id": -1,
+          "token_pos": 5006
+        }
+      ]
+    },
+    {
+      "track_id": 248,
+      "birth_layer": 8,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 106.9034652709961,
+          "feature_id": -1,
+          "token_pos": 3596
+        },
+        {
+          "layer": 9,
+          "activation": 124.23326873779297,
+          "feature_id": -1,
+          "token_pos": 3596
+        },
+        {
+          "layer": 10,
+          "activation": 207.01339721679688,
+          "feature_id": -1,
+          "token_pos": 3596
+        },
+        {
+          "layer": 11,
+          "activation": 204.85731506347656,
+          "feature_id": -1,
+          "token_pos": 3596
+        }
+      ]
+    },
+    {
+      "track_id": 249,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 65.85225677490234,
+          "feature_id": -1,
+          "token_pos": 226
+        }
+      ]
+    },
+    {
+      "track_id": 250,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 54.95762634277344,
+          "feature_id": -1,
+          "token_pos": 2686
+        }
+      ]
+    },
+    {
+      "track_id": 251,
+      "birth_layer": 8,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 49.16446304321289,
+          "feature_id": -1,
+          "token_pos": 1462
+        },
+        {
+          "layer": 9,
+          "activation": 42.604854583740234,
+          "feature_id": -1,
+          "token_pos": 1462
+        },
+        {
+          "layer": 10,
+          "activation": 42.29832077026367,
+          "feature_id": -1,
+          "token_pos": 1462
+        }
+      ]
+    },
+    {
+      "track_id": 252,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 41.839111328125,
+          "feature_id": -1,
+          "token_pos": 1055
+        }
+      ]
+    },
+    {
+      "track_id": 253,
+      "birth_layer": 8,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 34.94390869140625,
+          "feature_id": -1,
+          "token_pos": 4500
+        },
+        {
+          "layer": 9,
+          "activation": 44.14149475097656,
+          "feature_id": -1,
+          "token_pos": 4500
+        },
+        {
+          "layer": 10,
+          "activation": 78.95524597167969,
+          "feature_id": -1,
+          "token_pos": 4500
+        }
+      ]
+    },
+    {
+      "track_id": 254,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 34.900108337402344,
+          "feature_id": -1,
+          "token_pos": 2919
+        }
+      ]
+    },
+    {
+      "track_id": 255,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 25.624635696411133,
+          "feature_id": -1,
+          "token_pos": 4224
+        }
+      ]
+    },
+    {
+      "track_id": 256,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 18.67446517944336,
+          "feature_id": -1,
+          "token_pos": 3760
+        }
+      ]
+    },
+    {
+      "track_id": 257,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 16.01146697998047,
+          "feature_id": -1,
+          "token_pos": 343
+        }
+      ]
+    },
+    {
+      "track_id": 258,
+      "birth_layer": 8,
+      "death_layer": 8,
+      "observations": [
+        {
+          "layer": 8,
+          "activation": 15.719222068786621,
+          "feature_id": -1,
+          "token_pos": 1548
+        }
+      ]
+    },
+    {
+      "track_id": 259,
+      "birth_layer": 9,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 103.40424346923828,
+          "feature_id": -1,
+          "token_pos": 649
+        },
+        {
+          "layer": 10,
+          "activation": 135.2501678466797,
+          "feature_id": -1,
+          "token_pos": 649
+        },
+        {
+          "layer": 11,
+          "activation": 106.7656021118164,
+          "feature_id": -1,
+          "token_pos": 649
+        }
+      ]
+    },
+    {
+      "track_id": 260,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 68.94679260253906,
+          "feature_id": -1,
+          "token_pos": 3955
+        }
+      ]
+    },
+    {
+      "track_id": 261,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 56.65239715576172,
+          "feature_id": -1,
+          "token_pos": 764
+        }
+      ]
+    },
+    {
+      "track_id": 262,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 46.947391510009766,
+          "feature_id": -1,
+          "token_pos": 3062
+        }
+      ]
+    },
+    {
+      "track_id": 263,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 44.41621780395508,
+          "feature_id": -1,
+          "token_pos": 637
+        }
+      ]
+    },
+    {
+      "track_id": 264,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 28.368196487426758,
+          "feature_id": -1,
+          "token_pos": 1621
+        }
+      ]
+    },
+    {
+      "track_id": 265,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 28.225688934326172,
+          "feature_id": -1,
+          "token_pos": 1958
+        }
+      ]
+    },
+    {
+      "track_id": 266,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 26.64034080505371,
+          "feature_id": -1,
+          "token_pos": 4789
+        }
+      ]
+    },
+    {
+      "track_id": 267,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 24.301319122314453,
+          "feature_id": -1,
+          "token_pos": 4862
+        }
+      ]
+    },
+    {
+      "track_id": 268,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 20.544214248657227,
+          "feature_id": -1,
+          "token_pos": 660
+        }
+      ]
+    },
+    {
+      "track_id": 269,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 17.79911994934082,
+          "feature_id": -1,
+          "token_pos": 4988
+        }
+      ]
+    },
+    {
+      "track_id": 270,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 16.365032196044922,
+          "feature_id": -1,
+          "token_pos": 4297
+        }
+      ]
+    },
+    {
+      "track_id": 271,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 15.787110328674316,
+          "feature_id": -1,
+          "token_pos": 2568
+        }
+      ]
+    },
+    {
+      "track_id": 272,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 15.313061714172363,
+          "feature_id": -1,
+          "token_pos": 4551
+        }
+      ]
+    },
+    {
+      "track_id": 273,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 15.051576614379883,
+          "feature_id": -1,
+          "token_pos": 2369
+        }
+      ]
+    },
+    {
+      "track_id": 274,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 14.864765167236328,
+          "feature_id": -1,
+          "token_pos": 1444
+        }
+      ]
+    },
+    {
+      "track_id": 275,
+      "birth_layer": 9,
+      "death_layer": 9,
+      "observations": [
+        {
+          "layer": 9,
+          "activation": 14.66711139678955,
+          "feature_id": -1,
+          "token_pos": 534
+        }
+      ]
+    },
+    {
+      "track_id": 276,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 64.42350769042969,
+          "feature_id": -1,
+          "token_pos": 2978
+        }
+      ]
+    },
+    {
+      "track_id": 277,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 63.66614532470703,
+          "feature_id": -1,
+          "token_pos": 3765
+        }
+      ]
+    },
+    {
+      "track_id": 278,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 60.40007019042969,
+          "feature_id": -1,
+          "token_pos": 1304
+        }
+      ]
+    },
+    {
+      "track_id": 279,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 47.22541809082031,
+          "feature_id": -1,
+          "token_pos": 4348
+        }
+      ]
+    },
+    {
+      "track_id": 280,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 37.5970573425293,
+          "feature_id": -1,
+          "token_pos": 1097
+        }
+      ]
+    },
+    {
+      "track_id": 281,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 35.023929595947266,
+          "feature_id": -1,
+          "token_pos": 2765
+        }
+      ]
+    },
+    {
+      "track_id": 282,
+      "birth_layer": 10,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 33.85665512084961,
+          "feature_id": -1,
+          "token_pos": 1598
+        },
+        {
+          "layer": 11,
+          "activation": 42.52470016479492,
+          "feature_id": -1,
+          "token_pos": 1598
+        }
+      ]
+    },
+    {
+      "track_id": 283,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 32.12015151977539,
+          "feature_id": -1,
+          "token_pos": 12
+        }
+      ]
+    },
+    {
+      "track_id": 284,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 31.824462890625,
+          "feature_id": -1,
+          "token_pos": 4419
+        }
+      ]
+    },
+    {
+      "track_id": 285,
+      "birth_layer": 10,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 31.636127471923828,
+          "feature_id": -1,
+          "token_pos": 2645
+        },
+        {
+          "layer": 11,
+          "activation": 39.46711349487305,
+          "feature_id": -1,
+          "token_pos": 2645
+        }
+      ]
+    },
+    {
+      "track_id": 286,
+      "birth_layer": 10,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 28.842321395874023,
+          "feature_id": -1,
+          "token_pos": 2285
+        },
+        {
+          "layer": 11,
+          "activation": 59.995182037353516,
+          "feature_id": -1,
+          "token_pos": 2285
+        }
+      ]
+    },
+    {
+      "track_id": 287,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 27.89987564086914,
+          "feature_id": -1,
+          "token_pos": 3927
+        }
+      ]
+    },
+    {
+      "track_id": 288,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 23.9163761138916,
+          "feature_id": -1,
+          "token_pos": 3568
+        }
+      ]
+    },
+    {
+      "track_id": 289,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 22.903156280517578,
+          "feature_id": -1,
+          "token_pos": 3353
+        }
+      ]
+    },
+    {
+      "track_id": 290,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 20.801231384277344,
+          "feature_id": -1,
+          "token_pos": 2276
+        }
+      ]
+    },
+    {
+      "track_id": 291,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 20.069549560546875,
+          "feature_id": -1,
+          "token_pos": 2775
+        }
+      ]
+    },
+    {
+      "track_id": 292,
+      "birth_layer": 10,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 19.458375930786133,
+          "feature_id": -1,
+          "token_pos": 99
+        },
+        {
+          "layer": 11,
+          "activation": 23.6226749420166,
+          "feature_id": -1,
+          "token_pos": 99
+        }
+      ]
+    },
+    {
+      "track_id": 293,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 17.283254623413086,
+          "feature_id": -1,
+          "token_pos": 4006
+        }
+      ]
+    },
+    {
+      "track_id": 294,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 17.224136352539062,
+          "feature_id": -1,
+          "token_pos": 4018
+        }
+      ]
+    },
+    {
+      "track_id": 295,
+      "birth_layer": 10,
+      "death_layer": 10,
+      "observations": [
+        {
+          "layer": 10,
+          "activation": 15.530294418334961,
+          "feature_id": -1,
+          "token_pos": 459
+        }
+      ]
+    },
+    {
+      "track_id": 296,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 219.8604736328125,
+          "feature_id": -1,
+          "token_pos": 1901
+        }
+      ]
+    },
+    {
+      "track_id": 297,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 112.52230072021484,
+          "feature_id": -1,
+          "token_pos": 4972
+        }
+      ]
+    },
+    {
+      "track_id": 298,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 82.3907699584961,
+          "feature_id": -1,
+          "token_pos": 2438
+        }
+      ]
+    },
+    {
+      "track_id": 299,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 78.60334014892578,
+          "feature_id": -1,
+          "token_pos": 3172
+        }
+      ]
+    },
+    {
+      "track_id": 300,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 74.49744415283203,
+          "feature_id": -1,
+          "token_pos": 3628
+        }
+      ]
+    },
+    {
+      "track_id": 301,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 59.36015701293945,
+          "feature_id": -1,
+          "token_pos": 4621
+        }
+      ]
+    },
+    {
+      "track_id": 302,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 51.75998306274414,
+          "feature_id": -1,
+          "token_pos": 2001
+        }
+      ]
+    },
+    {
+      "track_id": 303,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 48.88058090209961,
+          "feature_id": -1,
+          "token_pos": 4596
+        }
+      ]
+    },
+    {
+      "track_id": 304,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 39.968421936035156,
+          "feature_id": -1,
+          "token_pos": 3167
+        }
+      ]
+    },
+    {
+      "track_id": 305,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 38.06884002685547,
+          "feature_id": -1,
+          "token_pos": 2887
+        }
+      ]
+    },
+    {
+      "track_id": 306,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 36.511043548583984,
+          "feature_id": -1,
+          "token_pos": 569
+        }
+      ]
+    },
+    {
+      "track_id": 307,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 36.03935241699219,
+          "feature_id": -1,
+          "token_pos": 4559
+        }
+      ]
+    },
+    {
+      "track_id": 308,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 36.0234375,
+          "feature_id": -1,
+          "token_pos": 1503
+        }
+      ]
+    },
+    {
+      "track_id": 309,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 35.078697204589844,
+          "feature_id": -1,
+          "token_pos": 938
+        }
+      ]
+    },
+    {
+      "track_id": 310,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 31.548105239868164,
+          "feature_id": -1,
+          "token_pos": 304
+        }
+      ]
+    },
+    {
+      "track_id": 311,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 24.31397247314453,
+          "feature_id": -1,
+          "token_pos": 1707
+        }
+      ]
+    },
+    {
+      "track_id": 312,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 23.033660888671875,
+          "feature_id": -1,
+          "token_pos": 2330
+        }
+      ]
+    },
+    {
+      "track_id": 313,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 22.9102840423584,
+          "feature_id": -1,
+          "token_pos": 553
+        }
+      ]
+    },
+    {
+      "track_id": 314,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 20.75007438659668,
+          "feature_id": -1,
+          "token_pos": 2403
+        }
+      ]
+    },
+    {
+      "track_id": 315,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 20.69847869873047,
+          "feature_id": -1,
+          "token_pos": 5098
+        }
+      ]
+    },
+    {
+      "track_id": 316,
+      "birth_layer": 11,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 11,
+          "activation": 20.000505447387695,
+          "feature_id": -1,
+          "token_pos": 2166
+        }
+      ]
+    }
+  ],
+  "layer_stats": [
+    {
+      "layer": 0,
+      "num_tracks": 50,
+      "births": 50,
+      "deaths": 36,
+      "mean_activation": 16.332169542312624,
+      "max_activation": 51.520912170410156
+    },
+    {
+      "layer": 1,
+      "num_tracks": 50,
+      "births": 36,
+      "deaths": 47,
+      "mean_activation": 20.466903858184814,
+      "max_activation": 57.72084426879883
+    },
+    {
+      "layer": 2,
+      "num_tracks": 50,
+      "births": 47,
+      "deaths": 45,
+      "mean_activation": 38.47216037750244,
+      "max_activation": 71.32523345947266
+    },
+    {
+      "layer": 3,
+      "num_tracks": 50,
+      "births": 45,
+      "deaths": 16,
+      "mean_activation": 107.31171739578247,
+      "max_activation": 369.9973449707031
+    },
+    {
+      "layer": 4,
+      "num_tracks": 50,
+      "births": 16,
+      "deaths": 14,
+      "mean_activation": 106.61337604522706,
+      "max_activation": 572.3545532226562
+    },
+    {
+      "layer": 5,
+      "num_tracks": 50,
+      "births": 14,
+      "deaths": 17,
+      "mean_activation": 111.45179744720458,
+      "max_activation": 1001.2930908203125
+    },
+    {
+      "layer": 6,
+      "num_tracks": 50,
+      "births": 17,
+      "deaths": 17,
+      "mean_activation": 119.76690183639526,
+      "max_activation": 1485.135009765625
+    },
+    {
+      "layer": 7,
+      "num_tracks": 50,
+      "births": 17,
+      "deaths": 17,
+      "mean_activation": 147.67477201461793,
+      "max_activation": 851.9520263671875
+    },
+    {
+      "layer": 8,
+      "num_tracks": 50,
+      "births": 17,
+      "deaths": 17,
+      "mean_activation": 156.44894937515258,
+      "max_activation": 537.3148193359375
+    },
+    {
+      "layer": 9,
+      "num_tracks": 50,
+      "births": 17,
+      "deaths": 20,
+      "mean_activation": 149.55509185791016,
+      "max_activation": 529.689697265625
+    },
+    {
+      "layer": 10,
+      "num_tracks": 50,
+      "births": 20,
+      "deaths": 21,
+      "mean_activation": 150.56778924942017,
+      "max_activation": 668.98291015625
+    },
+    {
+      "layer": 11,
+      "num_tracks": 50,
+      "births": 21,
+      "deaths": 0,
+      "mean_activation": 151.35977012634277,
+      "max_activation": 650.7897338867188
+    }
+  ]
+}

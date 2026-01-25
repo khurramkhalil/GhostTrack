@@ -1,0 +1,7 @@
+{
+  "total_samples": 225,
+  "factual_samples": 150,
+  "hallucinated_samples": 75,
+  "config": "./config/tuning/relaxed_alignment.yaml",
+  "model_dir": "./models/checkpoints/gpt2-medium"
+}

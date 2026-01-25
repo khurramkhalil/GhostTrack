@@ -1,0 +1,277 @@
+{
+  "question": "Where is it humid every single day?",
+  "factual_answer": "There is no place that is humid every single day",
+  "hallucinated_answer": "It is always humid in Los Angeles",
+  "predictions": {
+    "factual": 0.4,
+    "hallucinated": 0.4,
+    "correct_classification": false
+  },
+  "metrics": {
+    "factual": {
+      "entropy_mean": 2.4390690286827432,
+      "entropy_max": 5.584412564088992,
+      "entropy_std": 2.4629489117636165,
+      "entropy_final": 0.0,
+      "total_births": 334.0,
+      "total_deaths": 284.0,
+      "birth_rate": 13.916666666666666,
+      "death_rate": 11.833333333333334,
+      "churn_ratio": 12.875,
+      "survival_rate": 0.1497005988023952,
+      "competition_mean": 25.0,
+      "competition_max": 50.0,
+      "competition_std": 25.0,
+      "competition_final": 0.0,
+      "high_competition_ratio": 0.5,
+      "stability_mean": 0.13587883275451104,
+      "stability_min": 7.703610936578762e-06,
+      "unstable_track_ratio": 0.8888888888888888,
+      "dominance_mean": 0.05048404471238458,
+      "dominance_min": 0.0,
+      "dominance_final": 0.0,
+      "weak_dominance_ratio": 1.0,
+      "density_mean": 50.0,
+      "density_max": 50.0,
+      "density_std": 0.0,
+      "max_concurrent_tracks": 50.0
+    },
+    "hallucinated": {
+      "entropy_mean": 2.4415217786860164,
+      "entropy_max": 5.58333430565813,
+      "entropy_std": 2.465101700337362,
+      "entropy_final": 0.0,
+      "total_births": 323.0,
+      "total_deaths": 273.0,
+      "birth_rate": 13.458333333333334,
+      "death_rate": 11.375,
+      "churn_ratio": 12.416666666666666,
+      "survival_rate": 0.15479876160990713,
+      "competition_mean": 25.0,
+      "competition_max": 50.0,
+      "competition_std": 25.0,
+      "competition_final": 0.0,
+      "high_competition_ratio": 0.5,
+      "stability_mean": 0.147528306479339,
+      "stability_min": 7.703612308692828e-06,
+      "unstable_track_ratio": 0.8947368421052632,
+      "dominance_mean": 0.05018558125614279,
+      "dominance_min": 0.0,
+      "dominance_final": 0.0,
+      "weak_dominance_ratio": 1.0,
+      "density_mean": 50.0,
+      "density_max": 50.0,
+      "density_std": 0.0,
+      "max_concurrent_tracks": 50.0
+    },
+    "comparison": {
+      "entropy_mean": {
+        "factual": 2.4390690286827432,
+        "hallucinated": 2.4415217786860164,
+        "difference": 0.002452750003273163,
+        "percent_change": 0.10056090969257267,
+        "higher_in_hallucination": true
+      },
+      "entropy_max": {
+        "factual": 5.584412564088992,
+        "hallucinated": 5.58333430565813,
+        "difference": -0.0010782584308621779,
+        "percent_change": -0.019308359088581747,
+        "higher_in_hallucination": false
+      },
+      "entropy_std": {
+        "factual": 2.4629489117636165,
+        "hallucinated": 2.465101700337362,
+        "difference": 0.0021527885737455676,
+        "percent_change": 0.08740695202662747,
+        "higher_in_hallucination": true
+      },
+      "entropy_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "total_births": {
+        "factual": 334.0,
+        "hallucinated": 323.0,
+        "difference": -11.0,
+        "percent_change": -3.293413173652695,
+        "higher_in_hallucination": false
+      },
+      "total_deaths": {
+        "factual": 284.0,
+        "hallucinated": 273.0,
+        "difference": -11.0,
+        "percent_change": -3.873239436619718,
+        "higher_in_hallucination": false
+      },
+      "birth_rate": {
+        "factual": 13.916666666666666,
+        "hallucinated": 13.458333333333334,
+        "difference": -0.45833333333333215,
+        "percent_change": -3.2934131736526866,
+        "higher_in_hallucination": false
+      },
+      "death_rate": {
+        "factual": 11.833333333333334,
+        "hallucinated": 11.375,
+        "difference": -0.4583333333333339,
+        "percent_change": -3.873239436619723,
+        "higher_in_hallucination": false
+      },
+      "churn_ratio": {
+        "factual": 12.875,
+        "hallucinated": 12.416666666666666,
+        "difference": -0.4583333333333339,
+        "percent_change": -3.559870550161817,
+        "higher_in_hallucination": false
+      },
+      "survival_rate": {
+        "factual": 0.1497005988023952,
+        "hallucinated": 0.15479876160990713,
+        "difference": 0.005098162807511936,
+        "percent_change": 3.405572755417973,
+        "higher_in_hallucination": true
+      },
+      "competition_mean": {
+        "factual": 25.0,
+        "hallucinated": 25.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_max": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_std": {
+        "factual": 25.0,
+        "hallucinated": 25.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "high_competition_ratio": {
+        "factual": 0.5,
+        "hallucinated": 0.5,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "stability_mean": {
+        "factual": 0.13587883275451104,
+        "hallucinated": 0.147528306479339,
+        "difference": 0.011649473724827969,
+        "percent_change": 8.573427875903812,
+        "higher_in_hallucination": true
+      },
+      "stability_min": {
+        "factual": 7.703610936578762e-06,
+        "hallucinated": 7.703612308692828e-06,
+        "difference": 1.3721140651630492e-12,
+        "percent_change": 1.78113105199523e-05,
+        "higher_in_hallucination": true
+      },
+      "unstable_track_ratio": {
+        "factual": 0.8888888888888888,
+        "hallucinated": 0.8947368421052632,
+        "difference": 0.005847953216374324,
+        "percent_change": 0.6578947368421115,
+        "higher_in_hallucination": true
+      },
+      "dominance_mean": {
+        "factual": 0.05048404471238458,
+        "hallucinated": 0.05018558125614279,
+        "difference": -0.00029846345624179316,
+        "percent_change": -0.591203533595982,
+        "higher_in_hallucination": false
+      },
+      "dominance_min": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "dominance_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "weak_dominance_ratio": {
+        "factual": 1.0,
+        "hallucinated": 1.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_mean": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_max": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_std": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "max_concurrent_tracks": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      }
+    }
+  },
+  "track_analysis": {
+    "factual": {
+      "total_tracks": 334,
+      "avg_lifespan": 1.7964071856287425,
+      "std_lifespan": 2.012056243055305,
+      "max_activation": 1474.5108642578125,
+      "mean_activation": 105.96734250386557,
+      "competition_score": 25118.885361381967,
+      "num_active": 50,
+      "num_dead": 284
+    },
+    "hallucinated": {
+      "total_tracks": 323,
+      "avg_lifespan": 1.8575851393188854,
+      "std_lifespan": 2.042466271901072,
+      "max_activation": 1474.510498046875,
+      "mean_activation": 106.11444653511047,
+      "competition_score": 25091.192918173554,
+      "num_active": 50,
+      "num_dead": 273
+    }
+  },
+  "insights": [
+    "Entropy is 0.1% higher in hallucination, indicating more uncertainty in hypothesis selection."
+  ]
+}

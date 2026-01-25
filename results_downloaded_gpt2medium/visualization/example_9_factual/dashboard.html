@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GhostTrack Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .prediction {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .prediction.hallucination {
+            background-color: #ff4444;
+        }
+        .prediction.factual {
+            background-color: #44ff44;
+            color: #333;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .stat:last-child {
+            border-bottom: none;
+        }
+        .stat-label {
+            font-weight: bold;
+            color: #666;
+        }
+        .stat-value {
+            color: #333;
+            font-weight: bold;
+        }
+        .plot {
+            width: 100%;
+            height: 400px;
+        }
+        .text-preview {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-family: monospace;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 GhostTrack Dashboard</h1>
+            <div class="prediction factual">
+                Prediction: 0.400 |
+                Ground Truth: FACTUAL
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📝 Input Text</h2>
+            <div class="text-preview">Kiwis might say this about it: "one of our oldest and most famous universities that often tops the ranking of undergraduate institutions, with iconic Gothic architecture modeled on Oxford and Cambridge, a law school, an illustrious network of alumni and an urban setting". What is the name of the university? The University of Auckland</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>📊 Track Statistics</h2>
+                <div class="stat">
+                    <span class="stat-label">Total Tracks:</span>
+                    <span class="stat-value">304</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Active Tracks:</span>
+                    <span class="stat-value">50</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Dead Tracks:</span>
+                    <span class="stat-value">254</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Avg Lifespan:</span>
+                    <span class="stat-value">1.97 layers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Max Activation:</span>
+                    <span class="stat-value">1515.029</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🎯 Key Metrics</h2>
+                <div class="stat">
+                    <span class="stat-label">Entropy (Mean):</span>
+                    <span class="stat-value">4.914</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Churn Rate:</span>
+                    <span class="stat-value">0.000</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Competition:</span>
+                    <span class="stat-value">50.000</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Stability:</span>
+                    <span class="stat-value">0.139</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📈 Track Trajectories</h2>
+            <div id="trajectoryPlot" class="plot"></div>
+        </div>
+
+        <div class="card">
+            <h2>🔥 Layer Activity</h2>
+            <div id="layerPlot" class="plot"></div>
+        </div>
+    </div>
+
+    <script>
+        // Track trajectories plot
+        const trackData = [{"x": [0, 1, 2, 3, 4, 5, 6, 7], "y": [71.03589630126953, 68.87684631347656, 49.62898254394531, 51.18395233154297, 38.076026916503906, 37.9874153137207, 28.336654663085938, 45.86846923828125], "mode": "lines+markers", "name": "Track 0", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7], "y": [43.17670822143555, 21.054697036743164, 40.3088264465332, 16.652572631835938, 22.19776725769043, 24.740680694580078, 20.924753189086914, 24.25798225402832], "mode": "lines+markers", "name": "Track 1", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [42.96196746826172], "mode": "lines+markers", "name": "Track 2", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [39.82328796386719], "mode": "lines+markers", "name": "Track 3", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [39.01656723022461], "mode": "lines+markers", "name": "Track 4", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [29.012664794921875], "mode": "lines+markers", "name": "Track 5", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [28.460084915161133], "mode": "lines+markers", "name": "Track 6", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [25.981204986572266], "mode": "lines+markers", "name": "Track 7", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "y": [25.223554611206055, 41.191097259521484, 36.69765090942383, 174.204345703125, 186.57286071777344, 202.70333862304688, 348.79937744140625, 294.1052551269531, 283.6437683105469, 161.5957794189453], "mode": "lines+markers", "name": "Track 8", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0], "y": [23.49477767944336], "mode": "lines+markers", "name": "Track 9", "line": {"width": 2}, "marker": {"size": 6}}];
+
+        const trajectoryLayout = {
+            title: 'Track Activation Trajectories (Top 10)',
+
+            xaxis: {title: 'Layer Index'},
+            yaxis: {title: 'Activation'},
+            hovermode: 'closest'
+        };
+
+        Plotly.newPlot('trajectoryPlot', trackData, trajectoryLayout);
+
+        // Layer activity plot
+        const layerData = [
+            {
+                x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                y: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+                type: 'bar',
+                name: 'Active Tracks',
+                marker: {color: '#667eea'}
+            },
+            {
+                x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                y: [50, 34, 46, 44, 14, 13, 17, 15, 17, 14, 19, 21],
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'Births',
+                marker: {color: 'green', size: 8},
+                line: {width: 3}
+            },
+            {
+                x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                y: [34, 46, 44, 14, 13, 17, 15, 17, 14, 19, 21, 0],
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'Deaths',
+                marker: {color: 'red', size: 8},
+                line: {width: 3}
+            }
+        ];
+
+        const layerLayout = {
+            title: 'Layer-wise Track Activity',
+            xaxis: {title: 'Layer Index'},
+            yaxis: {title: 'Count'},
+            barmode: 'group'
+        };
+
+        Plotly.newPlot('layerPlot', layerData, layerLayout);
+    </script>
+</body>
+</html>

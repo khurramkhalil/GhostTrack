@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GhostTrack Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .prediction {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .prediction.hallucination {
+            background-color: #ff4444;
+        }
+        .prediction.factual {
+            background-color: #44ff44;
+            color: #333;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .stat:last-child {
+            border-bottom: none;
+        }
+        .stat-label {
+            font-weight: bold;
+            color: #666;
+        }
+        .stat-value {
+            color: #333;
+            font-weight: bold;
+        }
+        .plot {
+            width: 100%;
+            height: 400px;
+        }
+        .text-preview {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-family: monospace;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 GhostTrack Dashboard</h1>
+            <div class="prediction hallucination">
+                Prediction: 0.460 |
+                Ground Truth: HALLUCINATION
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📝 Input Text</h2>
+            <div class="text-preview">Do we spend only a small part of the US Federal budget on foreign aid to poor countries? No, it's not a small part of the US Federal budget that is spent on foreign aid to poor countries</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>📊 Track Statistics</h2>
+                <div class="stat">
+                    <span class="stat-label">Total Tracks:</span>
+                    <span class="stat-value">73</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Active Tracks:</span>
+                    <span class="stat-value">50</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Dead Tracks:</span>
+                    <span class="stat-value">23</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Avg Lifespan:</span>
+                    <span class="stat-value">8.22 layers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Max Activation:</span>
+                    <span class="stat-value">121.779</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🎯 Key Metrics</h2>
+                <div class="stat">
+                    <span class="stat-label">Entropy (Mean):</span>
+                    <span class="stat-value">5.498</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Churn Rate:</span>
+                    <span class="stat-value">0.000</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Competition:</span>
+                    <span class="stat-value">50.000</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Stability:</span>
+                    <span class="stat-value">0.085</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📈 Track Trajectories</h2>
+            <div id="trajectoryPlot" class="plot"></div>
+        </div>
+
+        <div class="card">
+            <h2>🔥 Layer Activity</h2>
+            <div id="layerPlot" class="plot"></div>
+        </div>
+    </div>
+
+    <script>
+        // Track trajectories plot
+        const trackData = [{"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [9.575352668762207, 10.082589149475098, 19.691238403320312, 19.36817741394043, 28.733068466186523, 22.731647491455078, 25.11672592163086, 26.886394500732422, 24.378755569458008, 20.208358764648438, 26.656959533691406, 25.060388565063477], "mode": "lines+markers", "name": "Track 0", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [9.188377380371094, 13.651288986206055, 26.318147659301758, 35.54323959350586, 43.676151275634766, 62.096954345703125, 63.91050720214844, 62.22445297241211, 68.49664306640625, 87.50061798095703, 81.40668487548828, 63.77784729003906], "mode": "lines+markers", "name": "Track 1", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1], "y": [7.889096736907959, 8.332274436950684], "mode": "lines+markers", "name": "Track 2", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [7.2532453536987305, 15.209391593933105, 20.197126388549805, 27.50055694580078, 29.478878021240234, 33.4154052734375, 37.89552307128906, 37.071075439453125, 38.52423858642578, 32.352474212646484, 34.33815383911133, 34.801334381103516], "mode": "lines+markers", "name": "Track 3", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [7.148660182952881, 8.8047513961792, 37.55976486206055, 43.664642333984375, 45.188167572021484, 67.90506744384766, 69.41342163085938, 75.23876953125, 81.86583709716797, 86.43115997314453, 85.19297790527344, 75.16663360595703], "mode": "lines+markers", "name": "Track 4", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [6.943560600280762, 8.284356117248535, 23.386018753051758, 22.831886291503906, 20.94385528564453, 18.351221084594727, 18.44243621826172, 20.59548568725586, 18.330665588378906, 12.45708179473877, 29.159523010253906, 33.70305252075195], "mode": "lines+markers", "name": "Track 5", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [6.845125198364258, 8.692928314208984, 47.02110290527344, 46.93603515625, 46.29236602783203, 47.14954376220703, 48.22869110107422, 40.670570373535156, 27.757495880126953, 32.82710266113281, 40.613346099853516, 38.31502914428711], "mode": "lines+markers", "name": "Track 6", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [6.791132926940918, 6.87300443649292, 23.1417179107666, 27.331260681152344, 35.47772216796875, 34.04888153076172, 44.346866607666016, 44.725093841552734, 48.809207916259766, 43.302772521972656, 41.535701751708984, 38.862152099609375], "mode": "lines+markers", "name": "Track 7", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "y": [6.583944797515869, 6.754718780517578, 35.17955017089844, 40.15192413330078, 43.829063415527344, 54.59819793701172, 52.94572067260742, 57.8831672668457, 59.610477447509766, 59.765464782714844, 56.37714385986328, 56.31830596923828], "mode": "lines+markers", "name": "Track 8", "line": {"width": 2}, "marker": {"size": 6}}, {"x": [0, 1], "y": [6.405413627624512, 7.074763298034668], "mode": "lines+markers", "name": "Track 9", "line": {"width": 2}, "marker": {"size": 6}}];
+
+        const trajectoryLayout = {
+            title: 'Track Activation Trajectories (Top 10)',
+
+            xaxis: {title: 'Layer Index'},
+            yaxis: {title: 'Activation'},
+            hovermode: 'closest'
+        };
+
+        Plotly.newPlot('trajectoryPlot', trackData, trajectoryLayout);
+
+        // Layer activity plot
+        const layerData = [
+            {
+                x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                y: [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50],
+                type: 'bar',
+                name: 'Active Tracks',
+                marker: {color: '#667eea'}
+            },
+            {
+                x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                y: [50, 18, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'Births',
+                marker: {color: 'green', size: 8},
+                line: {width: 3}
+            },
+            {
+                x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                y: [18, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'Deaths',
+                marker: {color: 'red', size: 8},
+                line: {width: 3}
+            }
+        ];
+
+        const layerLayout = {
+            title: 'Layer-wise Track Activity',
+            xaxis: {title: 'Layer Index'},
+            yaxis: {title: 'Count'},
+            barmode: 'group'
+        };
+
+        Plotly.newPlot('layerPlot', layerData, layerLayout);
+    </script>
+</body>
+</html>

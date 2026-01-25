@@ -21,6 +21,7 @@ import warnings
 
 from .model_wrapper import GPT2WithResidualHooks
 from .phi_wrapper import PhiWithResidualHooks
+from .qwen_wrapper import QwenWithResidualHooks
 
 
 # Registry mapping model name prefixes to wrapper classes
@@ -31,7 +32,9 @@ MODEL_REGISTRY: Dict[str, Type] = {
     
     # Phi family
     'phi': PhiWithResidualHooks,
-    # 'qwen': QwenWithResidualHooks,  
+    
+    # Qwen family
+    'qwen': QwenWithResidualHooks,
     # 'llama': LlamaWithResidualHooks,
     # 'mistral': MistralWithResidualHooks,
 }

@@ -1,0 +1,4227 @@
+{
+  "metadata": {
+    "text": "Where is it humid every single day? It is always humid in Los Angeles",
+    "text_length": 69,
+    "prediction": 0.46,
+    "is_hallucination": true,
+    "num_layers": 12
+  },
+  "track_stats": {
+    "total_tracks": 69,
+    "active_tracks": 50,
+    "dead_tracks": 19,
+    "avg_lifespan": 8.695652173913043,
+    "max_activation": 125.48847961425781
+  },
+  "divergence_metrics": {
+    "entropy_mean": 5.499321367531286,
+    "entropy_max": 5.579824948103727,
+    "entropy_std": 0.058009857694921105,
+    "entropy_final": 5.475042670461591,
+    "total_births": 69.0,
+    "total_deaths": 19.0,
+    "birth_rate": 5.75,
+    "death_rate": 1.5833333333333333,
+    "churn_ratio": 3.6666666666666665,
+    "survival_rate": 0.7246376811594203,
+    "competition_mean": 50.0,
+    "competition_max": 50.0,
+    "competition_std": 0.0,
+    "competition_final": 50.0,
+    "high_competition_ratio": 1.0,
+    "stability_mean": 0.0634726365545268,
+    "stability_min": 0.0007898302917037389,
+    "unstable_track_ratio": 0.9642857142857143,
+    "dominance_mean": 0.04595230158280791,
+    "dominance_min": 0.03724306997482021,
+    "dominance_final": 0.05344741645979713,
+    "weak_dominance_ratio": 1.0,
+    "density_mean": 50.0,
+    "density_max": 50.0,
+    "density_std": 0.0,
+    "max_concurrent_tracks": 50.0
+  },
+  "track_timeline": [
+    {
+      "track_id": 0,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 10.91805648803711,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 13.420413970947266,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 29.116628646850586,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 37.83348846435547,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 38.73052978515625,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 41.26263427734375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 39.329872131347656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 41.18089294433594,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 40.105384826660156,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 33.22471618652344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 34.15756607055664,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 33.24937057495117,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 1,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 8.682034492492676,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 8.882750511169434,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 42.60667419433594,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 48.780582427978516,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 50.06537628173828,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 50.098411560058594,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 52.24637985229492,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 44.10480880737305,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 45.18987274169922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 43.51774978637695,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 41.95296859741211,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 38.97980499267578,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 2,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.868896484375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 9.681076049804688,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 40.12904739379883,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 51.4178466796875,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 51.816749572753906,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 50.353824615478516,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 50.93486785888672,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 46.829505920410156,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 51.53722381591797,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 54.256324768066406,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 56.90422821044922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 56.7706184387207,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 3,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 7.859288692474365,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 8.176815032958984,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 46.844295501708984,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 62.05928039550781,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 60.753509521484375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 62.34721755981445,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 55.56797409057617,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 59.323204040527344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 54.55701446533203,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 53.73994445800781,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 54.01146697998047,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 55.807613372802734,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 4,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 6.01466178894043,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 20.733379364013672,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 22.343769073486328,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 27.144683837890625,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 37.66285705566406,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 35.70951461791992,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 36.57842254638672,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 36.237953186035156,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 26.442094802856445,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 27.767122268676758,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 31.095014572143555,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 29.125539779663086,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 5,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 5.552102565765381,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.710036754608154,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 41.428958892822266,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 43.30746078491211,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 43.43538284301758,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 45.45403289794922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 48.0395393371582,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 41.96896743774414,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 27.67554473876953,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 12.853906631469727,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 16.817594528198242,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 14.10761547088623,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 6,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 5.462436199188232,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 5.685624599456787,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 58.201202392578125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 66.13821411132812,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 62.87651443481445,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 67.18682861328125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 83.38230895996094,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 108.75281524658203,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 105.10630798339844,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 103.07831573486328,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 89.80684661865234,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 81.99087524414062,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 7,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 5.406387805938721,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 5.789628505706787,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 25.561561584472656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 29.35443115234375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 32.45691680908203,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 33.92330551147461,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 33.23430252075195,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 28.213214874267578,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 28.192718505859375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 27.493722915649414,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 36.841007232666016,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 36.31419372558594,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 8,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 5.231186866760254,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 14.161450386047363,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 24.496042251586914,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 38.958133697509766,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 40.203643798828125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 69.38621520996094,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 72.03401947021484,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 76.03655242919922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 105.67749786376953,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 111.7712173461914,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 94.05748748779297,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 100.71514892578125,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 9,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.802376747131348,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 17.294002532958984,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 35.40944290161133,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 42.614253997802734,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 44.2917594909668,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 46.69558334350586,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 58.082374572753906,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 67.21365356445312,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 74.42060852050781,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 95.0,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 71.01251220703125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 67.78504180908203,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 10,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.797510147094727,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 12.725137710571289,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 34.574249267578125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 43.72605514526367,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 46.64952087402344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 56.591346740722656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 53.25203323364258,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 60.15242385864258,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 61.097373962402344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 59.528968811035156,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 46.84992218017578,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 49.99153137207031,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 11,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.545656204223633,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 5.655076026916504,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 12,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.539220333099365,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 8.70798110961914,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 20.85042381286621,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 21.115310668945312,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 24.184696197509766,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 17.777862548828125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 22.82267189025879,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 24.33063507080078,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 15.240005493164062,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 12.45461654663086,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 18.56857681274414,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 18.495325088500977,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 13,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.531158924102783,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 5.640045642852783,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 32.59004592895508,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 32.40862274169922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 38.045562744140625,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 45.47278594970703,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 50.85636520385742,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 41.93929672241211,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 47.52306365966797,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 45.4096794128418,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 48.95328140258789,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 46.128326416015625,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 14,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.456993103027344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 8.282490730285645,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 24.14308738708496,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 24.44186019897461,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 29.898527145385742,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 28.96565055847168,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 30.018117904663086,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 30.343219757080078,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 21.579288482666016,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 17.699716567993164,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 18.500829696655273,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 14.812065124511719,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 15,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.419064044952393,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 16.293210983276367,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 22.15591812133789,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 23.254873275756836,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 26.32362174987793,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 27.799650192260742,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 26.79837417602539,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 28.1898250579834,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 26.88772964477539,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 22.305931091308594,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 32.525238037109375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 37.7265739440918,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 16,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.395717620849609,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.890305519104004,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 36.88594436645508,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 41.091102600097656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 51.99326705932617,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 51.63420867919922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 53.38285827636719,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 56.47621154785156,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 57.259891510009766,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 63.29420852661133,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 64.09413146972656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 64.6273422241211,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 17,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.319594860076904,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 24.591352462768555,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 24.282894134521484,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 28.68547821044922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 33.614707946777344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 34.48905944824219,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 44.22625732421875,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 47.23316955566406,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 53.33470153808594,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 57.055442810058594,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 58.265350341796875,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 50.39505386352539,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 18,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.269898414611816,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 19,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.262845516204834,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 20,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.235610485076904,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.200211524963379,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 21,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.230585098266602,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 22,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.171186923980713,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.607303142547607,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 36.71175003051758,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 36.24092483520508,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 37.553470611572266,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 34.64382553100586,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 35.34626388549805,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 32.19624710083008,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 21.84566307067871,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 20.847440719604492,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 21.204824447631836,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 24.140277862548828,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 23,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.119892597198486,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 24,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.077401161193848,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.6715474128723145,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 23.236013412475586,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 23.94866371154785,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 24.517383575439453,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 22.484092712402344,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 21.38532066345215,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 24.445838928222656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 24.64019012451172,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 20.024850845336914,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 31.501672744750977,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 30.92807388305664,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 25,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 4.035620212554932,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 26,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.8898725509643555,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 9.363007545471191,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 25.131975173950195,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 21.648473739624023,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 22.10162925720215,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 17.944515228271484,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 16.4442195892334,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 19.857481002807617,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 16.560819625854492,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 17.683670043945312,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 18.52395248413086,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 26.102615356445312,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 27,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.8604302406311035,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 13.80690860748291,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 29.413217544555664,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 34.97599792480469,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 38.21483612060547,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 37.54035949707031,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 39.43202209472656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 39.41054153442383,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 39.6835823059082,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 33.228904724121094,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 35.73283767700195,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 36.16212463378906,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 28,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.834852457046509,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 18.9385986328125,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 20.302566528320312,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 20.72824478149414,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 18.057262420654297,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 16.86675262451172,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 17.200695037841797,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 18.91815185546875,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 15.85781192779541,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 14.32247543334961,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 24.411291122436523,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 29.026338577270508,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 29,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.748026132583618,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 30,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.726940155029297,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 8.202224731445312,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 30.015380859375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 33.84462356567383,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 38.251163482666016,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 58.917232513427734,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 57.571189880371094,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 60.58116912841797,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 62.439632415771484,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 63.8579216003418,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 51.72237014770508,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 46.51393127441406,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 31,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.702962636947632,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 32,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.6818017959594727,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 33,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.5552029609680176,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 22.670101165771484,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 25.668447494506836,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 24.54908561706543,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 22.38549041748047,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 18.54685401916504,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 18.704626083374023,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 19.947751998901367,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 19.715484619140625,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 18.630640029907227,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 29.650981903076172,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 27.230539321899414,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 34,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.5265088081359863,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 8.623202323913574,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 49.932960510253906,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 66.31314849853516,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 84.48091888427734,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 86.13439178466797,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 80.04996490478516,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 88.76973724365234,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 93.36305236816406,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 107.21379852294922,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 83.74726867675781,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 65.98572540283203,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 35,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.5111711025238037,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 14.257182121276855,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 32.456642150878906,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 31.24233055114746,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 31.908878326416016,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 32.75596237182617,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 33.2459602355957,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 28.2592830657959,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 25.43018341064453,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 29.19478416442871,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 31.985013961791992,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 33.24424362182617,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 36,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.490379810333252,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 5.817720890045166,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 22.780981063842773,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 23.369821548461914,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 23.198535919189453,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 23.5394229888916,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 24.486698150634766,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 27.83390998840332,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 19.66875648498535,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 19.014013290405273,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 19.71436882019043,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 17.83499526977539,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 37,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.4577817916870117,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 11.512779235839844,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 34.321529388427734,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 41.56916427612305,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 49.07710647583008,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 74.59748840332031,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 76.31079864501953,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 70.96525573730469,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 73.96002960205078,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 74.59274291992188,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 67.56826782226562,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 64.50679016113281,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 38,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.446852445602417,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.561386585235596,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 39,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.441769599914551,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 5.846070289611816,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 40,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.4333620071411133,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 11.009140968322754,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 28.622194290161133,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 36.734901428222656,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 36.56901931762695,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 35.72677993774414,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 35.80135726928711,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 31.74605941772461,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 25.918481826782227,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 22.931903839111328,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 24.127216339111328,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 24.875370025634766,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 41,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.410759687423706,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.745842933654785,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 42,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.409980535507202,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 17.833221435546875,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 20.17987823486328,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 20.363821029663086,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 20.819997787475586,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 17.32562255859375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 15.684038162231445,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 20.14180564880371,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 15.46529769897461,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 12.469123840332031,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 18.963804244995117,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 25.20107078552246,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 43,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.36674427986145,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 44,
+      "birth_layer": 0,
+      "death_layer": 1,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.270009994506836,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 6.286957740783691,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 45,
+      "birth_layer": 0,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.2695677280426025,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 1,
+          "activation": 10.142730712890625,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 2,
+          "activation": 21.112442016601562,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 3,
+          "activation": 21.219226837158203,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 4,
+          "activation": 29.70762062072754,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 5,
+          "activation": 23.702356338500977,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 6,
+          "activation": 23.615463256835938,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 7,
+          "activation": 27.236757278442383,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 8,
+          "activation": 18.11835479736328,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 9,
+          "activation": 18.241071701049805,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 10,
+          "activation": 21.141448974609375,
+          "feature_id": -1,
+          "token_pos": 0
+        },
+        {
+          "layer": 11,
+          "activation": 22.986711502075195,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 46,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.218846082687378,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 47,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.1139936447143555,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 48,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.0906283855438232,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 49,
+      "birth_layer": 0,
+      "death_layer": 0,
+      "observations": [
+        {
+          "layer": 0,
+          "activation": 3.08095121383667,
+          "feature_id": -1,
+          "token_pos": 0
+        }
+      ]
+    },
+    {
+      "track_id": 50,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 39.751251220703125,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 2,
+          "activation": 44.49100112915039,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 3,
+          "activation": 45.638999938964844,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 4,
+          "activation": 52.550418853759766,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 5,
+          "activation": 63.4268798828125,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 6,
+          "activation": 68.34114074707031,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 7,
+          "activation": 71.95048522949219,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 8,
+          "activation": 68.90007019042969,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 9,
+          "activation": 88.85940551757812,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 10,
+          "activation": 82.8199234008789,
+          "feature_id": -1,
+          "token_pos": 2138
+        },
+        {
+          "layer": 11,
+          "activation": 82.15510559082031,
+          "feature_id": -1,
+          "token_pos": 2138
+        }
+      ]
+    },
+    {
+      "track_id": 51,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 36.49454116821289,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 2,
+          "activation": 40.478519439697266,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 3,
+          "activation": 41.84519577026367,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 4,
+          "activation": 44.732608795166016,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 5,
+          "activation": 46.36933517456055,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 6,
+          "activation": 45.08213806152344,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 7,
+          "activation": 42.2724494934082,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 8,
+          "activation": 42.17365264892578,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 9,
+          "activation": 32.84820556640625,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 10,
+          "activation": 37.9006462097168,
+          "feature_id": -1,
+          "token_pos": 1363
+        },
+        {
+          "layer": 11,
+          "activation": 35.90060043334961,
+          "feature_id": -1,
+          "token_pos": 1363
+        }
+      ]
+    },
+    {
+      "track_id": 52,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 19.792221069335938,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 2,
+          "activation": 20.90362548828125,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 3,
+          "activation": 21.051586151123047,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 4,
+          "activation": 20.515811920166016,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 5,
+          "activation": 18.831787109375,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 6,
+          "activation": 18.730817794799805,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 7,
+          "activation": 21.708303451538086,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 8,
+          "activation": 24.062015533447266,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 9,
+          "activation": 20.83751106262207,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 10,
+          "activation": 24.983196258544922,
+          "feature_id": -1,
+          "token_pos": 7024
+        },
+        {
+          "layer": 11,
+          "activation": 25.435680389404297,
+          "feature_id": -1,
+          "token_pos": 7024
+        }
+      ]
+    },
+    {
+      "track_id": 53,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 18.82130241394043,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 2,
+          "activation": 21.891550064086914,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 3,
+          "activation": 24.365219116210938,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 4,
+          "activation": 25.073829650878906,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 5,
+          "activation": 24.47765350341797,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 6,
+          "activation": 23.998647689819336,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 7,
+          "activation": 28.89750862121582,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 8,
+          "activation": 28.644451141357422,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 9,
+          "activation": 32.15401840209961,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 10,
+          "activation": 40.58536911010742,
+          "feature_id": -1,
+          "token_pos": 6113
+        },
+        {
+          "layer": 11,
+          "activation": 38.66591262817383,
+          "feature_id": -1,
+          "token_pos": 6113
+        }
+      ]
+    },
+    {
+      "track_id": 54,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 18.092348098754883,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 2,
+          "activation": 28.835363388061523,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 3,
+          "activation": 31.027374267578125,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 4,
+          "activation": 36.99476623535156,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 5,
+          "activation": 34.77268600463867,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 6,
+          "activation": 49.14471435546875,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 7,
+          "activation": 45.87221145629883,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 8,
+          "activation": 54.30590057373047,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 9,
+          "activation": 60.04193878173828,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 10,
+          "activation": 57.115074157714844,
+          "feature_id": -1,
+          "token_pos": 8285
+        },
+        {
+          "layer": 11,
+          "activation": 55.795772552490234,
+          "feature_id": -1,
+          "token_pos": 8285
+        }
+      ]
+    },
+    {
+      "track_id": 55,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 16.986425399780273,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 2,
+          "activation": 25.37409210205078,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 3,
+          "activation": 25.12018394470215,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 4,
+          "activation": 33.538970947265625,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 5,
+          "activation": 40.57273864746094,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 6,
+          "activation": 40.43234634399414,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 7,
+          "activation": 46.65717315673828,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 8,
+          "activation": 44.83083724975586,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 9,
+          "activation": 44.80086898803711,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 10,
+          "activation": 39.13092803955078,
+          "feature_id": -1,
+          "token_pos": 3563
+        },
+        {
+          "layer": 11,
+          "activation": 37.75485610961914,
+          "feature_id": -1,
+          "token_pos": 3563
+        }
+      ]
+    },
+    {
+      "track_id": 56,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 16.898059844970703,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 2,
+          "activation": 26.453645706176758,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 3,
+          "activation": 35.619667053222656,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 4,
+          "activation": 37.040809631347656,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 5,
+          "activation": 79.36414337158203,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 6,
+          "activation": 80.00051879882812,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 7,
+          "activation": 76.8182373046875,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 8,
+          "activation": 91.51881408691406,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 9,
+          "activation": 88.67649841308594,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 10,
+          "activation": 88.90191650390625,
+          "feature_id": -1,
+          "token_pos": 427
+        },
+        {
+          "layer": 11,
+          "activation": 78.15211486816406,
+          "feature_id": -1,
+          "token_pos": 427
+        }
+      ]
+    },
+    {
+      "track_id": 57,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 16.07868194580078,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 2,
+          "activation": 21.912269592285156,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 3,
+          "activation": 19.827022552490234,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 4,
+          "activation": 18.982677459716797,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 5,
+          "activation": 18.348365783691406,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 6,
+          "activation": 20.27408790588379,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 7,
+          "activation": 24.49822998046875,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 8,
+          "activation": 17.829471588134766,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 9,
+          "activation": 14.138737678527832,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 10,
+          "activation": 25.017675399780273,
+          "feature_id": -1,
+          "token_pos": 5661
+        },
+        {
+          "layer": 11,
+          "activation": 24.794301986694336,
+          "feature_id": -1,
+          "token_pos": 5661
+        }
+      ]
+    },
+    {
+      "track_id": 58,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 15.997611999511719,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 2,
+          "activation": 28.188756942749023,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 3,
+          "activation": 31.91191864013672,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 4,
+          "activation": 36.22578430175781,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 5,
+          "activation": 37.56877899169922,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 6,
+          "activation": 37.683807373046875,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 7,
+          "activation": 41.67194747924805,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 8,
+          "activation": 38.87386703491211,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 9,
+          "activation": 33.17928695678711,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 10,
+          "activation": 38.899986267089844,
+          "feature_id": -1,
+          "token_pos": 6086
+        },
+        {
+          "layer": 11,
+          "activation": 37.69074249267578,
+          "feature_id": -1,
+          "token_pos": 6086
+        }
+      ]
+    },
+    {
+      "track_id": 59,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 15.976445198059082,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 2,
+          "activation": 20.906917572021484,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 3,
+          "activation": 27.546066284179688,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 4,
+          "activation": 30.16193962097168,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 5,
+          "activation": 34.210166931152344,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 6,
+          "activation": 46.0032958984375,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 7,
+          "activation": 46.139808654785156,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 8,
+          "activation": 50.046939849853516,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 9,
+          "activation": 60.64386749267578,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 10,
+          "activation": 54.866153717041016,
+          "feature_id": -1,
+          "token_pos": 3288
+        },
+        {
+          "layer": 11,
+          "activation": 54.36809158325195,
+          "feature_id": -1,
+          "token_pos": 3288
+        }
+      ]
+    },
+    {
+      "track_id": 60,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 15.620153427124023,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 2,
+          "activation": 25.13664436340332,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 3,
+          "activation": 23.575498580932617,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 4,
+          "activation": 27.78323745727539,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 5,
+          "activation": 24.593276977539062,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 6,
+          "activation": 26.57912254333496,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 7,
+          "activation": 28.36791229248047,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 8,
+          "activation": 25.588455200195312,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 9,
+          "activation": 21.10210609436035,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 10,
+          "activation": 28.867229461669922,
+          "feature_id": -1,
+          "token_pos": 5017
+        },
+        {
+          "layer": 11,
+          "activation": 30.34044075012207,
+          "feature_id": -1,
+          "token_pos": 5017
+        }
+      ]
+    },
+    {
+      "track_id": 61,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 15.252132415771484,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 2,
+          "activation": 23.99184226989746,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 3,
+          "activation": 41.89978790283203,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 4,
+          "activation": 45.84341812133789,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 5,
+          "activation": 46.09840393066406,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 6,
+          "activation": 54.48051452636719,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 7,
+          "activation": 59.64301300048828,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 8,
+          "activation": 59.39132308959961,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 9,
+          "activation": 71.99423217773438,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 10,
+          "activation": 75.28707122802734,
+          "feature_id": -1,
+          "token_pos": 10097
+        },
+        {
+          "layer": 11,
+          "activation": 68.56641387939453,
+          "feature_id": -1,
+          "token_pos": 10097
+        }
+      ]
+    },
+    {
+      "track_id": 62,
+      "birth_layer": 1,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 1,
+          "activation": 14.41744327545166,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 2,
+          "activation": 22.510860443115234,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 3,
+          "activation": 67.34626770019531,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 4,
+          "activation": 101.12936401367188,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 5,
+          "activation": 95.22381591796875,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 6,
+          "activation": 84.33877563476562,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 7,
+          "activation": 74.64647674560547,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 8,
+          "activation": 97.37419891357422,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 9,
+          "activation": 97.79373168945312,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 10,
+          "activation": 72.20388793945312,
+          "feature_id": -1,
+          "token_pos": 9701
+        },
+        {
+          "layer": 11,
+          "activation": 73.77790832519531,
+          "feature_id": -1,
+          "token_pos": 9701
+        }
+      ]
+    },
+    {
+      "track_id": 63,
+      "birth_layer": 2,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 53.45854187011719,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 3,
+          "activation": 58.800716400146484,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 4,
+          "activation": 55.45478057861328,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 5,
+          "activation": 62.53321838378906,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 6,
+          "activation": 64.9815444946289,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 7,
+          "activation": 63.412837982177734,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 8,
+          "activation": 69.88397979736328,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 9,
+          "activation": 90.6235580444336,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 10,
+          "activation": 92.15491485595703,
+          "feature_id": -1,
+          "token_pos": 6521
+        },
+        {
+          "layer": 11,
+          "activation": 125.48847961425781,
+          "feature_id": -1,
+          "token_pos": 6521
+        }
+      ]
+    },
+    {
+      "track_id": 64,
+      "birth_layer": 2,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 50.417945861816406,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 3,
+          "activation": 50.051490783691406,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 4,
+          "activation": 45.596702575683594,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 5,
+          "activation": 50.967079162597656,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 6,
+          "activation": 48.60882568359375,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 7,
+          "activation": 43.93168640136719,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 8,
+          "activation": 42.467647552490234,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 9,
+          "activation": 42.56791305541992,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 10,
+          "activation": 43.57215881347656,
+          "feature_id": -1,
+          "token_pos": 5900
+        },
+        {
+          "layer": 11,
+          "activation": 49.894596099853516,
+          "feature_id": -1,
+          "token_pos": 5900
+        }
+      ]
+    },
+    {
+      "track_id": 65,
+      "birth_layer": 2,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 37.325599670410156,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 3,
+          "activation": 44.66135787963867,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 4,
+          "activation": 45.58374786376953,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 5,
+          "activation": 69.29307556152344,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 6,
+          "activation": 71.64469146728516,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 7,
+          "activation": 77.19373321533203,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 8,
+          "activation": 83.90171813964844,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 9,
+          "activation": 82.15978240966797,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 10,
+          "activation": 79.88034057617188,
+          "feature_id": -1,
+          "token_pos": 8502
+        },
+        {
+          "layer": 11,
+          "activation": 78.80830383300781,
+          "feature_id": -1,
+          "token_pos": 8502
+        }
+      ]
+    },
+    {
+      "track_id": 66,
+      "birth_layer": 2,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 37.114566802978516,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 3,
+          "activation": 43.54078674316406,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 4,
+          "activation": 44.38811492919922,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 5,
+          "activation": 42.207515716552734,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 6,
+          "activation": 39.75004577636719,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 7,
+          "activation": 41.08219909667969,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 8,
+          "activation": 39.182106018066406,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 9,
+          "activation": 35.70579147338867,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 10,
+          "activation": 38.34058380126953,
+          "feature_id": -1,
+          "token_pos": 1981
+        },
+        {
+          "layer": 11,
+          "activation": 41.14830017089844,
+          "feature_id": -1,
+          "token_pos": 1981
+        }
+      ]
+    },
+    {
+      "track_id": 67,
+      "birth_layer": 2,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 35.402587890625,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 3,
+          "activation": 36.91447067260742,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 4,
+          "activation": 47.449459075927734,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 5,
+          "activation": 56.842979431152344,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 6,
+          "activation": 53.268592834472656,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 7,
+          "activation": 63.34669876098633,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 8,
+          "activation": 59.86262512207031,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 9,
+          "activation": 62.75754928588867,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 10,
+          "activation": 59.046146392822266,
+          "feature_id": -1,
+          "token_pos": 2167
+        },
+        {
+          "layer": 11,
+          "activation": 63.96089553833008,
+          "feature_id": -1,
+          "token_pos": 2167
+        }
+      ]
+    },
+    {
+      "track_id": 68,
+      "birth_layer": 2,
+      "death_layer": null,
+      "observations": [
+        {
+          "layer": 2,
+          "activation": 34.694698333740234,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 3,
+          "activation": 38.46619415283203,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 4,
+          "activation": 38.758121490478516,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 5,
+          "activation": 36.315425872802734,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 6,
+          "activation": 49.261592864990234,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 7,
+          "activation": 48.7884635925293,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 8,
+          "activation": 50.400211334228516,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 9,
+          "activation": 86.63188171386719,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 10,
+          "activation": 81.20845794677734,
+          "feature_id": -1,
+          "token_pos": 3581
+        },
+        {
+          "layer": 11,
+          "activation": 73.42736053466797,
+          "feature_id": -1,
+          "token_pos": 3581
+        }
+      ]
+    }
+  ],
+  "layer_stats": [
+    {
+      "layer": 0,
+      "num_tracks": 50,
+      "births": 50,
+      "deaths": 13,
+      "mean_activation": 4.414895596504212,
+      "max_activation": 10.91805648803711
+    },
+    {
+      "layer": 1,
+      "num_tracks": 50,
+      "births": 13,
+      "deaths": 6,
+      "mean_activation": 13.131910667419433,
+      "max_activation": 39.751251220703125
+    },
+    {
+      "layer": 2,
+      "num_tracks": 50,
+      "births": 6,
+      "deaths": 0,
+      "mean_activation": 31.219903869628908,
+      "max_activation": 58.201202392578125
+    },
+    {
+      "layer": 3,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 36.16579822540283,
+      "max_activation": 67.34626770019531
+    },
+    {
+      "layer": 4,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 39.55302040100098,
+      "max_activation": 101.12936401367188
+    },
+    {
+      "layer": 5,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 42.95782230377197,
+      "max_activation": 95.22381591796875
+    },
+    {
+      "layer": 6,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 44.573411560058595,
+      "max_activation": 84.33877563476562
+    },
+    {
+      "layer": 7,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 45.914714317321774,
+      "max_activation": 108.75281524658203
+    },
+    {
+      "layer": 8,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 46.07463895797729,
+      "max_activation": 105.67749786376953
+    },
+    {
+      "layer": 9,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 47.604436206817624,
+      "max_activation": 111.7712173461914
+    },
+    {
+      "layer": 10,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 47.1038200378418,
+      "max_activation": 94.05748748779297
+    },
+    {
+      "layer": 11,
+      "num_tracks": 50,
+      "births": 0,
+      "deaths": 0,
+      "mean_activation": 46.957734508514406,
+      "max_activation": 125.48847961425781
+    }
+  ]
+}

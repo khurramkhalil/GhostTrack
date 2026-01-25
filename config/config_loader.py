@@ -51,6 +51,7 @@ class TrackingConfig:
     association_threshold: float = 0.5
     birth_threshold: float = 0.5
     death_threshold: float = 0.1
+    use_feature_id_matching: bool = False
 
 
 @dataclass

@@ -1,0 +1,119 @@
+# GhostTrack Configuration Template
+# =====================================
+# Copy this file and customize for new models.
+# 
+# Usage:
+#   1. Copy to config/model_configs/<model-name>.yaml
+#   2. Replace all [PLACEHOLDER] values
+#   3. Run: ./launch_model_analysis.sh <model-name>
+#
+# Supported Models:
+#   - GPT-2 family: gpt2, gpt2-medium, gpt2-large, gpt2-xl
+#   - Phi family: microsoft/phi-2, microsoft/phi-1_5 (planned)
+#   - Qwen family: Qwen/Qwen2-1.5B, Qwen/Qwen2-7B (planned)
+#   - LLaMA family: meta-llama/Llama-2-7b-hf (planned)
+
+project:
+  name: GhostTrack
+  version: 1.0.0
+  description: Multi-Hypothesis Tracking for [MODEL_NAME]
+
+# =====================================
+# Model Configuration
+# =====================================
+model:
+  # HuggingFace model identifier
+  # Examples: 'gpt2', 'gpt2-medium', 'microsoft/phi-2', 'Qwen/Qwen2-1.5B'
+  base_model: [HUGGINGFACE_MODEL_ID]
+  
+  # Hidden dimension (embedding size)
+  # GPT-2: 768 (small), 1024 (medium), 1280 (large), 1600 (xl)
+  # Phi-2: 2560
+  # Qwen2-1.5B: 1536
+  d_model: [HIDDEN_DIM]
+  
+  # Number of transformer layers
+  # GPT-2: 12 (small), 24 (medium), 36 (large), 48 (xl)
+  # Phi-2: 32
+  # Qwen2-1.5B: 28
+  n_layers: [NUM_LAYERS]
+  
+  # Device for model inference
+  device: cuda
+  
+  # Model family hint for wrapper selection (optional)
+  # Valid: gpt2, phi, qwen, llama, mistral
+  # If omitted, auto-detected from base_model
+  # model_family: gpt2
+
+# =====================================
+# Sparse Autoencoder Configuration
+# =====================================
+sae:
+  architecture: JumpReLU
+  d_model: [HIDDEN_DIM]  # Must match model.d_model
+  d_hidden: [HIDDEN_DIM_x5]  # Typically 5x expansion (e.g., 768*5=3840)
+  threshold: 0.1
+  lambda_sparse: 0.01
+
+# =====================================
+# SAE Training Configuration
+# =====================================
+sae_training:
+  epochs: 20
+  # Batch size - adjust based on GPU memory
+  # A100 80GB: 256 for small models, 128 for medium, 64 for large
+  batch_size: [BATCH_SIZE]
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  gradient_clip: 1.0
+  # Number of tokens to train on (100M recommended)
+  num_tokens: 100000000
+  max_length: 512
+  validation_every: 1000
+  target_recon_loss: 0.01
+  target_sparsity_min: 50
+  target_sparsity_max: 100
+
+# =====================================
+# Paths Configuration
+# =====================================
+paths:
+  data_dir: ./data
+  cache_dir: ./data/cache/[MODEL_NAME]
+  models_dir: ./models/checkpoints/[MODEL_NAME]
+  results_dir: ./results/[MODEL_NAME]
+  logs_dir: ./logs/[MODEL_NAME]
+
+# =====================================
+# Tracking Configuration
+# =====================================
+tracking:
+  top_k_features: 50
+  semantic_weight: 0.6
+  activation_weight: 0.2
+  position_weight: 0.2
+  association_threshold: 0.5
+  birth_threshold: 0.5
+  death_threshold: 0.1
+
+# =====================================
+# Detection Configuration
+# =====================================
+detection:
+  entropy_threshold: 1.5
+  churn_threshold: 0.3
+  entropy_weight: 0.4
+  churn_weight: 0.3
+  ml_weight: 0.3
+  threshold: 0.5
+
+# =====================================
+# Dataset Configuration
+# =====================================
+dataset:
+  primary: truthful_qa
+  split_train: 0.7
+  split_val: 0.15
+  split_test: 0.15
+  stratify_by: category

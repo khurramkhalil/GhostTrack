@@ -1,0 +1,277 @@
+{
+  "question": "What do ugly ducklings become when they grow up?",
+  "factual_answer": "Ugly ducklings become ducks when they grow up",
+  "hallucinated_answer": "Ugly ducklings become beautiful swans when they grow up",
+  "predictions": {
+    "factual": 0.48,
+    "hallucinated": 0.48,
+    "correct_classification": false
+  },
+  "metrics": {
+    "factual": {
+      "entropy_mean": 2.064077362645448,
+      "entropy_max": 5.580339814469105,
+      "entropy_std": 2.6649387010662844,
+      "entropy_final": 0.0,
+      "total_births": 71.0,
+      "total_deaths": 21.0,
+      "birth_rate": 2.21875,
+      "death_rate": 0.65625,
+      "churn_ratio": 1.4375,
+      "survival_rate": 0.704225352112676,
+      "competition_mean": 18.75,
+      "competition_max": 50.0,
+      "competition_std": 24.206145913796355,
+      "competition_final": 0.0,
+      "high_competition_ratio": 0.375,
+      "stability_mean": 0.047830779806437795,
+      "stability_min": 0.0009114376104354261,
+      "unstable_track_ratio": 0.9811320754716981,
+      "dominance_mean": 0.01712852057325362,
+      "dominance_min": 0.0,
+      "dominance_final": 0.0,
+      "weak_dominance_ratio": 1.0,
+      "density_mean": 50.0,
+      "density_max": 50.0,
+      "density_std": 0.0,
+      "max_concurrent_tracks": 50.0
+    },
+    "hallucinated": {
+      "entropy_mean": 2.0640358427329293,
+      "entropy_max": 5.580339814469104,
+      "entropy_std": 2.6648839414199097,
+      "entropy_final": 0.0,
+      "total_births": 70.0,
+      "total_deaths": 20.0,
+      "birth_rate": 2.1875,
+      "death_rate": 0.625,
+      "churn_ratio": 1.40625,
+      "survival_rate": 0.7142857142857143,
+      "competition_mean": 18.75,
+      "competition_max": 50.0,
+      "competition_std": 24.206145913796355,
+      "competition_final": 0.0,
+      "high_competition_ratio": 0.375,
+      "stability_mean": 0.0468763895520959,
+      "stability_min": 0.0009076068880170338,
+      "unstable_track_ratio": 0.9811320754716981,
+      "dominance_mean": 0.017135223990027128,
+      "dominance_min": 0.0,
+      "dominance_final": 0.0,
+      "weak_dominance_ratio": 1.0,
+      "density_mean": 50.0,
+      "density_max": 50.0,
+      "density_std": 0.0,
+      "max_concurrent_tracks": 50.0
+    },
+    "comparison": {
+      "entropy_mean": {
+        "factual": 2.064077362645448,
+        "hallucinated": 2.0640358427329293,
+        "difference": -4.151991251877263e-05,
+        "percent_change": -0.002011548271890263,
+        "higher_in_hallucination": false
+      },
+      "entropy_max": {
+        "factual": 5.580339814469105,
+        "hallucinated": 5.580339814469104,
+        "difference": -8.881784197001252e-16,
+        "percent_change": -1.5916206704781537e-14,
+        "higher_in_hallucination": false
+      },
+      "entropy_std": {
+        "factual": 2.6649387010662844,
+        "hallucinated": 2.6648839414199097,
+        "difference": -5.475964637469133e-05,
+        "percent_change": -0.0020548182347601886,
+        "higher_in_hallucination": false
+      },
+      "entropy_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "total_births": {
+        "factual": 71.0,
+        "hallucinated": 70.0,
+        "difference": -1.0,
+        "percent_change": -1.4084507042253522,
+        "higher_in_hallucination": false
+      },
+      "total_deaths": {
+        "factual": 21.0,
+        "hallucinated": 20.0,
+        "difference": -1.0,
+        "percent_change": -4.761904761904762,
+        "higher_in_hallucination": false
+      },
+      "birth_rate": {
+        "factual": 2.21875,
+        "hallucinated": 2.1875,
+        "difference": -0.03125,
+        "percent_change": -1.4084507042253522,
+        "higher_in_hallucination": false
+      },
+      "death_rate": {
+        "factual": 0.65625,
+        "hallucinated": 0.625,
+        "difference": -0.03125,
+        "percent_change": -4.761904761904762,
+        "higher_in_hallucination": false
+      },
+      "churn_ratio": {
+        "factual": 1.4375,
+        "hallucinated": 1.40625,
+        "difference": -0.03125,
+        "percent_change": -2.1739130434782608,
+        "higher_in_hallucination": false
+      },
+      "survival_rate": {
+        "factual": 0.704225352112676,
+        "hallucinated": 0.7142857142857143,
+        "difference": 0.010060362173038295,
+        "percent_change": 1.4285714285714382,
+        "higher_in_hallucination": true
+      },
+      "competition_mean": {
+        "factual": 18.75,
+        "hallucinated": 18.75,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_max": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_std": {
+        "factual": 24.206145913796355,
+        "hallucinated": 24.206145913796355,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "competition_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "high_competition_ratio": {
+        "factual": 0.375,
+        "hallucinated": 0.375,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "stability_mean": {
+        "factual": 0.047830779806437795,
+        "hallucinated": 0.0468763895520959,
+        "difference": -0.0009543902543418942,
+        "percent_change": -1.995347469148805,
+        "higher_in_hallucination": false
+      },
+      "stability_min": {
+        "factual": 0.0009114376104354261,
+        "hallucinated": 0.0009076068880170338,
+        "difference": -3.830722418392382e-06,
+        "percent_change": -0.42029452971139847,
+        "higher_in_hallucination": false
+      },
+      "unstable_track_ratio": {
+        "factual": 0.9811320754716981,
+        "hallucinated": 0.9811320754716981,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "dominance_mean": {
+        "factual": 0.01712852057325362,
+        "hallucinated": 0.017135223990027128,
+        "difference": 6.7034167735083305e-06,
+        "percent_change": 0.03913599393969724,
+        "higher_in_hallucination": true
+      },
+      "dominance_min": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "dominance_final": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "weak_dominance_ratio": {
+        "factual": 1.0,
+        "hallucinated": 1.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_mean": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_max": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "density_std": {
+        "factual": 0.0,
+        "hallucinated": 0.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      },
+      "max_concurrent_tracks": {
+        "factual": 50.0,
+        "hallucinated": 50.0,
+        "difference": 0.0,
+        "percent_change": 0.0,
+        "higher_in_hallucination": false
+      }
+    }
+  },
+  "track_analysis": {
+    "factual": {
+      "total_tracks": 71,
+      "avg_lifespan": 8.450704225352112,
+      "std_lifespan": 4.767225940317753,
+      "max_activation": 126.9649887084961,
+      "mean_activation": 38.046418291727704,
+      "competition_score": 535.1683480385442,
+      "num_active": 50,
+      "num_dead": 21
+    },
+    "hallucinated": {
+      "total_tracks": 70,
+      "avg_lifespan": 8.571428571428571,
+      "std_lifespan": 4.725527721313035,
+      "max_activation": 126.9649887084961,
+      "mean_activation": 38.04468894998232,
+      "competition_score": 535.2860510791954,
+      "num_active": 50,
+      "num_dead": 20
+    }
+  },
+  "insights": [
+    "Metrics are similar between factual and hallucinated answers."
+  ]
+}
