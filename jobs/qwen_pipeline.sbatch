@@ -29,14 +29,15 @@ echo "Config: $CONFIG"
 echo "================================================================"
 
 # 1. Train SAEs (Phase 1 & 2)
-# Using fewer epochs (10) for speed, as we just want to validate the pipeline
+# Using fewer tokens and epochs for initial validation if desired, or full run
 echo "[1/3] Training SAEs..."
-python3 scripts/train_sae.py \
+python3 scripts/extract_and_train.py \
     --config $CONFIG \
     --device cuda \
-    --layer-start 0 \
-    --layer-end 28 \
-    --epochs 10
+    --layers all \
+    --num-tokens 5000000 \
+    --save-dir ./models/checkpoints/qwen \
+    --cache-dir ./data/cache/qwen
 
 # 2. Run Tracking (Phase 3)
 echo "[2/3] Running Tracking..."
