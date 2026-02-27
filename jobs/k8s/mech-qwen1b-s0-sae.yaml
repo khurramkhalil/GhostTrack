@@ -69,10 +69,7 @@ spec:
           - |
             set -e
             echo "=== GhostTrack: SAE Phase | Qwen2.5-1.5B | Seed 0 ==="
-            curl -fsSL https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/ghosttrack/sae/trainer.py \
-              -o /workspace/GhostTrack/ghosttrack/sae/trainer.py
-            curl -fsSL https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/scripts/run_mechanism_study.py \
-              -o /workspace/GhostTrack/scripts/run_mechanism_study.py
+            python3 -c 'import urllib.request; base="https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/"; [(urllib.request.urlretrieve(base+s,d),print("OK",s)) for s,d in [("ghosttrack/sae/trainer.py","/workspace/GhostTrack/ghosttrack/sae/trainer.py"),("scripts/run_mechanism_study.py","/workspace/GhostTrack/scripts/run_mechanism_study.py")]]'
             nvidia-smi
             python scripts/run_mechanism_study.py \
               --model Qwen/Qwen2.5-1.5B \

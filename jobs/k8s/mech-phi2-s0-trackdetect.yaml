@@ -66,10 +66,7 @@ spec:
           - |
             set -e
             echo "=== GhostTrack: Track Phase | Phi-2 | Seed 0 ==="
-            curl -fsSL https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/ghosttrack/tracking/extractor.py \
-              -o /workspace/GhostTrack/ghosttrack/tracking/extractor.py
-            curl -fsSL https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/scripts/run_mechanism_study.py \
-              -o /workspace/GhostTrack/scripts/run_mechanism_study.py
+            python3 -c 'import urllib.request; base="https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/"; [(urllib.request.urlretrieve(base+s,d),print("OK",s)) for s,d in [("ghosttrack/tracking/extractor.py","/workspace/GhostTrack/ghosttrack/tracking/extractor.py"),("scripts/run_mechanism_study.py","/workspace/GhostTrack/scripts/run_mechanism_study.py")]]'
             nvidia-smi
             python scripts/run_mechanism_study.py \
               --model microsoft/phi-2 \
