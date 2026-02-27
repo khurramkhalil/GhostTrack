@@ -1,0 +1,114 @@
+# GhostTrack — Qwen2.5-1.5B | Seed 0 | Phase: track → detect
+# Runs hypothesis tracker over HaluEval examples, then fits the detector.
+# REQUIRES: ghosttrack-qwen1b-s0-data AND ghosttrack-qwen1b-s0-sae both Completed.
+#
+# Memory sizing (why 32Gi):
+#   Model weights on GPU: ~6 GB (1.5B params FP32)
+#   All 28 SAE checkpoints on GPU: 28 × 75 MB = 2.1 GB
+#   CPU RAM (Python + dataset + feature vectors): ~6 GB
+#   Peak ≈ 14 GiB → 14/32 = 44%  ✓ policy (20-150%)
+#   CPU ≤1 → ignored by cluster policy ✓
+#
+# Submit: kubectl apply -f jobs/k8s/mech-qwen1b-s0-trackdetect.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-qwen1b-s0-trackdetect -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-qwen1b-s0-trackdetect -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-qwen1b-s0-trackdetect
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-qwen1b-s0-trackdetect
+    project: ghosttrack
+    phase: trackdetect
+    model: qwen-1.5b
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-qwen1b-s0-trackdetect
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-40GB-PCIe
+                - NVIDIA-A40-48GB
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: Track Phase | Qwen2.5-1.5B | Seed 0 ==="
+            git pull origin main
+            nvidia-smi
+            python scripts/run_mechanism_study.py \
+              --model Qwen/Qwen2.5-1.5B \
+              --config config/model_configs/qwen-1.5b.yaml \
+              --phase track \
+              --output-dir /data/experiments/phase2_mechanism/qwen_1b_s0 \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir /data/sae_checkpoints/qwen_1b \
+              --seed 0 \
+              --device cuda
+            echo "=== Track done — running detect ==="
+            python scripts/run_mechanism_study.py \
+              --model Qwen/Qwen2.5-1.5B \
+              --config config/model_configs/qwen-1.5b.yaml \
+              --phase detect \
+              --output-dir /data/experiments/phase2_mechanism/qwen_1b_s0 \
+              --seed 0
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "1"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "1"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi

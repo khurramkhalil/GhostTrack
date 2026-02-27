@@ -1,0 +1,49 @@
+# Version control
+.git
+.gitignore
+
+# Secrets — never bake into image
+.env
+*.env
+jobs/k8s/secrets.yaml
+
+# Python artifacts
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+dist
+build
+.pytest_cache
+.coverage
+htmlcov
+
+# IDE
+.vscode
+.idea
+.DS_Store
+
+# Agent workflows (not needed in container)
+.agent
+
+# Slurm job files (Hellbender / HPC — not needed in container)
+jobs/*.sbatch
+*.out
+*.err
+
+# Data lives on PVC, not in the image
+data
+experiments
+
+# Old downloaded results — large, not needed in container
+results_downloaded_*
+results
+
+# Paper source
+paper
+
+# Jupyter notebooks
+notebooks
+
+# Wandb run artifacts
+wandb

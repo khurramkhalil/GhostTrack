@@ -1,0 +1,113 @@
+# GhostTrack — Phi-2 | Seed 0 | Phase: sae
+# Extraction ALREADY DONE (457.8G cached on PVC).  This job skips straight
+# to SAE training (extract_all_layers_single_pass returns cached paths).
+#
+# Memory sizing (why 32Gi):
+#   Hidden states per layer: 3M × 2560 × 2B float16 = 15.36 GiB (view, no copy)
+#   OOM fix: removed .float() in trainer.py; float16→float32 done per-batch on GPU.
+#   DataLoader batch: 512 × 2560 × 4B = 5 MB (negligible)
+#   Python / HF overhead ≈ 3 GiB
+#   Peak ≈ 18 GiB → 18/32 = 56%  ✓ policy (20-150%)
+#
+# layer-adaptive lambda_sparse: decays 1.0→0.3 across layers to prevent
+#   deep-layer divergence (observed in GPT-2 Medium L22-23).
+#
+# Submit: kubectl apply -f jobs/k8s/mech-phi2-s0-sae.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-phi2-s0-sae -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-phi2-s0-sae -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-phi2-s0-sae
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-phi2-s0-sae
+    project: ghosttrack
+    phase: sae
+    model: phi2
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-phi2-s0-sae
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-40GB-PCIe
+                - NVIDIA-A40-48GB
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: SAE Phase | Phi-2 | Seed 0 ==="
+            git pull origin main
+            nvidia-smi
+            python scripts/run_mechanism_study.py \
+              --model microsoft/phi-2 \
+              --config config/model_configs/phi-2.yaml \
+              --phase sae \
+              --output-dir /data/experiments/phase2_mechanism/phi2_s0 \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir /data/sae_checkpoints/phi2 \
+              --n-tokens 3000000 \
+              --batch-size-extract 2 \
+              --batch-size-sae 512 \
+              --seed 0 \
+              --device cuda
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "2"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "2"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi

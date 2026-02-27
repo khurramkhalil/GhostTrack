@@ -1,0 +1,114 @@
+# GhostTrack — GPT-2 Medium | Seed 0 | Phase: track → detect
+# Runs hypothesis tracker over HaluEval examples, then fits the detector.
+# REQUIRES: ghosttrack-gpt2m-s0-data AND ghosttrack-gpt2m-s0-sae both Completed.
+#
+# Memory sizing (why 16Gi):
+#   Model weights on GPU: ~1.4 GB
+#   All 24 SAE checkpoints on GPU: 24 × 40 MB = 960 MB
+#   CPU RAM (Python + dataset + feature vectors): ~4 GB
+#   Peak ≈ 5 GiB → 5/16 = 31%  ✓ policy (20-150%)
+#   CPU ≤1 → ignored by cluster policy ✓
+#
+# Submit: kubectl apply -f jobs/k8s/mech-gpt2m-s0-trackdetect.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-gpt2m-s0-trackdetect -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-gpt2m-s0-trackdetect -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-gpt2m-s0-trackdetect
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-gpt2m-s0-trackdetect
+    project: ghosttrack
+    phase: trackdetect
+    model: gpt2-medium
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-gpt2m-s0-trackdetect
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-40GB-PCIe
+                - NVIDIA-A40-48GB
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: Track Phase | GPT-2 Medium | Seed 0 ==="
+            git pull origin main
+            nvidia-smi
+            python scripts/run_mechanism_study.py \
+              --model gpt2-medium \
+              --config config/model_configs/gpt2-medium.yaml \
+              --phase track \
+              --output-dir /data/experiments/phase2_mechanism/gpt2_medium_s0 \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir /data/sae_checkpoints/gpt2_medium \
+              --seed 0 \
+              --device cuda
+            echo "=== Track done — running detect ==="
+            python scripts/run_mechanism_study.py \
+              --model gpt2-medium \
+              --config config/model_configs/gpt2-medium.yaml \
+              --phase detect \
+              --output-dir /data/experiments/phase2_mechanism/gpt2_medium_s0 \
+              --seed 0
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "16Gi"
+            cpu: "1"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "16Gi"
+            cpu: "1"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi

@@ -214,3 +214,6 @@ __marimo__/
 .agent/
 .example.sbatch.txt
 results_downloaded/
+
+# Kubernetes secrets — contain API keys, never commit
+jobs/k8s/secrets.yaml
