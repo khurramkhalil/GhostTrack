@@ -166,7 +166,9 @@ def phase_sae(args, cfg, out_dir: Path, data_dir: Path, ckpt_dir: Path, model):
 
 def phase_track(args, cfg, out_dir: Path, ckpt_dir: Path, model, dataset):
     """Run hypothesis tracker over the dataset and save metrics."""
+    import gc
     import numpy as np
+    import torch
     from ghosttrack.tracking import FeatureExtractor, HypothesisTracker
     from ghosttrack.metrics import MetricsRegistry
 
@@ -182,8 +184,15 @@ def phase_track(args, cfg, out_dir: Path, ckpt_dir: Path, model, dataset):
     for i, ex in enumerate(dataset):
         if i % 50 == 0:
             print(f"[track] {i}/{len(dataset)}")
+        # Periodically force GC to release GPU/CPU tensors from prior iterations.
+        if i % 500 == 0 and i > 0:
+            gc.collect()
+            if args.device == "cuda":
+                torch.cuda.empty_cache()
         text = ex.prompt + " " + ex.completion
 
+        layer_features = None
+        tracker = None
         try:
             layer_features = extractor.extract(text, max_length=256)
 
@@ -208,7 +217,10 @@ def phase_track(args, cfg, out_dir: Path, ckpt_dir: Path, model, dataset):
             labels.append(ex.label)
         except Exception as exc:
             print(f"[track] Skipping example {ex.id}: {exc}")
-            continue
+        finally:
+            # Explicitly release per-example tensors so GPU/CPU memory is
+            # returned promptly rather than waiting for the next GC cycle.
+            del layer_features, tracker
 
     X = np.stack(features_list)
     y = np.array(labels, dtype=int)

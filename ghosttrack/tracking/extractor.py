@@ -135,7 +135,10 @@ class FeatureExtractor:
         result = []
         for feat_id in top_k_indices:
             activation = float(vec[feat_id])
-            embedding = decoder[:, feat_id]
+            # .copy() makes an independent array so the 20 MB `decoder`
+            # can be freed when this function returns (column slices are
+            # views in numpy and would otherwise keep the whole base alive).
+            embedding = decoder[:, feat_id].copy()
             result.append((int(feat_id), activation, embedding))
 
         return result
