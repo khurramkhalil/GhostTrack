@@ -3,10 +3,12 @@
 # REQUIRES: ghosttrack-phi2-s0-data AND ghosttrack-phi2-s0-sae both Completed.
 #
 # Memory sizing (why 32Gi):
-#   Model weights on GPU: ~10.8 GB (2.7B params FP32)
-#   All 32 SAE checkpoints on GPU: 32 × ~100 MB = 3.2 GB
+#   Model weights on GPU: ~5.4 GB (2.7B params FP16)
+#   All 32 SAE checkpoints on GPU: 32 × ~100 MB = 3.2 GB (FP32)
+#   GPU total: ~8.6 GB + CUDA overhead → needs ≥ 40 GB GPU (A100/A40)
+#   Affinity is REQUIRED (not preferred) — small GPUs (≤ 12 GB) will OOM.
 #   CPU RAM (Python + dataset + feature vectors): ~6 GB
-#   Peak ≈ 20 GiB → 20/32 = 63%  ✓ policy (20-150%)
+#   Peak CPU ≈ 6 GiB → 6/32 = 19%  (memory limit covers CPU RAM only)
 #   CPU ≤1 → ignored by cluster policy ✓
 #
 # Submit: kubectl apply -f jobs/k8s/mech-phi2-s0-trackdetect.yaml
@@ -35,6 +37,18 @@ spec:
       restartPolicy: Never
       affinity:
         nodeAffinity:
+          # Phi-2 needs ~14 GB GPU (model + 32 SAEs). REQUIRE a large GPU;
+          # preferred-only caused OOM on a 10.57 GB node previously.
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-A100-40GB-PCIe
+                - NVIDIA-A40-48GB
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 100
             preference:
