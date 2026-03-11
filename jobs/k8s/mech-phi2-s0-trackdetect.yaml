@@ -45,10 +45,16 @@ spec:
               - key: nvidia.com/gpu.product
                 operator: In
                 values:
+                # ≥ 40 GB GPUs — verified from cluster node labels
                 - NVIDIA-A100-SXM4-80GB
                 - NVIDIA-A100-80GB-PCIe
-                - NVIDIA-A100-40GB-PCIe
-                - NVIDIA-A40-48GB
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 100
             preference:
@@ -58,14 +64,19 @@ spec:
                 values:
                 - NVIDIA-A100-SXM4-80GB
                 - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
           - weight: 60
             preference:
               matchExpressions:
               - key: nvidia.com/gpu.product
                 operator: In
                 values:
-                - NVIDIA-A100-40GB-PCIe
-                - NVIDIA-A40-48GB
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
       tolerations:
       - key: "nvidia.com/gpu"
         operator: "Exists"
