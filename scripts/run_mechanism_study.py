@@ -60,9 +60,15 @@ def _parse_args() -> argparse.Namespace:
                    help="Dataset cache directory (default: /data/datasets on k8s, else ./data)")
     p.add_argument("--sae-checkpoint-dir", default=None,
                    help="Where to save/load SAE checkpoints")
+    p.add_argument("--dataset", default="halueval",
+                   choices=["halueval", "truthfulqa"],
+                   help="Dataset source: 'halueval' uses human-labeled pairs; "
+                        "'truthfulqa' generates model completions on TruthfulQA "
+                        "(methodologically correct — model must be loadable during "
+                        "the data phase)")
     p.add_argument("--halueval-split", default="qa",
                    choices=["qa", "summarization", "dialogue"],
-                   help="HaluEval subset to use")
+                   help="HaluEval subset to use (only with --dataset halueval)")
     p.add_argument("--n-tokens", type=int, default=1_000_000,
                    help="Wikipedia tokens per SAE layer (sae phase)")
     p.add_argument("--batch-size-extract", type=int, default=8)
@@ -81,18 +87,43 @@ def _parse_args() -> argparse.Namespace:
 # Phase helpers
 # ---------------------------------------------------------------------------
 
-def phase_data(args, cfg, out_dir: Path, data_dir: Path):
-    """Download and save labelled hallucination dataset."""
-    from ghosttrack.data import HaluEvalLoader
+def phase_data(args, cfg, out_dir: Path, data_dir: Path, model=None):
+    """Download / generate and save labelled hallucination dataset.
 
-    print(f"\n[data] Loading HaluEval split={args.halueval_split} ...")
-    loader = HaluEvalLoader(cache_dir=str(data_dir))
-    dataset = loader.load(split=args.halueval_split)
+    For ``--dataset halueval`` the model is not needed.
+    For ``--dataset truthfulqa`` the model must be passed in — completions are
+    generated once and cached to ``{data_dir}/truthfulqa_{model_id}.json`` so
+    subsequent runs (seeds 1-4) reuse the same generations without re-running
+    inference.
+    """
+    dataset_type = getattr(args, "dataset", "halueval")
 
-    n_factual = dataset.n_factual
-    n_halluc = dataset.n_hallucinated
-    print(f"[data] Loaded {len(dataset)} examples  "
-          f"({n_factual} factual, {n_halluc} hallucinated)")
+    if dataset_type == "truthfulqa":
+        from ghosttrack.data import TruthfulQAGenerator
+        if model is None:
+            raise ValueError(
+                "--dataset truthfulqa requires a model to generate completions. "
+                "The model is loaded automatically when --phase includes 'track' "
+                "or 'sae'; for a standalone data phase use --phase all or ensure "
+                "the model is loaded."
+            )
+        model_id = args.model.replace("/", "-")
+        cache_path = data_dir / f"truthfulqa_{model_id}.json"
+        print(f"\n[data] Generating TruthfulQA completions for {args.model} ...")
+        print(f"[data] Cache: {cache_path}")
+        gen = TruthfulQAGenerator(model, cache_dir=str(data_dir))
+        dataset = gen.generate(
+            max_new_tokens=64,
+            cache_path=str(cache_path),
+        )
+    else:
+        from ghosttrack.data import HaluEvalLoader
+        print(f"\n[data] Loading HaluEval split={args.halueval_split} ...")
+        loader = HaluEvalLoader(cache_dir=str(data_dir))
+        dataset = loader.load(split=args.halueval_split)
+
+    print(f"[data] {len(dataset)} examples  "
+          f"({dataset.n_factual} factual, {dataset.n_hallucinated} hallucinated)")
 
     ds_path = out_dir / "dataset.json"
     dataset.save(str(ds_path))
@@ -324,11 +355,17 @@ def main():
     logger.info(f"Output dir: {out_dir}")
     logger.info(f"Model: {args.model}  Phase: {args.phase}")
 
-    # ---- Model (only needed for sae / track phases) ----
+    # ---- Model loading ----
+    # Needed for: sae, track phases always.
+    # Also needed for: data phase when --dataset truthfulqa (completions generated
+    # by the model itself — the core methodological requirement for the paper).
     phases = [args.phase] if args.phase != "all" else ["data", "sae", "track", "detect"]
     model = None
 
-    if any(ph in phases for ph in ("sae", "track")):
+    need_model_for_data = (
+        "data" in phases and getattr(args, "dataset", "halueval") == "truthfulqa"
+    )
+    if any(ph in phases for ph in ("sae", "track")) or need_model_for_data:
         from ghosttrack.models import create_model
         logger.info(f"Loading model: {args.model}")
         model = create_model(args.model, device=args.device)
@@ -339,7 +376,7 @@ def main():
     X = y = None
 
     if "data" in phases:
-        dataset = phase_data(args, cfg, out_dir, data_dir)
+        dataset = phase_data(args, cfg, out_dir, data_dir, model=model)
 
     if "sae" in phases:
         phase_sae(args, cfg, out_dir, data_dir, ckpt_dir, model)
