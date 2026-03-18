@@ -1,0 +1,144 @@
+# GhostTrack — Qwen2.5-1.5B | Seed 0 | TruthfulQA (model-generated hallucinations)
+# Methodologically correct: Qwen generates its own completions on TruthfulQA,
+# labeled by string-match against correct answers.
+#
+# REQUIRES: ghosttrack-qwen1b-s0-sae Completed
+#
+# Memory sizing (why 16Gi):
+#   Model on GPU: ~3 GB (1.5B params FP16)
+#   28 SAE checkpoints on GPU: 28 × 75 MB = 2.1 GB
+#   Only 817 examples → CPU RAM peak ~6 GiB → 6/16 = 38% ✓
+#
+# Submit: kubectl apply -f jobs/k8s/mech-qwen1b-s0-tqa.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-qwen1b-s0-tqa -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-qwen1b-s0-tqa -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-qwen1b-s0-tqa
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-qwen1b-s0-tqa
+    project: ghosttrack
+    phase: tqa-trackdetect
+    model: qwen-1.5b
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-qwen1b-s0-tqa
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: TruthfulQA | Qwen2.5-1.5B | Seed 0 ==="
+            python3 -c '
+            import urllib.request
+            base = "https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/"
+            files = [
+              ("ghosttrack/tracking/extractor.py",        "/workspace/GhostTrack/ghosttrack/tracking/extractor.py"),
+              ("ghosttrack/data/truthfulqa_generator.py", "/workspace/GhostTrack/ghosttrack/data/truthfulqa_generator.py"),
+              ("ghosttrack/detection/detector.py",        "/workspace/GhostTrack/ghosttrack/detection/detector.py"),
+              ("scripts/run_mechanism_study.py",          "/workspace/GhostTrack/scripts/run_mechanism_study.py"),
+            ]
+            [(urllib.request.urlretrieve(base+s, d), print("OK", s)) for s, d in files]
+            '
+            nvidia-smi
+
+            echo "=== Step 1: Generate TruthfulQA completions ==="
+            python scripts/run_mechanism_study.py \
+              --model Qwen/Qwen2.5-1.5B \
+              --config config/model_configs/qwen-1.5b.yaml \
+              --phase data \
+              --dataset truthfulqa \
+              --output-dir /data/experiments/phase2_mechanism/qwen_1b_s0_tqa \
+              --data-dir /data/datasets \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 2: Run hypothesis tracker ==="
+            python scripts/run_mechanism_study.py \
+              --model Qwen/Qwen2.5-1.5B \
+              --config config/model_configs/qwen-1.5b.yaml \
+              --phase track \
+              --output-dir /data/experiments/phase2_mechanism/qwen_1b_s0_tqa \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir /data/sae_checkpoints/qwen_1b \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 3: Fit detector ==="
+            python scripts/run_mechanism_study.py \
+              --model Qwen/Qwen2.5-1.5B \
+              --config config/model_configs/qwen-1.5b.yaml \
+              --phase detect \
+              --output-dir /data/experiments/phase2_mechanism/qwen_1b_s0_tqa \
+              --seed 0
+
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "16Gi"
+            cpu: "1"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "16Gi"
+            cpu: "1"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi
