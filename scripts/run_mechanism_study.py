@@ -61,11 +61,12 @@ def _parse_args() -> argparse.Namespace:
     p.add_argument("--sae-checkpoint-dir", default=None,
                    help="Where to save/load SAE checkpoints")
     p.add_argument("--dataset", default="halueval",
-                   choices=["halueval", "truthfulqa"],
+                   choices=["halueval", "truthfulqa", "triviaqa"],
                    help="Dataset source: 'halueval' uses human-labeled pairs; "
                         "'truthfulqa' generates model completions on TruthfulQA "
-                        "(methodologically correct — model must be loadable during "
-                        "the data phase)")
+                        "(small models hallucinate ~95%% — use 'triviaqa' instead); "
+                        "'triviaqa' generates on TriviaQA rc.nocontext "
+                        "(small models get 15-30%% correct — recommended)")
     p.add_argument("--halueval-split", default="qa",
                    choices=["qa", "summarization", "dialogue"],
                    help="HaluEval subset to use (only with --dataset halueval)")
@@ -114,6 +115,22 @@ def phase_data(args, cfg, out_dir: Path, data_dir: Path, model=None):
         gen = TruthfulQAGenerator(model, cache_dir=str(data_dir))
         dataset = gen.generate(
             max_new_tokens=64,
+            cache_path=str(cache_path),
+        )
+    elif dataset_type == "triviaqa":
+        from ghosttrack.data import TriviaQAGenerator
+        if model is None:
+            raise ValueError(
+                "--dataset triviaqa requires a model to generate completions."
+            )
+        model_id = args.model.replace("/", "-")
+        cache_path = data_dir / f"triviaqa_{model_id}.json"
+        print(f"\n[data] Generating TriviaQA completions for {args.model} ...")
+        print(f"[data] Cache: {cache_path}")
+        gen = TriviaQAGenerator(model, cache_dir=str(data_dir))
+        dataset = gen.generate(
+            max_new_tokens=32,
+            max_examples=3000,
             cache_path=str(cache_path),
         )
     else:
@@ -363,7 +380,8 @@ def main():
     model = None
 
     need_model_for_data = (
-        "data" in phases and getattr(args, "dataset", "halueval") == "truthfulqa"
+        "data" in phases
+        and getattr(args, "dataset", "halueval") in ("truthfulqa", "triviaqa")
     )
     if any(ph in phases for ph in ("sae", "track")) or need_model_for_data:
         from ghosttrack.models import create_model

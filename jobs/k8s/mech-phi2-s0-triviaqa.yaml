@@ -1,0 +1,155 @@
+# GhostTrack — Phi-2 | Seed 0 | TriviaQA (model-generated hallucinations)
+# See mech-gpt2m-s0-triviaqa.yaml for rationale.
+#
+# REQUIRES: ghosttrack-phi2-s0-sae Completed
+# GPU: REQUIRED ≥40 GB (same OOM constraint as HaluEval job)
+#
+# Submit: kubectl apply -f jobs/k8s/mech-phi2-s0-triviaqa.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-phi2-s0-triviaqa -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-phi2-s0-triviaqa -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-phi2-s0-triviaqa
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-phi2-s0-triviaqa
+    project: ghosttrack
+    phase: triviaqa-trackdetect
+    model: phi2
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-phi2-s0-triviaqa
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: TriviaQA | Phi-2 | Seed 0 ==="
+            python3 -c '
+            import urllib.request
+            base = "https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/"
+            files = [
+              ("ghosttrack/tracking/extractor.py",        "/workspace/GhostTrack/ghosttrack/tracking/extractor.py"),
+              ("ghosttrack/data/__init__.py",              "/workspace/GhostTrack/ghosttrack/data/__init__.py"),
+              ("ghosttrack/data/triviaqa_generator.py",   "/workspace/GhostTrack/ghosttrack/data/triviaqa_generator.py"),
+              ("ghosttrack/detection/detector.py",        "/workspace/GhostTrack/ghosttrack/detection/detector.py"),
+              ("scripts/run_mechanism_study.py",          "/workspace/GhostTrack/scripts/run_mechanism_study.py"),
+            ]
+            [(urllib.request.urlretrieve(base+s, d), print("OK", s)) for s, d in files]
+            '
+            nvidia-smi
+
+            echo "=== Step 1: Generate TriviaQA completions ==="
+            python scripts/run_mechanism_study.py \
+              --model microsoft/phi-2 \
+              --config config/model_configs/phi-2.yaml \
+              --phase data \
+              --dataset triviaqa \
+              --output-dir /data/experiments/phase2_mechanism/phi2_s0_triviaqa \
+              --data-dir /data/datasets \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 2: Run hypothesis tracker ==="
+            python scripts/run_mechanism_study.py \
+              --model microsoft/phi-2 \
+              --config config/model_configs/phi-2.yaml \
+              --phase track \
+              --output-dir /data/experiments/phase2_mechanism/phi2_s0_triviaqa \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir /data/sae_checkpoints/phi2 \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 3: Fit detector ==="
+            python scripts/run_mechanism_study.py \
+              --model microsoft/phi-2 \
+              --config config/model_configs/phi-2.yaml \
+              --phase detect \
+              --output-dir /data/experiments/phase2_mechanism/phi2_s0_triviaqa \
+              --seed 0
+
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "1"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "1"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 1Gi
