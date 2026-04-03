@@ -1,0 +1,66 @@
+# GhostTrack Configuration for Phi-3.5-mini-instruct
+# 32 layers, 3072 hidden dim
+# Instruction-tuned: responds reliably to QA prompts via chat_template.
+# Expected TriviaQA factual rate: ~40-55% (vs 5.5% for Phi-2 base).
+
+project:
+  name: GhostTrack
+  version: 1.0.0
+  description: Multi-Hypothesis Tracking for Microsoft Phi-3.5-mini-instruct
+
+model:
+  base_model: microsoft/Phi-3.5-mini-instruct
+  d_model: 3072
+  n_layers: 32
+  device: cuda
+
+sae:
+  architecture: JumpReLU
+  d_model: 3072
+  d_hidden: 12288  # 4x expansion ratio
+  threshold: 3.0
+  lambda_sparse: 1.0
+
+sae_training:
+  epochs: 20
+  batch_size: 32   # Reduced for larger hidden dim
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  gradient_clip: 1.0
+  num_tokens: 100000000
+  max_length: 512
+  validation_every: 1000
+  target_recon_loss: 0.01
+  target_sparsity_min: 50
+  target_sparsity_max: 100
+
+paths:
+  data_dir: ./data
+  cache_dir: ./data/cache/phi-3.5-mini-instruct
+  models_dir: ./models/checkpoints/phi-3.5-mini-instruct
+  results_dir: ./results/phi-3.5-mini-instruct
+  logs_dir: ./logs/phi-3.5-mini-instruct
+
+tracking:
+  top_k_features: 100
+  semantic_weight: 0.6
+  activation_weight: 0.2
+  position_weight: 0.2
+  association_threshold: 0.5
+  birth_threshold: 0.3
+  death_threshold: 0.1
+
+detection:
+  entropy_threshold: 1.5
+  churn_threshold: 0.3
+  entropy_weight: 0.4
+  churn_weight: 0.3
+  ml_weight: 0.3
+  threshold: 0.5
+
+dataset:
+  primary: triviaqa
+  split_train: 0.7
+  split_val: 0.15
+  split_test: 0.15
+  stratify_by: category

@@ -1,0 +1,197 @@
+# GhostTrack — Phi-3.5-mini-instruct | Seed 0 | Full Pipeline
+#
+# Phases: SAE training (Wikipedia) → TriviaQA generation (instruct prompts)
+#         → LLM judge → track → detect
+#
+# Why this model: Phi-3.5-mini-instruct is Microsoft's strongest small model
+# for factual QA. Expected TriviaQA accuracy: ~40-55% (vs 5.5% for Phi-2 base).
+#
+# Architecture: 32 layers, d_model=3072, d_hidden=12288 (4x SAE)
+# GPU memory:
+#   SAE training: model (~7.6 GB) + one SAE layer (~576 MB) + activations ≈ 14 GB
+#   Tracking:     model (~7.6 GB) + all 32 SAE checkpoints (~9.2 GB) ≈ 18 GB
+#   → requires ≥ 40 GB GPU
+#
+# Timing estimate: SAE ~8h, TriviaQA gen ~45min, judge ~30min, track ~4h
+#
+# Submit: kubectl apply -f jobs/k8s/mech-phi35-s0.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-phi35-s0 -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-phi35-s0 -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-phi35-s0
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-phi35-s0
+    project: ghosttrack
+    phase: full-pipeline
+    model: phi-3.5-mini-instruct
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-phi35-s0
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: Full Pipeline | Phi-3.5-mini-instruct | Seed 0 ==="
+            pip install openai -q
+
+            python3 -c '
+            import urllib.request
+            base = "https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/"
+            files = [
+              ("ghosttrack/tracking/extractor.py",       "/workspace/GhostTrack/ghosttrack/tracking/extractor.py"),
+              ("ghosttrack/data/__init__.py",             "/workspace/GhostTrack/ghosttrack/data/__init__.py"),
+              ("ghosttrack/data/triviaqa_generator.py",  "/workspace/GhostTrack/ghosttrack/data/triviaqa_generator.py"),
+              ("ghosttrack/detection/detector.py",       "/workspace/GhostTrack/ghosttrack/detection/detector.py"),
+              ("scripts/run_mechanism_study.py",         "/workspace/GhostTrack/scripts/run_mechanism_study.py"),
+              ("scripts/score_triviaqa.py",              "/workspace/GhostTrack/scripts/score_triviaqa.py"),
+              ("config/model_configs/phi-3.5-mini-instruct.yaml", "/workspace/GhostTrack/config/model_configs/phi-3.5-mini-instruct.yaml"),
+            ]
+            [(urllib.request.urlretrieve(base+s, d), print("OK", s)) for s, d in files]
+            '
+            nvidia-smi
+
+            MODEL="microsoft/Phi-3.5-mini-instruct"
+            CONFIG="config/model_configs/phi-3.5-mini-instruct.yaml"
+            CACHE_PATH="/data/datasets/triviaqa_microsoft-Phi-3.5-mini-instruct.json"
+            OUT_DIR="/data/experiments/phase2_mechanism/phi35_instruct_s0_triviaqa"
+            SAE_DIR="/data/sae_checkpoints/phi35_instruct"
+
+            echo "=== Step 1: Train SAEs on Wikipedia ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase sae \
+              --output-dir "$OUT_DIR" \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir "$SAE_DIR" \
+              --n-tokens 5000000 \
+              --batch-size-extract 4 \
+              --batch-size-sae 256 \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 2: Generate TriviaQA completions (instruct mode) ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase data \
+              --dataset triviaqa \
+              --output-dir "$OUT_DIR" \
+              --data-dir /data/datasets \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 3: LLM-judge TriviaQA completions ==="
+            python scripts/score_triviaqa.py \
+              --triviaqa-cache "$CACHE_PATH" \
+              --output-dir "$OUT_DIR" \
+              --api-key E0fTkLAw3ZqcsYuugDKbwh5VcTMmto8x \
+              --batch-size 10 \
+              --max-workers 10
+
+            echo "=== Step 4: Run hypothesis tracker ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase track \
+              --output-dir "$OUT_DIR" \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir "$SAE_DIR" \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 5: Fit detector ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase detect \
+              --output-dir "$OUT_DIR" \
+              --seed 0
+
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "48Gi"
+            cpu: "4"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "48Gi"
+            cpu: "4"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 4Gi

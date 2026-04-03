@@ -1,0 +1,66 @@
+# GhostTrack Configuration for Qwen2.5-3B-Instruct
+# 36 layers, 2048 hidden dim
+# Instruction-tuned: responds reliably to QA prompts via chat_template.
+# Expected TriviaQA factual rate: ~35-50% (vs 8% for Qwen2.5-1.5B-base).
+
+project:
+  name: GhostTrack
+  version: 1.0.0
+  description: Multi-Hypothesis Tracking for Qwen2.5-3B-Instruct
+
+model:
+  base_model: Qwen/Qwen2.5-3B-Instruct
+  d_model: 2048
+  n_layers: 36
+  device: cuda
+
+sae:
+  architecture: JumpReLU
+  d_model: 2048
+  d_hidden: 8192   # 4x expansion ratio
+  threshold: 3.0
+  lambda_sparse: 1.0
+
+sae_training:
+  epochs: 20
+  batch_size: 64
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  gradient_clip: 1.0
+  num_tokens: 100000000
+  max_length: 512
+  validation_every: 1000
+  target_recon_loss: 0.01
+  target_sparsity_min: 50
+  target_sparsity_max: 100
+
+paths:
+  data_dir: ./data
+  cache_dir: ./data/cache/qwen-3b-instruct
+  models_dir: ./models/checkpoints/qwen-3b-instruct
+  results_dir: ./results/qwen-3b-instruct
+  logs_dir: ./logs/qwen-3b-instruct
+
+tracking:
+  top_k_features: 100
+  semantic_weight: 0.6
+  activation_weight: 0.2
+  position_weight: 0.2
+  association_threshold: 0.5
+  birth_threshold: 0.3
+  death_threshold: 0.1
+
+detection:
+  entropy_threshold: 1.5
+  churn_threshold: 0.3
+  entropy_weight: 0.4
+  churn_weight: 0.3
+  ml_weight: 0.3
+  threshold: 0.5
+
+dataset:
+  primary: triviaqa
+  split_train: 0.7
+  split_val: 0.15
+  split_test: 0.15
+  stratify_by: category
