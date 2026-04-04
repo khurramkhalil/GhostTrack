@@ -129,8 +129,8 @@ spec:
               --output-dir "$OUT_DIR" \
               --data-dir /data/datasets \
               --sae-checkpoint-dir "$SAE_DIR" \
-              --n-tokens 5000000 \
-              --batch-size-extract 4 \
+              --n-tokens 500000 \
+              --batch-size-extract 2 \
               --batch-size-sae 256 \
               --seed 0 \
               --device cuda
@@ -177,11 +177,11 @@ spec:
         resources:
           requests:
             nvidia.com/gpu: 1
-            memory: "48Gi"
+            memory: "64Gi"
             cpu: "4"
           limits:
             nvidia.com/gpu: 1
-            memory: "48Gi"
+            memory: "64Gi"
             cpu: "4"
         envFrom:
         - secretRef:
