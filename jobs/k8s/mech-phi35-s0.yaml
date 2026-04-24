@@ -92,6 +92,7 @@ spec:
             set -e
             echo "=== GhostTrack: Full Pipeline | Phi-3.5-mini-instruct | Seed 0 ==="
             pip install openai -q
+            pip install -U transformers -q
 
             python3 -c '
             import urllib.request
