@@ -1,0 +1,166 @@
+# GhostTrack — Llama-3.2-3B-Instruct | Seed 0 | HaluEval Track + Detect
+#
+# Reuses SAE checkpoints from the llama triviaqa run (28/28 layers done).
+# Runs data (HaluEval QA) → track → detect.
+#
+# Why HaluEval: TriviaQA AUROC was 0.575 — detector collapses due to chat
+# template overhead diluting completion signal. HaluEval full-sentence pairs
+# give equal-length content for both classes.
+#
+# REQUIRES: /data/sae_checkpoints/llama_3b_instruct/ exists (28 layers)
+#
+# Submit: kubectl apply -f jobs/k8s/mech-llama3b-s0-halueval.yaml
+# Logs:   kubectl logs -f -l job-name=ghosttrack-llama3b-s0-halueval -n gp-engine-mizzou-dcps
+# Delete: kubectl delete job ghosttrack-llama3b-s0-halueval -n gp-engine-mizzou-dcps
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ghosttrack-llama3b-s0-halueval
+  namespace: gp-engine-mizzou-dcps
+  labels:
+    app: ghosttrack-llama3b-s0-halueval
+    project: ghosttrack
+    phase: trackdetect
+    model: llama-3.2-3b-instruct
+    seed: "0"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: ghosttrack-llama3b-s0-halueval
+        project: ghosttrack
+    spec:
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-SXM4-80GB
+                - NVIDIA-A100-80GB-PCIe
+                - NVIDIA-GH200-480GB
+                - NVIDIA-H200-NVL
+          - weight: 60
+            preference:
+              matchExpressions:
+              - key: nvidia.com/gpu.product
+                operator: In
+                values:
+                - NVIDIA-A100-PCIE-40GB
+                - NVIDIA-A40
+                - NVIDIA-L40
+                - NVIDIA-L40S
+                - NVIDIA-RTX-A6000
+      tolerations:
+      - key: "nvidia.com/gpu"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: ghosttrack
+        image: khurramkhalil/ghosttrack:latest
+        imagePullPolicy: Always
+        workingDir: /workspace/GhostTrack
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            set -e
+            echo "=== GhostTrack: HaluEval Track+Detect | Llama-3.2-3B-Instruct | Seed 0 ==="
+            python3 -c '
+            import urllib.request
+            base = "https://raw.githubusercontent.com/khurramkhalil/GhostTrack/main/"
+            files = [
+              ("ghosttrack/tracking/extractor.py",       "/workspace/GhostTrack/ghosttrack/tracking/extractor.py"),
+              ("ghosttrack/data/__init__.py",             "/workspace/GhostTrack/ghosttrack/data/__init__.py"),
+              ("ghosttrack/detection/detector.py",       "/workspace/GhostTrack/ghosttrack/detection/detector.py"),
+              ("scripts/run_mechanism_study.py",         "/workspace/GhostTrack/scripts/run_mechanism_study.py"),
+              ("config/model_configs/llama-3.2-3b-instruct.yaml", "/workspace/GhostTrack/config/model_configs/llama-3.2-3b-instruct.yaml"),
+            ]
+            [(urllib.request.urlretrieve(base+s, d), print("OK", s)) for s, d in files]
+            '
+            nvidia-smi
+
+            MODEL="meta-llama/Llama-3.2-3B-Instruct"
+            CONFIG="config/model_configs/llama-3.2-3b-instruct.yaml"
+            OUT_DIR="/data/experiments/phase2_mechanism/llama_3b_instruct_s0_halueval"
+            SAE_DIR="/data/sae_checkpoints/llama_3b_instruct"
+
+            echo "=== Step 1: Load HaluEval dataset ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase data \
+              --dataset halueval \
+              --halueval-split qa \
+              --output-dir "$OUT_DIR" \
+              --data-dir /data/datasets \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 2: Run hypothesis tracker ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase track \
+              --output-dir "$OUT_DIR" \
+              --data-dir /data/datasets \
+              --sae-checkpoint-dir "$SAE_DIR" \
+              --seed 0 \
+              --device cuda
+
+            echo "=== Step 3: Fit detector ==="
+            python scripts/run_mechanism_study.py \
+              --model "$MODEL" \
+              --config "$CONFIG" \
+              --phase detect \
+              --output-dir "$OUT_DIR" \
+              --seed 0
+
+            echo "=== Done ==="
+        resources:
+          requests:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "2"
+          limits:
+            nvidia.com/gpu: 1
+            memory: "32Gi"
+            cpu: "2"
+        envFrom:
+        - secretRef:
+            name: ghosttrack-secrets
+        - configMapRef:
+            name: ghosttrack-config
+        volumeMounts:
+        - mountPath: /data
+          name: ghosttrack-data
+        - mountPath: /dev/shm
+          name: dshm
+      volumes:
+      - name: ghosttrack-data
+        persistentVolumeClaim:
+          claimName: ghosttrack-data
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 2Gi
