@@ -85,6 +85,9 @@ spec:
         args:
           - |
             set -e
+            LOG=/data/logs/llama3b_halueval_$(date +%s).log
+            mkdir -p /data/logs
+            exec > >(tee "$LOG") 2>&1
             echo "=== GhostTrack: HaluEval Track+Detect | Llama-3.2-3B-Instruct | Seed 0 ==="
             python3 -c '
             import urllib.request

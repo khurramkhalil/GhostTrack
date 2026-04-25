@@ -90,6 +90,9 @@ spec:
         args:
           - |
             set -e
+            LOG=/data/logs/phi35_full_$(date +%s).log
+            mkdir -p /data/logs
+            exec > >(tee "$LOG") 2>&1
             echo "=== GhostTrack: Full Pipeline | Phi-3.5-mini-instruct | Seed 0 ==="
             pip install openai -q
             pip install -U transformers -q
